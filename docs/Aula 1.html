@@ -6,8 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
+<meta name="author" content="Lucas Versari">
+<meta name="dcterms.date" content="2024-03-06">
 
-<title>FIP606_2024 - About</title>
+<title>FIP606_2024 - Aula 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,40 +21,6 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
-}
-/* CSS for syntax highlighting */
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 </style>
 
@@ -119,11 +87,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text">Home</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link active" href="./about.html" rel="" target="" aria-current="page">
+    <a class="nav-link" href="./about.html" rel="" target="">
  <span class="menu-text">About</span></a>
   </li>  
   <li class="nav-item">
-    <a class="nav-link" href="./Aula 1.html" rel="" target="">
+    <a class="nav-link active" href="./Aula 1.html" rel="" target="" aria-current="page">
  <span class="menu-text">Aula 1</span></a>
   </li>  
 </ul>
@@ -138,21 +106,46 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- sidebar -->
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">On this page</h2>
+   
+  <ul>
+  <li><a href="#introdução-ao-r" id="toc-introdução-ao-r" class="nav-link active" data-scroll-target="#introdução-ao-r">Introdução ao R</a>
+  <ul class="collapse">
+  <li><a href="#trabalhe-de-forma-organizada" id="toc-trabalhe-de-forma-organizada" class="nav-link" data-scroll-target="#trabalhe-de-forma-organizada">Trabalhe de forma organizada</a></li>
+  <li><a href="#diferença-de-quarto-document-e-r-markdown" id="toc-diferença-de-quarto-document-e-r-markdown" class="nav-link" data-scroll-target="#diferença-de-quarto-document-e-r-markdown">Diferença de Quarto Document e R Markdown</a></li>
+  <li><a href="#chunk" id="toc-chunk" class="nav-link" data-scroll-target="#chunk">Chunk</a></li>
+  <li><a href="#texto" id="toc-texto" class="nav-link" data-scroll-target="#texto">Texto</a></li>
+  <li><a href="#atribuição-de-valores" id="toc-atribuição-de-valores" class="nav-link" data-scroll-target="#atribuição-de-valores">Atribuição de Valores</a></li>
+  </ul></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">About</h1>
+<h1 class="title">Aula 1</h1>
 </div>
 
 
 
 <div class="quarto-title-meta">
 
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Lucas Versari </p>
+          </div>
+  </div>
     
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">March 6, 2024</p>
+    </div>
+  </div>
   
     
   </div>
@@ -160,15 +153,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 </header>
 
-<p>About this site</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="dv">1</span> <span class="sc">+</span> <span class="dv">1</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>[1] 2</code></pre>
-</div>
-</div>
+<section id="introdução-ao-r" class="level1">
+<h1>Introdução ao R</h1>
+<p>Nessa primeira aula aprendemos como utilizar o RStudio e sobre as funções presentes nas barras de ferramentas.</p>
+<section id="trabalhe-de-forma-organizada" class="level2">
+<h2 class="anchored" data-anchor-id="trabalhe-de-forma-organizada">Trabalhe de forma organizada</h2>
+<p>Para isso pode ser criado um projeto clicando na barra de ferramentas superior em ‘File’ e em seguida em ‘New project’. Assim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa <strong>Monitoramento da sensibilidade in vitro de</strong> <em>Colletotrichum truncatum</em> <strong>à fungicidas</strong> e outro projeto para o conjunto de dados da pesquisa <strong>Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja</strong>.</p>
+<p>Após criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em ‘File’ e depois em ‘New File’, podendo selecionar ‘Quarto Document…’ ou ‘R Markdown’.</p>
+</section>
+<section id="diferença-de-quarto-document-e-r-markdown" class="level2">
+<h2 class="anchored" data-anchor-id="diferença-de-quarto-document-e-r-markdown">Diferença de Quarto Document e R Markdown</h2>
+<p>O Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos <strong>.Rmd</strong> existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros).</p>
+</section>
+<section id="chunk" class="level2">
+<h2 class="anchored" data-anchor-id="chunk">Chunk</h2>
+<p>Antes de tudo, para que possamos utilizar o R Quarto Markdown e executar pedaços de códigos que serão integrados ao documento, devemos criar um chunk. O chunk permite que as funções e demais códigos sejam executadas e rodadas no documento. Um atalho que pode ser usado para sua criação é o <strong>Ctrl + Alt + I</strong>.</p>
+</section>
+<section id="texto" class="level2">
+<h2 class="anchored" data-anchor-id="texto">Texto</h2>
+<p>Durante a escrita, podemos colocar palavras em itálico usando 1 asterisco antes e após as palavras em questão, do mesmo modo podemos colocar palavras em negrito utilizando 2 asteriscos antes e a´pos a (s) palavra (s).</p>
+<p>Dentro de um chunk, podemos colocar palavras e/ou frases entre aspas ou com um # na frente para que sejam rodadas como um texto, e não como dados.</p>
+</section>
+<section id="atribuição-de-valores" class="level2">
+<h2 class="anchored" data-anchor-id="atribuição-de-valores">Atribuição de Valores</h2>
+<p>Quando queremos atribuir um valor para algum nome, podemos utilizar ‘&lt;-’. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor.</p>
 
 
+</section>
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">

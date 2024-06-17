@@ -1,7 +1,7 @@
 {
-  "hash": "229e155a1a16a0342fb1a3e895adfb65",
+  "hash": "f7e2b89b4d23745f2b4e4aac9b255a72",
   "result": {
-    "markdown": "---\ntitle: \"FIP606_2024\"\n---\n\n\nThis is a Quarto website.\n\nTo learn more about Quarto websites visit <https://quarto.org/docs/websites>.\n\n\n::: {.cell}\n\n```{.r .cell-code}\n1 + 1\n```\n\n::: {.cell-output .cell-output-stdout}\n```\n[1] 2\n```\n:::\n:::\n",
+    "markdown": "---\ntitle: \"Bem-vindo!\"\nabout:\n  template: jolla\n  image: https://ibb.co/2F3q76v/profile.jpg\n  links:\n    - icon: github\n      text: Github\n      href: https://lversari.github.io/FIP606_2024/\n    - icon: LinkedIn\n      text: LinkedIn\n      href: https://www.linkedin.com/in/lucasversari/\n    - icon: orcid \n      text: orcid\n      href: https://orcid.org/0000-0001-8462-1127\n\n---\n\nOlá, sou o Lucas Versari e é uma satisfação compartilhar essa página!\n\n\n\n::: {.cell}\n\n:::\n\n### Sobre mim:\nEngenheiro Agrônomo pela Universidade Federal de Mato Grosso (UFMT) e atualmente mestrando em Fitopatologia na Universidade Federal de Viçosa (UFV). Durante a Graduação foi bolsista de iniciação científica da Embraoa Agrossilvipastoril em Sinop-MT, na área da Fitopatologia, por dois anos. Trabalhou por 1 ano e 6 meses na EPR Consultoria e Pesquisa Agronômica. No momento desenvolve pesquisas no Instituto de Biotecnologia Aplicada à Agropecuária (BIOAGRO/UFV) no Laboratório de Genética e Genômica da Interação Planta-Patógeno.\n\n\n::: {.cell}\n\n:::\n\n\n### Sobre o site:\nTêm como finalidade disponibilizar o conteúdo das aulas de Análises e Visualização de Dados em Fitopatologia, ministrada pelo Professor Dr. Emerson edeiros Del Ponte.\nEsse site auxiliará com informações e passo a passo, desde a iniciação em RStudio até mesmo em interpretação e visualização de dados.",
     "supporting": [],
     "filters": [
       "rmarkdown/pagebreak.lua"

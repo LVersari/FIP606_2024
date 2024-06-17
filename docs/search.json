@@ -7,10 +7,52 @@
     "text": "About this site\n\n1 + 1\n\n[1] 2"
   },
   {
+    "objectID": "Aula 1.html",
+    "href": "Aula 1.html",
+    "title": "Aula 1",
+    "section": "",
+    "text": "Nessa primeira aula aprendemos como utilizar o RStudio e sobre as funções presentes nas barras de ferramentas.\n\n\nPara isso pode ser criado um projeto clicando na barra de ferramentas superior em ‘File’ e em seguida em ‘New project’. Assim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa Monitoramento da sensibilidade in vitro de Colletotrichum truncatum à fungicidas e outro projeto para o conjunto de dados da pesquisa Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja.\nApós criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em ‘File’ e depois em ‘New File’, podendo selecionar ‘Quarto Document…’ ou ‘R Markdown’.\n\n\n\nO Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos .Rmd existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros).\n\n\n\nAntes de tudo, para que possamos utilizar o R Quarto Markdown e executar pedaços de códigos que serão integrados ao documento, devemos criar um chunk. O chunk permite que as funções e demais códigos sejam executadas e rodadas no documento. Um atalho que pode ser usado para sua criação é o Ctrl + Alt + I.\n\n\n\nDurante a escrita, podemos colocar palavras em itálico usando 1 asterisco antes e após as palavras em questão, do mesmo modo podemos colocar palavras em negrito utilizando 2 asteriscos antes e a´pos a (s) palavra (s).\nDentro de um chunk, podemos colocar palavras e/ou frases entre aspas ou com um # na frente para que sejam rodadas como um texto, e não como dados.\n\n\n\nQuando queremos atribuir um valor para algum nome, podemos utilizar ‘&lt;-’. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor."
+  },
+  {
+    "objectID": "Aula 1.html#trabalhe-de-forma-organizada",
+    "href": "Aula 1.html#trabalhe-de-forma-organizada",
+    "title": "Aula 1",
+    "section": "",
+    "text": "Para isso pode ser criado um projeto clicando na barra de ferramentas superior em ‘File’ e em seguida em ‘New project’. Assim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa Monitoramento da sensibilidade in vitro de Colletotrichum truncatum à fungicidas e outro projeto para o conjunto de dados da pesquisa Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja.\nApós criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em ‘File’ e depois em ‘New File’, podendo selecionar ‘Quarto Document…’ ou ‘R Markdown’."
+  },
+  {
+    "objectID": "Aula 1.html#diferença-de-quarto-document-e-r-markdown",
+    "href": "Aula 1.html#diferença-de-quarto-document-e-r-markdown",
+    "title": "Aula 1",
+    "section": "",
+    "text": "O Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos .Rmd existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros)."
+  },
+  {
+    "objectID": "Aula 1.html#chunk",
+    "href": "Aula 1.html#chunk",
+    "title": "Aula 1",
+    "section": "",
+    "text": "Antes de tudo, para que possamos utilizar o R Quarto Markdown e executar pedaços de códigos que serão integrados ao documento, devemos criar um chunk. O chunk permite que as funções e demais códigos sejam executadas e rodadas no documento. Um atalho que pode ser usado para sua criação é o Ctrl + Alt + I."
+  },
+  {
+    "objectID": "Aula 1.html#texto",
+    "href": "Aula 1.html#texto",
+    "title": "Aula 1",
+    "section": "",
+    "text": "Durante a escrita, podemos colocar palavras em itálico usando 1 asterisco antes e após as palavras em questão, do mesmo modo podemos colocar palavras em negrito utilizando 2 asteriscos antes e a´pos a (s) palavra (s).\nDentro de um chunk, podemos colocar palavras e/ou frases entre aspas ou com um # na frente para que sejam rodadas como um texto, e não como dados."
+  },
+  {
+    "objectID": "Aula 1.html#atribuição-de-valores",
+    "href": "Aula 1.html#atribuição-de-valores",
+    "title": "Aula 1",
+    "section": "",
+    "text": "Quando queremos atribuir um valor para algum nome, podemos utilizar ‘&lt;-’. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor."
+  },
+  {
     "objectID": "index.html",
     "href": "index.html",
-    "title": "FIP606_2024",
+    "title": "Bem-vindo!",
     "section": "",
-    "text": "This is a Quarto website.\nTo learn more about Quarto websites visit https://quarto.org/docs/websites.\n\n1 + 1\n\n[1] 2"
+    "text": "Olá, sou o Lucas Versari e é uma satisfação compartilhar essa página!\n\nSobre mim:\nEngenheiro Agrônomo pela Universidade Federal de Mato Grosso (UFMT) e atualmente mestrando em Fitopatologia na Universidade Federal de Viçosa (UFV). Durante a Graduação foi bolsista de iniciação científica da Embraoa Agrossilvipastoril em Sinop-MT, na área da Fitopatologia, por dois anos. Trabalhou por 1 ano e 6 meses na EPR Consultoria e Pesquisa Agronômica. No momento desenvolve pesquisas no Instituto de Biotecnologia Aplicada à Agropecuária (BIOAGRO/UFV) no Laboratório de Genética e Genômica da Interação Planta-Patógeno.\n\n\nSobre o site:\nTêm como finalidade disponibilizar o conteúdo das aulas de Análises e Visualização de Dados em Fitopatologia, ministrada pelo Professor Dr. Emerson edeiros Del Ponte. Esse site auxiliará com informações e passo a passo, desde a iniciação em RStudio até mesmo em interpretação e visualização de dados."
   }
 ]
