@@ -1,14 +1,27 @@
 project:
   type: website
   output-dir: docs
+  
+execute:
+  cache: true
+  freeze: auto
+  warning: false
 
 website:
-  title: "FIP606_2024"
+  title: "FIP606"
+  favicon: logo.png
+  
   navbar:
+    pinned: true
+    logo: logo.png
+    
     left:
-      - href: index.qmd
-      - href: Aula 1.qmd
-        text: R Básico
+      - text: R Básico
+        menu: 
+        - href: Aula 1.qmd
+          text: Para que serve o R?
+        - href: Aula 2.qmd
+          text: Introdução ao R
 
 format:
   html:

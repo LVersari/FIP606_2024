@@ -2,29 +2,26 @@
 title: "Aula 1"
 author: "Lucas Versari"
 date: "2024-03-06"
+about:
+  template: jolla
+  id: about-block
+  image: "logoR.jpg"
+  image-shape: round
 editor_options: 
   chunk_output_type: console
 ---
-# Introdução ao R
-Nessa primeira aula aprendemos como utilizar o RStudio e sobre as funções presentes nas barras de ferramentas. 
 
-## Trabalhe de forma organizada
-  Para isso pode ser criado um projeto clicando na barra de ferramentas superior em 'File' e em seguida em 'New project'. Assim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados.
-  Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa **Monitoramento da sensibilidade in vitro de** *Colletotrichum truncatum* **à fungicidas** e outro projeto para o conjunto de dados da pesquisa **Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja**.
+R é uma linguagem de programação e um ambiente de software voltado para a análise estatística, visualização de dados e ciência de dados. Desenvolvido inicialmente por Ross Ihaka e Robert Gentleman na Universidade de Auckland, Nova Zelândia, R é amplamente utilizado em estatísticas, pesquisa científica, economia, bioinformática e outras áreas que requerem análise de dados.
 
-  Após criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em 'File' e depois em 'New File', podendo selecionar 'Quarto Document...' ou 'R Markdown'.
+**Característica Principal**
+Linguagem de Programação: R é uma linguagem de programação interpretada, semelhante ao S, com uma sintaxe fácil de aprender e usar.
 
-## Diferença de Quarto Document e R Markdown
-  O Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos **.Rmd** existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros).
+1. Análise Estatística: R fornece uma ampla variedade de técnicas estatísticas, incluindo modelagem linear e não linear, testes estatísticos, séries temporais, classificação e agrupamento.
 
-## Chunk
-  Antes de tudo, para que possamos utilizar o R Quarto Markdown e executar pedaços de códigos que serão integrados ao documento, devemos criar um chunk. O chunk permite que as funções e demais códigos sejam executadas e rodadas no documento. Um atalho que pode ser usado para sua criação é o **Ctrl + Alt + I**.
+2. Visualização de Dados: R possui excelentes capacidades de visualização de dados, permitindo a criação de gráficos de alta qualidade para análise exploratória e apresentação de resultados.
 
-## Texto
-  Durante a escrita, podemos colocar palavras em itálico usando 1 asterisco antes e após as palavras em questão, do mesmo modo podemos colocar palavras em negrito utilizando 2 asteriscos antes e a´pos a (s) palavra (s).
+3. Pacotes Extensíveis: O poder do R é ampliado por milhares de pacotes disponíveis no CRAN (Comprehensive R Archive Network), Bioconductor, e outros repositórios. Estes pacotes cobrem uma vasta gama de métodos e técnicas.
 
-  Dentro de um chunk, podemos colocar palavras e/ou frases entre aspas ou com um # na frente para que sejam rodadas como um texto, e não como dados.
+4. Comunidade Ativa: R tem uma grande e ativa comunidade de usuários e desenvolvedores que contribuem com pacotes, documentação e ajudam em fóruns.
 
-## Atribuição de Valores
-  Quando queremos atribuir um valor para algum nome, podemos utilizar '<-'. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor.
-
+5. Código aberto: permite trabalhar com inumeras possibilidades nas análises de dados, visualização de dados utilizando diferentes componentes gráficos, modelagem estatística, dentre outros recursos.

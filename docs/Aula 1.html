@@ -9,7 +9,7 @@
 <meta name="author" content="Lucas Versari">
 <meta name="dcterms.date" content="2024-03-06">
 
-<title>FIP606_2024 - Aula 1</title>
+<title>FIP606 - Aula 1</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -26,16 +26,15 @@ ul.task-list li input[type="checkbox"] {
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
-<script src="site_libs/quarto-nav/headroom.min.js"></script>
 <script src="site_libs/clipboard/clipboard.min.js"></script>
 <script src="site_libs/quarto-search/autocomplete.umd.js"></script>
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
+<link href="./logo.png" rel="icon" type="image/png">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
-<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
@@ -65,15 +64,18 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed">
+<body class="nav-fixed fullcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
     <nav class="navbar navbar-expand-lg navbar-dark ">
       <div class="navbar-container container-fluid">
       <div class="navbar-brand-container">
+    <a href="./index.html" class="navbar-brand navbar-brand-logo">
+    <img src="./logo.png" alt="" class="navbar-logo">
+    </a>
     <a class="navbar-brand" href="./index.html">
-    <span class="navbar-title">FIP606_2024</span>
+    <span class="navbar-title">FIP606</span>
     </a>
   </div>
             <div id="quarto-search" class="" title="Search"></div>
@@ -82,14 +84,21 @@ ul.task-list li input[type="checkbox"] {
 </button>
           <div class="collapse navbar-collapse" id="navbarCollapse">
             <ul class="navbar-nav navbar-nav-scroll me-auto">
-  <li class="nav-item">
-    <a class="nav-link" href="./index.html" rel="" target="">
- <span class="menu-text">Bem-vindos!</span></a>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-r-básico" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">R Básico</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-r-básico">    
+        <li>
+    <a class="dropdown-item" href="./Aula 1.html" rel="" target="">
+ <span class="dropdown-text">Para que serve o R?</span></a>
   </li>  
-  <li class="nav-item">
-    <a class="nav-link active" href="./Aula 1.html" rel="" target="" aria-current="page">
- <span class="menu-text">R Básico</span></a>
+        <li>
+    <a class="dropdown-item" href="./Aula 2.html" rel="" target="">
+ <span class="dropdown-text">Introdução ao R</span></a>
   </li>  
+    </ul>
+  </li>
 </ul>
             <div class="quarto-navbar-tools ms-auto">
 </div>
@@ -101,84 +110,44 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">On this page</h2>
-   
-  <ul>
-  <li><a href="#introdução-ao-r" id="toc-introdução-ao-r" class="nav-link active" data-scroll-target="#introdução-ao-r">Introdução ao R</a>
-  <ul class="collapse">
-  <li><a href="#trabalhe-de-forma-organizada" id="toc-trabalhe-de-forma-organizada" class="nav-link" data-scroll-target="#trabalhe-de-forma-organizada">Trabalhe de forma organizada</a></li>
-  <li><a href="#diferença-de-quarto-document-e-r-markdown" id="toc-diferença-de-quarto-document-e-r-markdown" class="nav-link" data-scroll-target="#diferença-de-quarto-document-e-r-markdown">Diferença de Quarto Document e R Markdown</a></li>
-  <li><a href="#chunk" id="toc-chunk" class="nav-link" data-scroll-target="#chunk">Chunk</a></li>
-  <li><a href="#texto" id="toc-texto" class="nav-link" data-scroll-target="#texto">Texto</a></li>
-  <li><a href="#atribuição-de-valores" id="toc-atribuição-de-valores" class="nav-link" data-scroll-target="#atribuição-de-valores">Atribuição de Valores</a></li>
-  </ul></li>
-  </ul>
-</nav>
-    </div>
+    
 <!-- main -->
-<main class="content" id="quarto-document-content">
-
-<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-about-jolla">
+  <img src="logoR.jpg" class="about-image
+  round " style="height: 15em; width: 15em;">
+ <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
 <h1 class="title">Aula 1</h1>
 </div>
-
-
-
 <div class="quarto-title-meta">
-
     <div>
     <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
              <p>Lucas Versari </p>
           </div>
   </div>
-    
     <div>
     <div class="quarto-title-meta-heading">Published</div>
     <div class="quarto-title-meta-contents">
       <p class="date">March 6, 2024</p>
     </div>
   </div>
-  
-    
   </div>
-  
-
-</header>
-
-<section id="introdução-ao-r" class="level1">
-<h1>Introdução ao R</h1>
-<p>Nessa primeira aula aprendemos como utilizar o RStudio e sobre as funções presentes nas barras de ferramentas.</p>
-<section id="trabalhe-de-forma-organizada" class="level2">
-<h2 class="anchored" data-anchor-id="trabalhe-de-forma-organizada">Trabalhe de forma organizada</h2>
-<p>Para isso pode ser criado um projeto clicando na barra de ferramentas superior em ‘File’ e em seguida em ‘New project’. Assim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa <strong>Monitoramento da sensibilidade in vitro de</strong> <em>Colletotrichum truncatum</em> <strong>à fungicidas</strong> e outro projeto para o conjunto de dados da pesquisa <strong>Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja</strong>.</p>
-<p>Após criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em ‘File’ e depois em ‘New File’, podendo selecionar ‘Quarto Document…’ ou ‘R Markdown’.</p>
-</section>
-<section id="diferença-de-quarto-document-e-r-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="diferença-de-quarto-document-e-r-markdown">Diferença de Quarto Document e R Markdown</h2>
-<p>O Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos <strong>.Rmd</strong> existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros).</p>
-</section>
-<section id="chunk" class="level2">
-<h2 class="anchored" data-anchor-id="chunk">Chunk</h2>
-<p>Antes de tudo, para que possamos utilizar o R Quarto Markdown e executar pedaços de códigos que serão integrados ao documento, devemos criar um chunk. O chunk permite que as funções e demais códigos sejam executadas e rodadas no documento. Um atalho que pode ser usado para sua criação é o <strong>Ctrl + Alt + I</strong>.</p>
-</section>
-<section id="texto" class="level2">
-<h2 class="anchored" data-anchor-id="texto">Texto</h2>
-<p>Durante a escrita, podemos colocar palavras em itálico usando 1 asterisco antes e após as palavras em questão, do mesmo modo podemos colocar palavras em negrito utilizando 2 asteriscos antes e a´pos a (s) palavra (s).</p>
-<p>Dentro de um chunk, podemos colocar palavras e/ou frases entre aspas ou com um # na frente para que sejam rodadas como um texto, e não como dados.</p>
-</section>
-<section id="atribuição-de-valores" class="level2">
-<h2 class="anchored" data-anchor-id="atribuição-de-valores">Atribuição de Valores</h2>
-<p>Quando queremos atribuir um valor para algum nome, podemos utilizar ‘&lt;-’. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor.</p>
+</header><main class="content" id="quarto-document-content">
+<p>R é uma linguagem de programação e um ambiente de software voltado para a análise estatística, visualização de dados e ciência de dados. Desenvolvido inicialmente por Ross Ihaka e Robert Gentleman na Universidade de Auckland, Nova Zelândia, R é amplamente utilizado em estatísticas, pesquisa científica, economia, bioinformática e outras áreas que requerem análise de dados.</p>
+<p><strong>Característica Principal</strong> Linguagem de Programação: R é uma linguagem de programação interpretada, semelhante ao S, com uma sintaxe fácil de aprender e usar.</p>
+<ol type="1">
+<li><p>Análise Estatística: R fornece uma ampla variedade de técnicas estatísticas, incluindo modelagem linear e não linear, testes estatísticos, séries temporais, classificação e agrupamento.</p></li>
+<li><p>Visualização de Dados: R possui excelentes capacidades de visualização de dados, permitindo a criação de gráficos de alta qualidade para análise exploratória e apresentação de resultados.</p></li>
+<li><p>Pacotes Extensíveis: O poder do R é ampliado por milhares de pacotes disponíveis no CRAN (Comprehensive R Archive Network), Bioconductor, e outros repositórios. Estes pacotes cobrem uma vasta gama de métodos e técnicas.</p></li>
+<li><p>Comunidade Ativa: R tem uma grande e ativa comunidade de usuários e desenvolvedores que contribuem com pacotes, documentação e ajudam em fóruns.</p></li>
+<li><p>Código aberto: permite trabalhar com inumeras possibilidades nas análises de dados, visualização de dados utilizando diferentes componentes gráficos, modelagem estatística, dentre outros recursos.</p></li>
+</ol>
 
 
-</section>
-</section>
-
-</main> <!-- /main -->
+</main>  
+</div>
+ <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -199,13 +168,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
   }
   toggleBodyColorPrimary();  
-  const icon = "";
-  const anchorJS = new window.AnchorJS();
-  anchorJS.options = {
-    placement: 'right',
-    icon: icon
-  };
-  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     
