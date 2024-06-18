@@ -1,12 +1,12 @@
 {
-    "id": "94F10833",
-    "path": "C:/Users/User/OneDrive/Documentos/GitHub/FIP606_2024/Aula 2.qmd",
-    "project_path": "Aula 2.qmd",
+    "id": "54DFEA58",
+    "path": "~/GitHub/FIP606_2024/Aula 1.qmd",
+    "project_path": "Aula 1.qmd",
     "type": "quarto_markdown",
-    "hash": "245633753",
+    "hash": "0",
     "contents": "",
     "dirty": false,
-    "created": 1718682776621.0,
+    "created": 1718567162737.0,
     "source_on_save": false,
     "relative_order": 4,
     "properties": {
@@ -18,11 +18,11 @@
         "chunk_output_type": "console"
     },
     "folds": "",
-    "lastKnownWriteTime": 1718684862,
+    "lastKnownWriteTime": 1718684869,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1718684862228,
+    "last_content_update": 1718684869817,
     "read_only": false,
     "read_only_alternatives": []
 }

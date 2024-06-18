@@ -46,7 +46,8 @@ website:
               url: https://lversari.github.io/FIP606_2024/
             - text: Emerson M. Del Ponte
               url: https://github.com/emdelponte
-
+  
+  back-to-top-navigation: true
 
 format:
   html:
