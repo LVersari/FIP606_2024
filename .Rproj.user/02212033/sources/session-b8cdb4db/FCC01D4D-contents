@@ -38,12 +38,8 @@ website:
               url: https://www.instagram.com/fitopatologiaufv/
        - icon: Lattes 
          menu:
-            - text: Lattes
+            - text: Curriculo Lattes
               url: http://lattes.cnpq.br/4019652817990249
-       - icon: orcid 
-         menu:
-            - text: orcid
-              url: https://orcid.org/0000-0001-8462-1127
        - icon: github
          menu:
             - text: Lucas R. Versari
