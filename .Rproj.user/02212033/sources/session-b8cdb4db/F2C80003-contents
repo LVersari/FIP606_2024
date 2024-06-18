@@ -1,11 +1,10 @@
 ---
-title: "Bem-vindo!"
+title: "Bem-vindos!"
 about:
   template: jolla
   id: about-block
   image: "Foto1.jpg"
   image-shape: round
-  image: profile.jpg
   links:
     - icon: github
       text: Github
