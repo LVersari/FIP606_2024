@@ -23,10 +23,43 @@ website:
         - href: Aula 2.qmd
           text: Introdução ao R
 
+
+     
+    right:
+       - icon: linkedin
+         href: https://www.linkedin.com/in/lucasversari/
+       - icon: instagram
+         menu: 
+            - text: Lucas Versari
+              url: https://www.instagram.com/lucasversari/
+            - text: Emerson M. Del Ponte
+              url: https://www.instagram.com/emdelponte/
+            - text: Fitopatolofia UFV
+              url: https://www.instagram.com/fitopatologiaufv/
+       - icon: Lattes 
+         menu:
+            - text: Lattes
+              url: http://lattes.cnpq.br/4019652817990249
+       - icon: orcid 
+         menu:
+            - text: orcid
+              url: https://orcid.org/0000-0001-8462-1127
+       - icon: github
+         menu:
+            - text: Lucas R. Versari
+              url: https://lversari.github.io/FIP606_2024/
+            - text: Emerson M. Del Ponte
+              url: https://github.com/emdelponte
+
+
 format:
   html:
-    theme: cosmo
+    theme: 
+      light: flatly
+      dark: superhero
     css: styles.css
     toc: true
+
+editor: visual
 
       

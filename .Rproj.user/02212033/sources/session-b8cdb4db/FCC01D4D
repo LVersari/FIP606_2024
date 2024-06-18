@@ -3,7 +3,7 @@
     "path": "~/GitHub/FIP606_2024/_quarto.yml",
     "project_path": "_quarto.yml",
     "type": "yaml",
-    "hash": "2429329456",
+    "hash": "4139754662",
     "contents": "",
     "dirty": false,
     "created": 1717596362141.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "23,10",
-        "scrollLine": "9"
+        "cursorPosition": "51,45",
+        "scrollLine": "34"
     },
     "folds": "",
-    "lastKnownWriteTime": 1718684620,
+    "lastKnownWriteTime": 1718685734,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1718684620093,
+    "last_content_update": 1718685734934,
     "read_only": false,
     "read_only_alternatives": []
 }

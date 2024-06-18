@@ -4,19 +4,6 @@ about:
   id: about-block
   image: "Foto1.jpg"
   image-shape: round
-  links:
-    - icon: github
-      text: Github
-      href: https://lversari.github.io/FIP606_2024/
-    - icon: LinkedIn
-      text: LinkedIn
-      href: https://www.linkedin.com/in/lucasversari/
-    - icon: Lattes 
-      text: Lattes
-      href: http://lattes.cnpq.br/4019652817990249
-    - icon: orcid 
-      text: orcid
-      href: https://orcid.org/0000-0001-8462-1127
 
 ---
 # Bem-vindos!
