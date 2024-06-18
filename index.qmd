@@ -1,5 +1,5 @@
 ---
-title: "Bem-vindos!"
+title: "FIP606"
 about:
   template: jolla
   id: about-block
@@ -12,15 +12,23 @@ about:
     - icon: LinkedIn
       text: LinkedIn
       href: https://www.linkedin.com/in/lucasversari/
+    - icon: Lattes 
+      text: Lattes
+      href: http://lattes.cnpq.br/4019652817990249
     - icon: orcid 
       text: orcid
       href: https://orcid.org/0000-0001-8462-1127
 
 ---
+# Bem-vindos!
+
+
+
 Olá, sou o Lucas Versari e é uma satisfação compartilhar essa página!
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Sobre mim:
+
+## Sobre mim
 Engenheiro Agrônomo pela Universidade Federal de Mato Grosso (UFMT) e atualmente mestrando em Fitopatologia na Universidade Federal de Viçosa (UFV). Durante a Graduação foi bolsista de iniciação científica da Embraoa Agrossilvipastoril em Sinop-MT, na área da Fitopatologia, por dois anos. Trabalhou por 1 ano e 6 meses na EPR Consultoria e Pesquisa Agronômica. No momento desenvolve pesquisas no Instituto de Biotecnologia Aplicada à Agropecuária (BIOAGRO/UFV) no Laboratório de Genética e Genômica da Interação Planta-Patógeno.
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
