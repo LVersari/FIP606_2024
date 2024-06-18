@@ -1,4 +1,5 @@
 ---
+tittle: Bem-vindos!
 about:
   template: jolla
   id: about-block
@@ -6,19 +7,23 @@ about:
   image-shape: round
 
 ---
-# Bem-vindos!
 
 
+|                                                                    |
+|:------------------------------------------------------------------:|
+| Olá, sou o Lucas Versari e é uma satisfação compartilhar essa página! |
 
-Olá, sou o Lucas Versari e é uma satisfação compartilhar essa página!
++:------------------------------------------------------------------------------------------------:+
+| **Sobre mim**                                                                                    |
+|                                                                                                  |
+| Engenheiro Agrônomo pela Universidade Federal de Mato Grosso (UFMT) e atualmente mestrando em Fitopatologia na Universidade Federal de Viçosa (UFV). Durante a Graduação foi bolsista de iniciação científica da Embraoa Agrossilvipastoril em Sinop-MT, na área da Fitopatologia, por dois anos. Trabalhou por 1 ano e 6 meses na EPR Consultoria e Pesquisa Agronômica. No momento desenvolve pesquisas no Instituto de Biotecnologia Aplicada à Agropecuária (BIOAGRO/UFV) no Laboratório de Genética e Genômica da Interação Planta-Patógeno.                                                  |
++--------------------------------------------------------------------------------------------------+
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
++:------------------------------------------------------------------------------------------------:+
+| **Sobre o site**                                                                                 |
+|                                                                                                  |
+| Têm como finalidade disponibilizar o conteúdo das aulas de Análises e Visualização de Dados em Fitopatologia, ministrada pelo Professor Dr. Emerson Medeiros Del Ponte.                           |
+|                                                                                                  |
+| Esse site auxiliará com informações e passo a passo, desde a iniciação em RStudio até mesmo em interpretação e visualização de dados.                                                             |
 
-## Sobre mim
-Engenheiro Agrônomo pela Universidade Federal de Mato Grosso (UFMT) e atualmente mestrando em Fitopatologia na Universidade Federal de Viçosa (UFV). Durante a Graduação foi bolsista de iniciação científica da Embraoa Agrossilvipastoril em Sinop-MT, na área da Fitopatologia, por dois anos. Trabalhou por 1 ano e 6 meses na EPR Consultoria e Pesquisa Agronômica. No momento desenvolve pesquisas no Instituto de Biotecnologia Aplicada à Agropecuária (BIOAGRO/UFV) no Laboratório de Genética e Genômica da Interação Planta-Patógeno.
-
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
-## Sobre o site
-Têm como finalidade disponibilizar o conteúdo das aulas de Análises e Visualização de Dados em Fitopatologia, ministrada pelo Professor Dr. Emerson edeiros Del Ponte.
-Esse site auxiliará com informações e passo a passo, desde a iniciação em RStudio até mesmo em interpretação e visualização de dados.
+| Boa sorte!                                                                                       |

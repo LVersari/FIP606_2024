@@ -3,7 +3,7 @@
     "path": "~/GitHub/FIP606_2024/index.qmd",
     "project_path": "index.qmd",
     "type": "quarto_markdown",
-    "hash": "3925595661",
+    "hash": "3194277864",
     "contents": "",
     "dirty": false,
     "created": 1717596360890.0,
@@ -12,15 +12,15 @@
     "properties": {
         "source_window_id": "",
         "Source": "Source",
-        "cursorPosition": "21,15",
-        "scrollLine": "13"
+        "cursorPosition": "9,0",
+        "scrollLine": "0"
     },
     "folds": "",
-    "lastKnownWriteTime": 1718686112,
+    "lastKnownWriteTime": 1718687748,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1718686112346,
+    "last_content_update": 1718687748545,
     "read_only": false,
     "read_only_alternatives": []
 }
