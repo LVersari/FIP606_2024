@@ -5,7 +5,7 @@ about:
   id: about-block
   image: "Foto1.jpg"
   image-shape: round
-  image: https://ibb.co/2F3q76v/profile.jpg
+  image: profile.jpg
   links:
     - icon: github
       text: Github
