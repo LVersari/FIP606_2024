@@ -3,7 +3,7 @@
     "path": "~/GitHub/FIP606_2024/Aula 1b.qmd",
     "project_path": "Aula 1b.qmd",
     "type": "quarto_markdown",
-    "hash": "3195443093",
+    "hash": "2720165948",
     "contents": "",
     "dirty": false,
     "created": 1718933798513.0,
@@ -18,16 +18,16 @@
         "cursorPosition": "0,0",
         "scrollLine": "0",
         "rmdVisualCollapsedChunks": "",
-        "rmdVisualModeLocation": "2:0",
+        "rmdVisualModeLocation": "33:0",
         "docOutlineVisible": "1",
         "chunk_output_type": "console"
     },
     "folds": "",
-    "lastKnownWriteTime": 1719114019,
+    "lastKnownWriteTime": 1719114631,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1719114019579,
+    "last_content_update": 1719114631484,
     "read_only": false,
     "read_only_alternatives": []
 }
