@@ -2,9 +2,9 @@
 format: html
 editor: visual
 about:
-  template: jolla
+  template: solana
   id: about-block
-  image: "Foto1.jpg"
+  image: "logoR.jpg"
   image-shape: round
 ---
 
