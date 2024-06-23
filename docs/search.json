@@ -14,32 +14,46 @@
     "text": "# Software R e a IDE RStudio\nO Rstudio é uma IDE (ambiente de desenvolvimento integrado) para o R. Com sua utilização gratuita, o RStudio é uma excelente ferramenta para desenvolvimento em R, extremamente visual quando comparado com ambientes de outras linguagens e também com o console do R, e muito simples de se utilizar.\n## Como instalar o R :\n1. **Acesse o site oficial do R**: [CRAN (The Comprehensive R Archive Network)](https://cran.r-project.org/).\n2. **Escolha seu sistema operacional**:\n\nex: **Windows**; **macOS**; **Linux**…\n\n3. **Baixe o instalador**:\n4. **Execute o instalador**:\n5. **Siga as instruções do instalador**:\nQualquer dúvida, seguir o passo a passo disponível no site que realizou o download do software (R-Project).\n### Verificar a Instalação do R\n1° Abrir o R, 2° verificar a versão do r no console do R, digitando ‘version’ e clicando Enter.\n# **Instalar o RStudio**:\n\nNo site do[RStudio](https://posit.co/download/rstudio-desktop/) procure a versão apropriada para o seu sistema operacional e clique em baixar.\nApós o download execute o arquivo e então a instalação de seu RStudio estará concluída.\n\n\n\n\n Back to top"
   },
   {
+    "objectID": "Aula 2.html",
+    "href": "Aula 2.html",
+    "title": "RStudio:",
+    "section": "",
+    "text": "Para isso pode ser criado um projeto clicando na barra de ferramentas superior em File e em seguida em New project.\n\n{echo=FALSE}\nlibrary(magick)\nimagem &lt;- image_read(\"a.png\")\n\nAssim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa Monitoramento da sensibilidade in vitro de Colletotrichum truncatum à fungicidas e outro projeto para o conjunto de dados da pesquisa Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja.\nApós criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em File e depois em New File, podendo selecionar ‘Quarto Document…’ ou ‘R Markdown’.\n\n{echo=FALSE}\nlibrary(magick)\nimagem &lt;- image_read(\"b.png\")\n\n\n\n\nO Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos **.Rmd** existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros). Nessa página Web foi utilizado apenas Quarto Document.\n\n\n\nAntes de tudo, para que possamos utilizar o R Quarto Markdown e executar pedaços de códigos que serão integrados ao documento, devemos criar um chunk. O chunk permite que as funções e demais códigos sejam executadas e rodadas no documento. Um atalho que pode ser usado para sua criação é o Ctrl + Alt + I.\n\n\n\nDurante a escrita, podemos colocar palavras em itálico usando 1 asterisco antes e após as palavras em questão, do mesmo modo podemos colocar palavras em negrito utilizando 2 asteriscos antes e após a (s) palavra (s).\nDentro de um chunk, podemos colocar palavras e/ou frases entre aspas ““ ou com um # na frente para que sejam rodadas como um texto, e não como dados.\n\n\n\nQuando queremos atribuir um valor para algum nome, podemos utilizar ‘&lt;-’. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor."
+  },
+  {
     "objectID": "Aula 2.html#trabalhe-de-forma-organizada",
     "href": "Aula 2.html#trabalhe-de-forma-organizada",
-    "title": "FIP606",
-    "section": "Trabalhe de forma organizada",
-    "text": "Trabalhe de forma organizada\nPara isso pode ser criado um projeto clicando na barra de ferramentas superior em ‘File’ e em seguida em ‘New project’. Assim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa Monitoramento da sensibilidade in vitro de Colletotrichum truncatum à fungicidas e outro projeto para o conjunto de dados da pesquisa Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja.\nApós criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em ‘File’ e depois em ‘New File’, podendo selecionar ‘Quarto Document…’ ou ‘R Markdown’."
+    "title": "RStudio:",
+    "section": "",
+    "text": "Para isso pode ser criado um projeto clicando na barra de ferramentas superior em File e em seguida em New project.\n\n{echo=FALSE}\nlibrary(magick)\nimagem &lt;- image_read(\"a.png\")\n\nAssim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa Monitoramento da sensibilidade in vitro de Colletotrichum truncatum à fungicidas e outro projeto para o conjunto de dados da pesquisa Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja.\nApós criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em File e depois em New File, podendo selecionar ‘Quarto Document…’ ou ‘R Markdown’.\n\n{echo=FALSE}\nlibrary(magick)\nimagem &lt;- image_read(\"b.png\")"
   },
   {
     "objectID": "Aula 2.html#diferença-de-quarto-document-e-r-markdown",
     "href": "Aula 2.html#diferença-de-quarto-document-e-r-markdown",
-    "title": "FIP606",
-    "section": "Diferença de Quarto Document e R Markdown",
-    "text": "Diferença de Quarto Document e R Markdown\nO Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos ‘.Rmd’ existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros). Nessa página Web foi utilizado apenas Quarto Document. ## Chunk Antes de tudo, para que possamos utilizar o R Quarto Markdown e executar pedaços de códigos que serão integrados ao documento, devemos criar um chunk. O chunk permite que as funções e demais códigos sejam executadas e rodadas no documento. Um atalho que pode ser usado para sua criação é o Ctrl + Alt + I."
+    "title": "RStudio:",
+    "section": "",
+    "text": "O Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos **.Rmd** existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros). Nessa página Web foi utilizado apenas Quarto Document."
+  },
+  {
+    "objectID": "Aula 2.html#chunk",
+    "href": "Aula 2.html#chunk",
+    "title": "RStudio:",
+    "section": "",
+    "text": "Antes de tudo, para que possamos utilizar o R Quarto Markdown e executar pedaços de códigos que serão integrados ao documento, devemos criar um chunk. O chunk permite que as funções e demais códigos sejam executadas e rodadas no documento. Um atalho que pode ser usado para sua criação é o Ctrl + Alt + I."
   },
   {
     "objectID": "Aula 2.html#texto",
     "href": "Aula 2.html#texto",
-    "title": "FIP606",
-    "section": "Texto",
-    "text": "Texto\nDurante a escrita, podemos colocar palavras em itálico usando 1 asterisco antes e após as palavras em questão, do mesmo modo podemos colocar palavras em negrito utilizando 2 asteriscos antes e após a (s) palavra (s).\nDentro de um chunk, podemos colocar palavras e/ou frases entre aspas ou com um # na frente para que sejam rodadas como um texto, e não como dados."
+    "title": "RStudio:",
+    "section": "",
+    "text": "Durante a escrita, podemos colocar palavras em itálico usando 1 asterisco antes e após as palavras em questão, do mesmo modo podemos colocar palavras em negrito utilizando 2 asteriscos antes e após a (s) palavra (s).\nDentro de um chunk, podemos colocar palavras e/ou frases entre aspas ““ ou com um # na frente para que sejam rodadas como um texto, e não como dados."
   },
   {
     "objectID": "Aula 2.html#atribuição-de-valores",
     "href": "Aula 2.html#atribuição-de-valores",
-    "title": "FIP606",
-    "section": "Atribuição de Valores",
-    "text": "Atribuição de Valores\nQuando queremos atribuir um valor para algum nome, podemos utilizar ‘&lt;-’. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor."
+    "title": "RStudio:",
+    "section": "",
+    "text": "Quando queremos atribuir um valor para algum nome, podemos utilizar ‘&lt;-’. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor."
   },
   {
     "objectID": "index.html",

@@ -1,0 +1,14 @@
+{
+  "hash": "1ff91ae1f1e5ca0256b7e79cee31dd24",
+  "result": {
+    "markdown": "---\nformat: html\neditor: visual\n---\n\n\n# RStudio:\n\n## Trabalhe de forma organizada\n\nPara isso pode ser criado um projeto clicando na barra de ferramentas superior em `File` e em seguida em `New project`. \n\n::: {.cell hash='Aula-2_cache/html/unnamed-chunk-1_6dec25622d31ab74f9e9d12555495200'}\n\n```{.r .cell-code}\n{echo=FALSE}\nlibrary(magick)\nimagem <- image_read(\"a.png\")\n```\n:::\n\n\nAssim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa **Monitoramento da sensibilidade in vitro de** *Colletotrichum truncatum* **à fungicidas** e outro projeto para o conjunto de dados da pesquisa **Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja**.\n\nApós criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em `File` e depois em `New File`, podendo selecionar 'Quarto Document...' ou 'R Markdown'.\n\n::: {.cell hash='Aula-2_cache/html/unnamed-chunk-2_f498e06906f8b4d4c810ff60858b9ac2'}\n\n```{.r .cell-code}\n{echo=FALSE}\nlibrary(magick)\nimagem <- image_read(\"b.png\")\n```\n:::\n\n\n\n## Diferença de Quarto Document e R Markdown\n\nO Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos `**.Rmd**` existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros). Nessa página Web foi utilizado apenas Quarto Document. \n\n## Chunk \nAntes de tudo, para que possamos utilizar o R Quarto Markdown e executar pedaços de códigos que serão integrados ao documento, devemos criar um chunk. O chunk permite que as funções e demais códigos sejam executadas e rodadas no documento. Um atalho que pode ser usado para sua criação é o **Ctrl + Alt + I**.\n\n## Texto\nDurante a escrita, podemos colocar palavras em itálico usando 1 asterisco antes e após as palavras em questão, do mesmo modo podemos colocar palavras em negrito utilizando 2 asteriscos antes e após a (s) palavra (s).\n\nDentro de um chunk, podemos colocar palavras e/ou frases entre aspas **\"\"** ou com um **#** na frente para que sejam rodadas como um texto, e não como dados.\n\n## Atribuição de Valores\n\nQuando queremos atribuir um valor para algum nome, podemos utilizar '\\<-'. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
