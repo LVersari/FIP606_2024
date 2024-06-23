@@ -1,8 +1,10 @@
 ---
-  format: html
-  editor: visual
+format: html
+editor: visual
+about:
+  template: jolla
   id: about-block
-  image: "logoR.jpg"
+  image: "Foto1.jpg"
   image-shape: round
 ---
 
