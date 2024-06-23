@@ -234,17 +234,31 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <section id="trabalhe-de-forma-organizada" class="level2">
 <h2 class="anchored" data-anchor-id="trabalhe-de-forma-organizada">Trabalhe de forma organizada</h2>
 <p>Para isso pode ser criado um projeto clicando na barra de ferramentas superior em <code>File</code> e em seguida em <code>New project</code>.</p>
-<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-1_6dec25622d31ab74f9e9d12555495200">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>{echo<span class="ot">=</span><span class="cn">FALSE</span>}</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magick)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>imagem <span class="ot">&lt;-</span> <span class="fu">image_read</span>(<span class="st">"a.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-1_dbee82dc514005dd015a09e10bf7875c">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magick)</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>image <span class="ot">&lt;-</span> <span class="fu">image_read</span>(<span class="st">"a.png"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(image)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  format width height colorspace matte filesize density
+1    PNG  1366    768       sRGB FALSE   113790   38x38</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Aula-2_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="683"></p>
+</div>
 </div>
 <p>Assim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa <strong>Monitoramento da sensibilidade in vitro de</strong> <em>Colletotrichum truncatum</em> <strong>à fungicidas</strong> e outro projeto para o conjunto de dados da pesquisa <strong>Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja</strong>.</p>
 <p>Após criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em <code>File</code> e depois em <code>New File</code>, podendo selecionar ‘Quarto Document…’ ou ‘R Markdown’.</p>
-<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-2_f498e06906f8b4d4c810ff60858b9ac2">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>{echo<span class="ot">=</span><span class="cn">FALSE</span>}</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magick)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>imagem <span class="ot">&lt;-</span> <span class="fu">image_read</span>(<span class="st">"b.png"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-2_03f34a295fc3852a438b95c7c1493efe">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(magick)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>imagem <span class="ot">&lt;-</span> <span class="fu">image_read</span>(<span class="st">"b.png"</span>)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(imagem)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>  format width height colorspace matte filesize density
+1    PNG  1366    768       sRGB FALSE   110539   38x38</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Aula-2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="683"></p>
+</div>
 </div>
 </section>
 <section id="diferença-de-quarto-document-e-r-markdown" class="level2">
