@@ -20,6 +20,8 @@ website:
         menu: 
         - href: Aula 1.qmd
           text: Para que serve o R?
+        - href: Aula 1b.qmd
+          text: Instalação do R e RStudio
         - href: Aula 2.qmd
           text: Introdução ao R
 

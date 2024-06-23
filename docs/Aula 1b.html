@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>FIP606 - Bem-vindos!</title>
+<title>FIP606 – aula-1b</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,6 +33,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" class="quarto-color-scheme" id="quarto-text-highlighting-styles">
 <link href="site_libs/quarto-html/quarto-syntax-highlighting-dark.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
@@ -64,7 +65,7 @@ ul.task-list li input[type="checkbox"] {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-fixed fullcontent">
+<body class="nav-fixed">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -173,31 +174,37 @@ ul.task-list li input[type="checkbox"] {
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article page-navbar">
 <!-- sidebar -->
 <!-- margin-sidebar -->
-    
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        
+    </div>
 <!-- main -->
-<div class="quarto-about-jolla">
-  <img src="Foto1.jpg" class="about-image
-  round " style="height: 15em; width: 15em;">
- <header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Bem-vindos!</h1>
-</div>
-<div class="quarto-title-meta">
-  </div>
-</header><main class="content" id="quarto-document-content">
-<pre><code>  Olá, sou o Lucas Versari e é uma satisfação compartilhar essa página!</code></pre>
-<p><strong>Sobre mim</strong></p>
-<p>Engenheiro Agrônomo pela Universidade Federal de Mato Grosso (UFMT) e atualmente mestrando em Fitopatologia na Universidade Federal de Viçosa (UFV). Durante a Graduação foi bolsista de iniciação científica da Embrapa Agrossilvipastoril em Sinop-MT, na área da Fitopatologia, por dois anos. Trabalhou por 1 ano e 6 meses na EPR Consultoria e Pesquisa Agronômica. No momento desenvolve pesquisas no Instituto de Biotecnologia Aplicada à Agropecuária (BIOAGRO/UFV) no Laboratório de Genética e Genômica da Interação Planta-Patógeno.</p>
-<p><strong>Sobre o site</strong></p>
-<p>Têm como finalidade disponibilizar o conteúdo das aulas de Análises e Visualização de Dados em Fitopatologia, ministrada pelo Professor Dr.&nbsp;Emerson Medeiros Del Ponte.</p>
-<p>Esse site auxiliará com informações e passo a passo, desde a iniciação em RStudio até mesmo em interpretação e visualização de dados.</p>
-<p>Bons estudos!</p>
-<hr>
+<main class="content" id="quarto-document-content">
 
 
-<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main>  
-</div>
- <!-- /main -->
+
+<p># Software R e a IDE RStudio</p>
+<p>O Rstudio é uma IDE (ambiente de desenvolvimento integrado) para o R. Com sua utilização gratuita, o RStudio é uma excelente ferramenta para desenvolvimento em R, extremamente visual quando comparado com ambientes de outras linguagens e também com o console do R, e muito simples de se utilizar.</p>
+<p>## Como instalar o R :</p>
+<p>1. **Acesse o site oficial do R**: [CRAN (The Comprehensive R Archive Network)](https://cran.r-project.org/).</p>
+<p>2. **Escolha seu sistema operacional**:</p>
+<ul>
+<li>ex: **Windows**; **macOS**; **Linux**…</li>
+</ul>
+<p>3. **Baixe o instalador**:</p>
+<p>4. **Execute o instalador**:</p>
+<p>5. **Siga as instruções do instalador**:</p>
+<p>Qualquer dúvida, seguir o passo a passo disponível no site que realizou o download do software (R-Project).</p>
+<p>### Verificar a Instalação do R</p>
+<p>1° Abrir o R, 2° verificar a versão do r no console do R, digitando ‘version’ e clicando Enter.</p>
+<p># **Instalar o RStudio**:</p>
+<ul>
+<li><p>No site do[RStudio](https://posit.co/download/rstudio-desktop/) procure a versão apropriada para o seu sistema operacional e clique em baixar.</p></li>
+<li><p>Após o download execute o arquivo e então a instalação de seu RStudio estará concluída.</p></li>
+</ul>
+
+
+
+<a onclick="window.scrollTo(0, 0); return false;" role="button" id="quarto-back-to-top"><i class="bi bi-arrow-up"></i> Back to top</a></main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -333,6 +340,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   } else {
     toggleColorMode(false);
   }
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
   const isCodeAnnotation = (el) => {
     for (const clz of el.classList) {
       if (clz.startsWith('code-annotation-')) {                     

@@ -10,7 +10,7 @@ editor_options:
 
 R é uma linguagem de programação e um ambiente de software voltado para a análise estatística, visualização de dados e ciência de dados. Desenvolvido inicialmente por Ross Ihaka e Robert Gentleman na Universidade de Auckland, Nova Zelândia, R é amplamente utilizado em estatísticas, pesquisa científica, economia, bioinformática e outras áreas que requerem análise de dados.
 
-**Característica Principal**
+  **Característica Principal**
 Linguagem de Programação: R é uma linguagem de programação interpretada, semelhante ao S, com uma sintaxe fácil de aprender e usar.
 
 1. Análise Estatística: R fornece uma ampla variedade de técnicas estatísticas, incluindo modelagem linear e não linear, testes estatísticos, séries temporais, classificação e agrupamento.

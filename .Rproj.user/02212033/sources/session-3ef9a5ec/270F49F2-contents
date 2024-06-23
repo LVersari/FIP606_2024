@@ -1,0 +1,34 @@
+---
+editor_options: 
+  chunk_output_type: console
+---
+
+\# Software R e a IDE RStudio
+
+O Rstudio é uma IDE (ambiente de desenvolvimento integrado) para o R. Com sua utilização gratuita, o RStudio é uma excelente ferramenta para desenvolvimento em R, extremamente visual quando comparado com ambientes de outras linguagens e também com o console do R, e muito simples de se utilizar.
+
+\## Como instalar o R :
+
+1\. \*\*Acesse o site oficial do R\*\*: \[CRAN (The Comprehensive R Archive Network)\](https://cran.r-project.org/).
+
+2\. \*\*Escolha seu sistema operacional\*\*:
+
+-   ex: \*\*Windows\*\*; \*\*macOS\*\*; \*\*Linux\*\*...
+
+3\. \*\*Baixe o instalador\*\*:
+
+4\. \*\*Execute o instalador\*\*:
+
+5\. \*\*Siga as instruções do instalador\*\*:
+
+Qualquer dúvida, seguir o passo a passo disponível no site que realizou o download do software (R-Project).
+
+\### Verificar a Instalação do R
+
+1° Abrir o R, 2° verificar a versão do r no console do R, digitando 'version' e clicando Enter.
+
+\# \*\*Instalar o RStudio\*\*:
+
+-   No site do\[RStudio\](https://posit.co/download/rstudio-desktop/) procure a versão apropriada para o seu sistema operacional e clique em baixar.
+
+-   Após o download execute o arquivo e então a instalação de seu RStudio estará concluída.

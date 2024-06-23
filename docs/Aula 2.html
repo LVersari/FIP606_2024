@@ -95,6 +95,10 @@ ul.task-list li input[type="checkbox"] {
  <span class="dropdown-text">Para que serve o R?</span></a>
   </li>  
         <li>
+    <a class="dropdown-item" href="./Aula 1b.html" rel="" target="">
+ <span class="dropdown-text">Instalação do R e RStudio</span></a>
+  </li>  
+        <li>
     <a class="dropdown-item" href="./Aula 2.html" rel="" target="">
  <span class="dropdown-text">Introdução ao R</span></a>
   </li>  
@@ -175,9 +179,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#trabalhe-de-forma-organizada" id="toc-trabalhe-de-forma-organizada" class="nav-link active" data-scroll-target="#trabalhe-de-forma-organizada">Trabalhe de forma organizada</a></li>
+  <li><a href="#como-utilizar-o-rstudio" id="toc-como-utilizar-o-rstudio" class="nav-link active" data-scroll-target="#como-utilizar-o-rstudio">**Como utilizar o RStudio:</a></li>
+  <li><a href="#trabalhe-de-forma-organizada" id="toc-trabalhe-de-forma-organizada" class="nav-link" data-scroll-target="#trabalhe-de-forma-organizada">Trabalhe de forma organizada</a></li>
   <li><a href="#diferença-de-quarto-document-e-r-markdown" id="toc-diferença-de-quarto-document-e-r-markdown" class="nav-link" data-scroll-target="#diferença-de-quarto-document-e-r-markdown">Diferença de Quarto Document e R Markdown</a></li>
-  <li><a href="#chunk" id="toc-chunk" class="nav-link" data-scroll-target="#chunk">Chunk</a></li>
   <li><a href="#texto" id="toc-texto" class="nav-link" data-scroll-target="#texto">Texto</a></li>
   <li><a href="#atribuição-de-valores" id="toc-atribuição-de-valores" class="nav-link" data-scroll-target="#atribuição-de-valores">Atribuição de Valores</a></li>
   </ul>
@@ -188,7 +192,9 @@ ul.task-list li input[type="checkbox"] {
 
 
 
-<p>Nessa primeira aula será mostrado como utilizar o RStudio e sobre as funções presentes nas barras de ferramentas.</p>
+<section id="como-utilizar-o-rstudio" class="level2">
+<h2 class="anchored" data-anchor-id="como-utilizar-o-rstudio">**Como utilizar o RStudio:</h2>
+</section>
 <section id="trabalhe-de-forma-organizada" class="level2">
 <h2 class="anchored" data-anchor-id="trabalhe-de-forma-organizada">Trabalhe de forma organizada</h2>
 <p>Para isso pode ser criado um projeto clicando na barra de ferramentas superior em ‘File’ e em seguida em ‘New project’. Assim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa <strong>Monitoramento da sensibilidade in vitro de</strong> <em>Colletotrichum truncatum</em> <strong>à fungicidas</strong> e outro projeto para o conjunto de dados da pesquisa <strong>Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja</strong>.</p>
@@ -196,15 +202,11 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="diferença-de-quarto-document-e-r-markdown" class="level2">
 <h2 class="anchored" data-anchor-id="diferença-de-quarto-document-e-r-markdown">Diferença de Quarto Document e R Markdown</h2>
-<p>O Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos <strong>.Rmd</strong> existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros).</p>
-</section>
-<section id="chunk" class="level2">
-<h2 class="anchored" data-anchor-id="chunk">Chunk</h2>
-<p>Antes de tudo, para que possamos utilizar o R Quarto Markdown e executar pedaços de códigos que serão integrados ao documento, devemos criar um chunk. O chunk permite que as funções e demais códigos sejam executadas e rodadas no documento. Um atalho que pode ser usado para sua criação é o <strong>Ctrl + Alt + I</strong>.</p>
+<p>O Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos ‘<strong>.Rmd</strong>’ existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros). Nessa página Web foi utilizado apenas Quarto Document. ## Chunk Antes de tudo, para que possamos utilizar o R Quarto Markdown e executar pedaços de códigos que serão integrados ao documento, devemos criar um chunk. O chunk permite que as funções e demais códigos sejam executadas e rodadas no documento. Um atalho que pode ser usado para sua criação é o <strong>Ctrl + Alt + I</strong>.</p>
 </section>
 <section id="texto" class="level2">
 <h2 class="anchored" data-anchor-id="texto">Texto</h2>
-<p>Durante a escrita, podemos colocar palavras em itálico usando 1 asterisco antes e após as palavras em questão, do mesmo modo podemos colocar palavras em negrito utilizando 2 asteriscos antes e a´pos a (s) palavra (s).</p>
+<p>Durante a escrita, podemos colocar palavras em itálico usando 1 asterisco antes e após as palavras em questão, do mesmo modo podemos colocar palavras em negrito utilizando 2 asteriscos antes e após a (s) palavra (s).</p>
 <p>Dentro de um chunk, podemos colocar palavras e/ou frases entre aspas ou com um # na frente para que sejam rodadas como um texto, e não como dados.</p>
 </section>
 <section id="atribuição-de-valores" class="level2">
