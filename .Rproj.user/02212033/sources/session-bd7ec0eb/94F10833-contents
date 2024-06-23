@@ -3,6 +3,7 @@ format: html
 editor: visual
 message: false
 warning: false
+
 ---
 
 # RStudio:
@@ -10,7 +11,7 @@ warning: false
 ## Trabalhe de forma organizada
 
 Para isso pode ser criado um projeto clicando na barra de ferramentas superior em `File` e em seguida em `New project`. 
-```{r}
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(magick)
 image <- image_read("a.png")
 print(image)
@@ -18,8 +19,8 @@ print(image)
 
 Assim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa **Monitoramento da sensibilidade in vitro de** *Colletotrichum truncatum* **à fungicidas** e outro projeto para o conjunto de dados da pesquisa **Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja**.
 
-Após criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em `File` e depois em `New File`, podendo selecionar 'Quarto Document...' ou 'R Markdown'.
-```{r}
+Após criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em `File` e depois em `New File`, podendo selecionar `Quarto Document...` ou `R Markdown`.
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
 library(magick)
 imagem <- image_read("b.png")
 print(imagem)
@@ -40,4 +41,4 @@ Dentro de um chunk, podemos colocar palavras e/ou frases entre aspas **""** ou c
 
 ## Atribuição de Valores
 
-Quando queremos atribuir um valor para algum nome, podemos utilizar '\<-'. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor.
+Quando queremos atribuir um valor para algum nome, podemos utilizar `\<-`. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor.
