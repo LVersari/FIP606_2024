@@ -104,7 +104,7 @@ cars
 ```
 
 ## 10. Criar coluna dentro do data frame
-É utilizado `$` para criar uma nova coluna dentro do dara frame, como mostra a seguir:
+É utilizado `$` para criar uma nova coluna dentro do data frame, como mostra a seguir:
 ```{r}
 df2$dist2 <- c(1:50)
 df2
