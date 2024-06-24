@@ -1,5 +1,8 @@
 ---
-title: "Aula 3"
+format: html
+editor: visual
+message: false
+warning: false
 ---
 
 # 1. ggplot
@@ -18,7 +21,7 @@ library(gsheet)
 df4 <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit?usp=sharing") 
 ```
 
-1.3 Construção de gráficos
+## 1.3 Construção de gráficos
 ```{r}
 library(ggplot2)
 g1 <- df4 |>

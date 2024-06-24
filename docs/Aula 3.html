@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>FIP606 - Aula 3</title>
+<title>FIP606 – aula-3</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -235,6 +235,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <li><a href="#ggplot" id="toc-ggplot" class="nav-link active" data-scroll-target="#ggplot">1. ggplot</a>
   <ul class="collapse">
   <li><a href="#carregar-conjuntos-de-dados" id="toc-carregar-conjuntos-de-dados" class="nav-link" data-scroll-target="#carregar-conjuntos-de-dados">1.2 Carregar conjuntos de dados</a></li>
+  <li><a href="#construção-de-gráficos" id="toc-construção-de-gráficos" class="nav-link" data-scroll-target="#construção-de-gráficos">1.3 Construção de gráficos</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -242,22 +243,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
-<div class="quarto-title">
-<h1 class="title">Aula 3</h1>
-</div>
 
-
-
-<div class="quarto-title-meta">
-
-    
-  
-    
-  </div>
-  
-
-</header>
 
 <section id="ggplot" class="level1">
 <h1>1. ggplot</h1>
@@ -271,7 +257,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gsheet) </span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df4 <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit?usp=sharing"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>1.3 Construção de gráficos</p>
+</section>
+<section id="construção-de-gráficos" class="level2">
+<h2 class="anchored" data-anchor-id="construção-de-gráficos">1.3 Construção de gráficos</h2>
 <div class="cell" data-hash="Aula-3_cache/html/unnamed-chunk-2_262712f888450fe08591829ec0b68654">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>g1 <span class="ot">&lt;-</span> df4 <span class="sc">|&gt;</span></span>
