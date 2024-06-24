@@ -1,0 +1,22 @@
+---
+format: html
+editor: visual
+message: false
+warning: false
+---
+
+**Pacotes** são coleções de funções R, dados e código compilado em um formato bem definido, criados para adicionar funcionalidades específicas.
+Será mostrados os principais pacotes utilizados em análises e visualização de dados.
+
+# 1. Instalação
+No console coloque `install.packages("**nome do pacote**")` e pressione `Enter`.
+Outra opção é clicar no menu superior em `Tools`, `Install Packages...`, digitar o nome do pacote e selecionar `install`, conforme mostra a imagem abaixo.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(magick)
+imagem <- image_read("e.png")
+print(imagem)
+```
+
+## 2. Carregar pacotes
+Utilize a função `library()`, inserindo dentro do parênteses o nome do pacote.

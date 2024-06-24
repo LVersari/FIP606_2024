@@ -1,0 +1,14 @@
+{
+  "hash": "b96b85248b1d471d0fd1584b91d224c6",
+  "result": {
+    "markdown": "---\nformat: html\neditor: visual\nmessage: false\nwarning: false\n---\n\n\n**Pacotes** são coleções de funções R, dados e código compilado em um formato bem definido, criados para adicionar funcionalidades específicas.\nSerá mostrados os principais pacotes utilizados em análises e visualização de dados.\n\n# 1. Instalação\nNo console coloque `install.packages(\"**nome do pacote**\")` e pressione `Enter`.\nOutra opção é clicar no menu superior em `Tools`, `Install Packages...`, digitar o nome do pacote e selecionar `install`, conforme mostra a imagem abaixo.\n\n\n::: {.cell hash='Aula-2b_cache/html/unnamed-chunk-1_ddde015adf37a23e0cdae03cd10469d0'}\n::: {.cell-output .cell-output-stdout}\n```\n  format width height colorspace matte filesize density\n1    PNG  1366    768       sRGB FALSE   301531   38x38\n```\n:::\n\n::: {.cell-output-display}\n![](Aula-2b_files/figure-html/unnamed-chunk-1-1.png){width=683}\n:::\n:::\n\n\n## 2. Carregar pacotes\nUtilize a função `library()`, inserindo dentro do parênteses o nome do pacote.\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}

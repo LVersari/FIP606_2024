@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -102,6 +136,25 @@ ul.task-list li input[type="checkbox"] {
     <a class="dropdown-item" href="./Aula 2.html" rel="" target="">
  <span class="dropdown-text">Introdução ao R</span></a>
   </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula 2b.html" rel="" target="">
+ <span class="dropdown-text">Pacotes</span></a>
+  </li>  
+        <li>
+    <a class="dropdown-item" href="./Aula 2c.html" rel="" target="">
+ <span class="dropdown-text">Importação de dados</span></a>
+  </li>  
+    </ul>
+  </li>
+  <li class="nav-item dropdown ">
+    <a class="nav-link dropdown-toggle" href="#" id="nav-menu-análises-e-visualização-de-dados" role="button" data-bs-toggle="dropdown" aria-expanded="false" rel="" target="">
+ <span class="menu-text">Análises e Visualização de Dados</span>
+    </a>
+    <ul class="dropdown-menu" aria-labelledby="nav-menu-análises-e-visualização-de-dados">    
+        <li>
+    <a class="dropdown-item" href="./Aula 3.html" rel="" target="">
+ <span class="dropdown-text">Gráficos ggplot</span></a>
+  </li>  
     </ul>
   </li>
 </ul>
@@ -179,13 +232,18 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">On this page</h2>
    
   <ul>
-  <li><a href="#rstudio" id="toc-rstudio" class="nav-link active" data-scroll-target="#rstudio">RStudio:</a>
+  <li><a href="#rstudio" id="toc-rstudio" class="nav-link active" data-scroll-target="#rstudio">1. RStudio:</a>
   <ul class="collapse">
-  <li><a href="#trabalhe-de-forma-organizada" id="toc-trabalhe-de-forma-organizada" class="nav-link" data-scroll-target="#trabalhe-de-forma-organizada">Trabalhe de forma organizada</a></li>
-  <li><a href="#diferença-de-quarto-document-e-r-markdown" id="toc-diferença-de-quarto-document-e-r-markdown" class="nav-link" data-scroll-target="#diferença-de-quarto-document-e-r-markdown">Diferença de Quarto Document e R Markdown</a></li>
-  <li><a href="#chunk" id="toc-chunk" class="nav-link" data-scroll-target="#chunk">Chunk</a></li>
-  <li><a href="#texto" id="toc-texto" class="nav-link" data-scroll-target="#texto">Texto</a></li>
-  <li><a href="#atribuição-de-valores" id="toc-atribuição-de-valores" class="nav-link" data-scroll-target="#atribuição-de-valores">Atribuição de Valores</a></li>
+  <li><a href="#trabalhe-de-forma-organizada" id="toc-trabalhe-de-forma-organizada" class="nav-link" data-scroll-target="#trabalhe-de-forma-organizada">2. Trabalhe de forma organizada</a></li>
+  <li><a href="#diferença-de-quarto-document-e-r-markdown" id="toc-diferença-de-quarto-document-e-r-markdown" class="nav-link" data-scroll-target="#diferença-de-quarto-document-e-r-markdown">3. Diferença de Quarto Document e R Markdown</a></li>
+  <li><a href="#chunk" id="toc-chunk" class="nav-link" data-scroll-target="#chunk">4. Chunk</a></li>
+  <li><a href="#ferramentas-de-texto" id="toc-ferramentas-de-texto" class="nav-link" data-scroll-target="#ferramentas-de-texto">5. Ferramentas de Texto</a></li>
+  <li><a href="#atribuição-de-valores" id="toc-atribuição-de-valores" class="nav-link" data-scroll-target="#atribuição-de-valores">6. Atribuição de Valores</a></li>
+  <li><a href="#conjunto-de-valores" id="toc-conjunto-de-valores" class="nav-link" data-scroll-target="#conjunto-de-valores">7. Conjunto de valores</a></li>
+  <li><a href="#data-frame" id="toc-data-frame" class="nav-link" data-scroll-target="#data-frame">8. Data frame</a></li>
+  <li><a href="#pipe" id="toc-pipe" class="nav-link" data-scroll-target="#pipe">9. Pipe <code>|&gt;</code></a></li>
+  <li><a href="#criar-coluna-dentro-do-data-frame" id="toc-criar-coluna-dentro-do-data-frame" class="nav-link" data-scroll-target="#criar-coluna-dentro-do-data-frame">10. Criar coluna dentro do data frame</a></li>
+  <li><a href="#criar-arquivo-html" id="toc-criar-arquivo-html" class="nav-link" data-scroll-target="#criar-arquivo-html">11. Criar arquivo HTML</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -196,47 +254,320 @@ ul.task-list li input[type="checkbox"] {
 
 
 <section id="rstudio" class="level1">
-<h1>RStudio:</h1>
-<section id="trabalhe-de-forma-organizada" class="level2">
-<h2 class="anchored" data-anchor-id="trabalhe-de-forma-organizada">Trabalhe de forma organizada</h2>
-<p>Para isso pode ser criado um projeto clicando na barra de ferramentas superior em <code>File</code> e em seguida em <code>New project</code>.</p>
-<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-1_57439f9e9b90d72161c05e2c87cfbdf4">
+<h1>1. RStudio:</h1>
+<p>A interface do RStudio é normalmente dividida em 4 partes, conforme apresentado na imagem abaixo pelos números 1, 2, 3 e 4.</p>
+<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-1_04dca825857a1ad726a0cdbc7a2698dc">
 <div class="cell-output cell-output-stdout">
 <pre><code>  format width height colorspace matte filesize density
-1    PNG  1366    768       sRGB FALSE   113790   38x38</code></pre>
+1    PNG  1366    768       sRGB FALSE   107329   38x38</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="Aula-2_files/figure-html/unnamed-chunk-1-1.png" class="img-fluid" width="683"></p>
 </div>
 </div>
-<p>Assim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa <strong>Monitoramento da sensibilidade in vitro de</strong> <em>Colletotrichum truncatum</em> <strong>à fungicidas</strong> e outro projeto para o conjunto de dados da pesquisa <strong>Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja</strong>.</p>
-<p>Após criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em <code>File</code> e depois em <code>New File</code>, podendo selecionar <code>Quarto Document...</code> ou <code>R Markdown</code>.</p>
-<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-2_0a2b9bd9133633fa53e686abb2ce2c5f">
+<p>1 - <strong>script</strong>, nessa janela é possível colocar em cada linha códigos e o <code>Enter</code>é utilizado para quebra de linha. Para executar o comando usa <code>Control+Enter</code> ou clique em <code>Run</code> (<strong>⊳</strong>) no canto superior direito do chunck.</p>
+<p>2 - <strong>console</strong>, trabalhar no console é muito limitado, pois as instruções devem ser inseridas uma por uma. Para executar o comando preciona <code>Ènter</code>.</p>
+<p>3 - <strong>Environment</strong>, é onde ficam armazendos os objetos criados, bases de dados importadas, etc. <strong>History</strong>, onde fica o histórico dos comandos executados.</p>
+<p>4 - <strong>Files, Plots, Packages, Help, Viewer</strong>, em <code>Files</code> encontra as pastas e arquivos carregados no RStudio. A visualização de grãficos em <code>Plots</code>, buscar pacotes instalados em <code>Packages</code>, para saber mais sobre as funções em <code>Help</code> e visualizar imagens carregadas em <code>Viewer</code>.</p>
+<section id="trabalhe-de-forma-organizada" class="level2">
+<h2 class="anchored" data-anchor-id="trabalhe-de-forma-organizada">2. Trabalhe de forma organizada</h2>
+<p>Para isso pode ser criado um projeto clicando na barra de ferramentas superior em <code>File</code> e em seguida em <code>New project</code>.</p>
+<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-2_60a5f38df5c0a0679561243f4cc251c3">
 <div class="cell-output cell-output-stdout">
 <pre><code>  format width height colorspace matte filesize density
-1    PNG  1366    768       sRGB FALSE   110539   38x38</code></pre>
+1    PNG  1366    768       sRGB FALSE   113790   38x38</code></pre>
 </div>
 <div class="cell-output-display">
 <p><img src="Aula-2_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="683"></p>
 </div>
 </div>
+<p>Assim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa <strong>Monitoramento da sensibilidade in vitro de</strong> <em>Colletotrichum truncatum</em> <strong>à fungicidas</strong> e outro projeto para o conjunto de dados da pesquisa <strong>Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja</strong>.</p>
+<p>Após criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em <code>File</code> e depois em <code>New File</code>, podendo selecionar <code>Quarto Document...</code> ou <code>R Markdown</code>.</p>
+<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-3_b1e996a8e34490d902a25de3507b035a">
+<div class="cell-output cell-output-stdout">
+<pre><code>  format width height colorspace matte filesize density
+1    PNG  1366    768       sRGB FALSE   110539   38x38</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Aula-2_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid" width="683"></p>
+</div>
+</div>
 </section>
 <section id="diferença-de-quarto-document-e-r-markdown" class="level2">
-<h2 class="anchored" data-anchor-id="diferença-de-quarto-document-e-r-markdown">Diferença de Quarto Document e R Markdown</h2>
+<h2 class="anchored" data-anchor-id="diferença-de-quarto-document-e-r-markdown">3. Diferença de Quarto Document e R Markdown</h2>
 <p>O Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos <code>**.Rmd**</code> existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros). Nessa página Web foi utilizado apenas Quarto Document.</p>
 </section>
 <section id="chunk" class="level2">
-<h2 class="anchored" data-anchor-id="chunk">Chunk</h2>
-<p>Antes de tudo, para que possamos utilizar o R Quarto Markdown e executar pedaços de códigos que serão integrados ao documento, devemos criar um chunk. O chunk permite que as funções e demais códigos sejam executadas e rodadas no documento. Um atalho que pode ser usado para sua criação é o <strong>Ctrl + Alt + I</strong>.</p>
+<h2 class="anchored" data-anchor-id="chunk">4. Chunk</h2>
+<p>Acima foi inserido um chuck. Chunck é um bloco de código dentro de um documento R Markdown (ou Quarto) que permite a execução de código R ou de outros idiomas suportados (como Python, SQL, etc.) dentro de um documento de texto. Um atalho que pode ser usado para sua criação é o <strong>Ctrl + Alt + I</strong> ou inserir o chunck conforme mostra a imagem a seguir:</p>
+<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-5_f9bd0b97b8f3b774203b56157a3fa661">
+<div class="cell-output cell-output-stdout">
+<pre><code>  format width height colorspace matte filesize density
+1    PNG  1366    768       sRGB FALSE    99562   38x38</code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Aula-2_files/figure-html/unnamed-chunk-5-1.png" class="img-fluid" width="683"></p>
+</div>
+</div>
 </section>
-<section id="texto" class="level2">
-<h2 class="anchored" data-anchor-id="texto">Texto</h2>
-<p>Durante a escrita, podemos colocar palavras em itálico usando 1 asterisco antes e após as palavras em questão, do mesmo modo podemos colocar palavras em negrito utilizando 2 asteriscos antes e após a (s) palavra (s).</p>
-<p>Dentro de um chunk, podemos colocar palavras e/ou frases entre aspas <strong>““</strong> ou com um <strong>#</strong> na frente para que sejam rodadas como um texto, e não como dados.</p>
+<section id="ferramentas-de-texto" class="level2">
+<h2 class="anchored" data-anchor-id="ferramentas-de-texto">5. Ferramentas de Texto</h2>
+<p><strong>Negrito: inserir antes e depois do texto que deseja apresentar em negrito, dois asteriscos </strong> **. <em>Itálico</em>: inserir antes e depois do texto que deseja apresentar em itálico, um asteriscos * *. Título e subtítulos: Fora do chunck, para visualizar o texto como título, colocar um <strong>#</strong> antes e um <strong>#</strong> depois do texto. Para subtítulos, colocar dois <strong>##</strong> antes e dois <strong>##</strong> depois texto. Comentários: dentro do chunck escrever comentários utilizando antes do texto #. Texto: para rodar o código do chunck como texto, ex: nome da planilha excel, utilizar aspas duplas <strong>“</strong> antes e depois do texto. <code>Funções</code>: fora do chunck, para destacar uma função no texto, inserir antes e depois do texto uma aspas <strong>`</strong>.</p>
 </section>
 <section id="atribuição-de-valores" class="level2">
-<h2 class="anchored" data-anchor-id="atribuição-de-valores">Atribuição de Valores</h2>
-<p>Quando queremos atribuir um valor para algum nome, podemos utilizar <code>\&lt;-</code>. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor.</p>
+<h2 class="anchored" data-anchor-id="atribuição-de-valores">6. Atribuição de Valores</h2>
+<p>Quando queremos atribuir um valor para algum nome, podemos utilizar <code>&lt;-</code>. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor.</p>
+<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-6_94c82cf6f1666b76b70cf7a3e2a20017">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>x <span class="ot">&lt;-</span> <span class="dv">10</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 10</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>y <span class="ot">&lt;-</span> x<span class="sc">*</span><span class="dv">10</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>y</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 100</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>z <span class="ot">&lt;-</span> x<span class="sc">*</span>y</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>z</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1000</code></pre>
+</div>
+</div>
+</section>
+<section id="conjunto-de-valores" class="level2">
+<h2 class="anchored" data-anchor-id="conjunto-de-valores">7. Conjunto de valores</h2>
+<p>Para criar um conjunto de valores, pode-se utilizar <code>c()</code>e colocar os valores desejados. Caso os valores sejam contínuos, pode-se agrupá-los usando :, desse modo o conjunto será formado por todos os valores que estão entre os dois números colocados.</p>
+<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-7_37d02a69eeb5a0763dcd98c0304baaf9">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>A <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">10</span>)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>A </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1]  1  2  3  4  5  6  7  8  9 10</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>B <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">11</span><span class="sc">:</span><span class="dv">20</span>)</span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>B</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] 11 12 13 14 15 16 17 18 19 20</code></pre>
+</div>
+</div>
+</section>
+<section id="data-frame" class="level2">
+<h2 class="anchored" data-anchor-id="data-frame">8. Data frame</h2>
+<p>O <strong>data frame</strong> é é o objeto que guarda o conjunto de dados na forma de tabela (tabulares ou planos). Podendo armazenar vetores de diferentes tipos (caracteres, numéricos, lógico e etc) nas suas colunas. Ele pode ser criado por meio da junção de dois ou mais conjunto de dados, usando a função <code>data.frame()</code>, mas, para isso, o número de valores presentes nos conjuntos deve ser o mesmo.</p>
+<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-8_553cacae397b217ba3c73c07074adbf3">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(A,B)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>df </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>    A  B
+1   1 11
+2   2 12
+3   3 13
+4   4 14
+5   5 15
+6   6 16
+7   7 17
+8   8 18
+9   9 19
+10 10 20</code></pre>
+</div>
+</div>
+</section>
+<section id="pipe" class="level2">
+<h2 class="anchored" data-anchor-id="pipe">9. Pipe <code>|&gt;</code></h2>
+<p>Utilizado quando desejar que todas as funções executadas estejam se referindo a um determinado data frame sem precisar chamá-lo repetidamente, podemos usar um pipe, precisando <code>Ctrl+Shift+M</code>. O pipe indica que todas as funções abaixo dele estão se referindo ao data frame especificado.</p>
+<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-9_0c95498f77121da4598ad61384b5d799">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df2 <span class="ot">&lt;-</span> cars</span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>cars</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   speed dist
+1      4    2
+2      4   10
+3      7    4
+4      7   22
+5      8   16
+6      9   10
+7     10   18
+8     10   26
+9     10   34
+10    11   17
+11    11   28
+12    12   14
+13    12   20
+14    12   24
+15    12   28
+16    13   26
+17    13   34
+18    13   34
+19    13   46
+20    14   26
+21    14   36
+22    14   60
+23    14   80
+24    15   20
+25    15   26
+26    15   54
+27    16   32
+28    16   40
+29    17   32
+30    17   40
+31    17   50
+32    18   42
+33    18   56
+34    18   76
+35    18   84
+36    19   36
+37    19   46
+38    19   68
+39    20   32
+40    20   48
+41    20   52
+42    20   56
+43    20   64
+44    22   66
+45    23   54
+46    24   70
+47    24   92
+48    24   93
+49    24  120
+50    25   85</code></pre>
+</div>
+</div>
+</section>
+<section id="criar-coluna-dentro-do-data-frame" class="level2">
+<h2 class="anchored" data-anchor-id="criar-coluna-dentro-do-data-frame">10. Criar coluna dentro do data frame</h2>
+<p>É utilizado <code>$</code> para criar uma nova coluna dentro do dara frame, como mostra a seguir:</p>
+<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-10_2a96e00d43ff4d71e9f2c535ff011a9f">
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df2<span class="sc">$</span>dist2 <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">50</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>df2</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   speed dist dist2
+1      4    2     1
+2      4   10     2
+3      7    4     3
+4      7   22     4
+5      8   16     5
+6      9   10     6
+7     10   18     7
+8     10   26     8
+9     10   34     9
+10    11   17    10
+11    11   28    11
+12    12   14    12
+13    12   20    13
+14    12   24    14
+15    12   28    15
+16    13   26    16
+17    13   34    17
+18    13   34    18
+19    13   46    19
+20    14   26    20
+21    14   36    21
+22    14   60    22
+23    14   80    23
+24    15   20    24
+25    15   26    25
+26    15   54    26
+27    16   32    27
+28    16   40    28
+29    17   32    29
+30    17   40    30
+31    17   50    31
+32    18   42    32
+33    18   56    33
+34    18   76    34
+35    18   84    35
+36    19   36    36
+37    19   46    37
+38    19   68    38
+39    20   32    39
+40    20   48    40
+41    20   52    41
+42    20   56    42
+43    20   64    43
+44    22   66    44
+45    23   54    45
+46    24   70    46
+47    24   92    47
+48    24   93    48
+49    24  120    49
+50    25   85    50</code></pre>
+</div>
+</div>
+<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-11_a2a2a92901bdf3784d616456828ae126">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>df2 <span class="sc">|&gt;</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">dist3 =</span> dist2<span class="sc">+</span><span class="dv">1</span>) <span class="sc">|&gt;</span> </span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="dv">1</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   speed
+1      4
+2      4
+3      7
+4      7
+5      8
+6      9
+7     10
+8     10
+9     10
+10    11
+11    11
+12    12
+13    12
+14    12
+15    12
+16    13
+17    13
+18    13
+19    13
+20    14
+21    14
+22    14
+23    14
+24    15
+25    15
+26    15
+27    16
+28    16
+29    17
+30    17
+31    17
+32    18
+33    18
+34    18
+35    18
+36    19
+37    19
+38    19
+39    20
+40    20
+41    20
+42    20
+43    20
+44    22
+45    23
+46    24
+47    24
+48    24
+49    24
+50    25</code></pre>
+</div>
+</div>
+</section>
+<section id="criar-arquivo-html" class="level2">
+<h2 class="anchored" data-anchor-id="criar-arquivo-html">11. Criar arquivo HTML</h2>
+<p>Para transformar o documento <code>.qmd</code> em <code>HTML</code> ou em outros formatos, é necessário renderizar o documento. Para isso basta clicar no menu superior em Render para que o documento ou site seja criado.</p>
+<div class="cell" data-hash="Aula-2_cache/html/unnamed-chunk-12_dbef28aff792ca5480d8bf8dd00f8d88">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 1 × 7
+  format width height colorspace matte filesize density
+  &lt;chr&gt;  &lt;int&gt;  &lt;int&gt; &lt;chr&gt;      &lt;lgl&gt;    &lt;int&gt; &lt;chr&gt;  
+1 PNG     1366    768 sRGB       FALSE    89045 38x38  </code></pre>
+</div>
+<div class="cell-output-display">
+<p><img src="Aula-2_files/figure-html/unnamed-chunk-12-1.png" class="img-fluid" width="683"></p>
+</div>
+</div>
 
 
 </section>

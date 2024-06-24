@@ -1,0 +1,5 @@
+"0","library(readxl) "
+"0","df2 <- read_excel(""dados_diversos.xlsx"") "
+"0","df21 <- read_excel(""dados_diversos.xlsx"", sheet = ""escala"") "
+"0","#df21 <- read_excel(""dados-diversos.xlsx"", ""escala"") "
+"0","#df21 <- read_excel(""dados-diversos.xlsx"", 2)"

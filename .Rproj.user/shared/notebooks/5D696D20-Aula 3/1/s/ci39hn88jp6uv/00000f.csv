@@ -1,0 +1,2 @@
+"0","library(gsheet) "
+"0","df4 <- gsheet2tbl(""https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit?usp=sharing"") "

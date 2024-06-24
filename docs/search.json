@@ -9,58 +9,149 @@
   {
     "objectID": "Aula 1b.html",
     "href": "Aula 1b.html",
-    "title": "Software R e a IDE RStudio",
+    "title": "1. Software R e a IDE RStudio",
     "section": "",
-    "text": "O Rstudio é uma IDE (ambiente de desenvolvimento integrado) para o R. Com sua utilização gratuita, o RStudio é uma excelente ferramenta para desenvolvimento em R, extremamente visual quando comparado com ambientes de outras linguagens e também com o console do R, e muito simples de se utilizar.\n\n\n1.Acesse o site oficial do R: CRAN (The Comprehensive R Archive Network).\n2.Escolha seu sistema operacional:\n\nex: Windows; macOS; Linux…\n\n3.Baixe o instalador:\n4.Execute o instalador:\n5.Siga as instruções do instalador:\nQualquer dúvida, seguir o passo a passo disponível no site que realizou o download do software (R-Project).\n\n\n1° Abrir o R, 2° verificar a versão do r no console do R, digitando ‘version’ e clicando Enter."
+    "text": "O Rstudio é uma IDE (ambiente de desenvolvimento integrado) para o R. Com sua utilização gratuita, o RStudio é uma excelente ferramenta para desenvolvimento em R, extremamente visual quando comparado com ambientes de outras linguagens e também com o console do R, e muito simples de se utilizar.\n\n\nI.Acesse o site oficial do R: CRAN (The Comprehensive R Archive Network).\nII.Escolha seu sistema operacional:\n\nex: Windows; macOS; Linux…\n\nIII.Baixe o instalador:\nIV.Execute o instalador:\nV.Siga as instruções do instalador:\nQualquer dúvida, seguir o passo a passo disponível no site que realizou o download do software (R-Project).\n\n\n1° Abrir o R, 2° verificar a versão do r no console do R, digitando ‘version’ e clicando Enter."
   },
   {
     "objectID": "Aula 1b.html#como-instalar-o-r",
     "href": "Aula 1b.html#como-instalar-o-r",
-    "title": "Software R e a IDE RStudio",
+    "title": "1. Software R e a IDE RStudio",
     "section": "",
-    "text": "1.Acesse o site oficial do R: CRAN (The Comprehensive R Archive Network).\n2.Escolha seu sistema operacional:\n\nex: Windows; macOS; Linux…\n\n3.Baixe o instalador:\n4.Execute o instalador:\n5.Siga as instruções do instalador:\nQualquer dúvida, seguir o passo a passo disponível no site que realizou o download do software (R-Project).\n\n\n1° Abrir o R, 2° verificar a versão do r no console do R, digitando ‘version’ e clicando Enter."
+    "text": "I.Acesse o site oficial do R: CRAN (The Comprehensive R Archive Network).\nII.Escolha seu sistema operacional:\n\nex: Windows; macOS; Linux…\n\nIII.Baixe o instalador:\nIV.Execute o instalador:\nV.Siga as instruções do instalador:\nQualquer dúvida, seguir o passo a passo disponível no site que realizou o download do software (R-Project).\n\n\n1° Abrir o R, 2° verificar a versão do r no console do R, digitando ‘version’ e clicando Enter."
   },
   {
     "objectID": "Aula 2.html",
     "href": "Aula 2.html",
-    "title": "RStudio:",
+    "title": "1. RStudio:",
     "section": "",
-    "text": "Para isso pode ser criado um projeto clicando na barra de ferramentas superior em File e em seguida em New project.\n\n\n  format width height colorspace matte filesize density\n1    PNG  1366    768       sRGB FALSE   113790   38x38\n\n\n\n\n\nAssim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa Monitoramento da sensibilidade in vitro de Colletotrichum truncatum à fungicidas e outro projeto para o conjunto de dados da pesquisa Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja.\nApós criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em File e depois em New File, podendo selecionar Quarto Document... ou R Markdown.\n\n\n  format width height colorspace matte filesize density\n1    PNG  1366    768       sRGB FALSE   110539   38x38\n\n\n\n\n\n\n\n\nO Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos **.Rmd** existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros). Nessa página Web foi utilizado apenas Quarto Document.\n\n\n\nAntes de tudo, para que possamos utilizar o R Quarto Markdown e executar pedaços de códigos que serão integrados ao documento, devemos criar um chunk. O chunk permite que as funções e demais códigos sejam executadas e rodadas no documento. Um atalho que pode ser usado para sua criação é o Ctrl + Alt + I.\n\n\n\nDurante a escrita, podemos colocar palavras em itálico usando 1 asterisco antes e após as palavras em questão, do mesmo modo podemos colocar palavras em negrito utilizando 2 asteriscos antes e após a (s) palavra (s).\nDentro de um chunk, podemos colocar palavras e/ou frases entre aspas ““ ou com um # na frente para que sejam rodadas como um texto, e não como dados.\n\n\n\nQuando queremos atribuir um valor para algum nome, podemos utilizar \\&lt;-. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor."
+    "text": "A interface do RStudio é normalmente dividida em 4 partes, conforme apresentado na imagem abaixo pelos números 1, 2, 3 e 4.\n\n\n  format width height colorspace matte filesize density\n1    PNG  1366    768       sRGB FALSE   107329   38x38\n\n\n\n\n\n1 - script, nessa janela é possível colocar em cada linha códigos e o Enteré utilizado para quebra de linha. Para executar o comando usa Control+Enter ou clique em Run (⊳) no canto superior direito do chunck.\n2 - console, trabalhar no console é muito limitado, pois as instruções devem ser inseridas uma por uma. Para executar o comando preciona Ènter.\n3 - Environment, é onde ficam armazendos os objetos criados, bases de dados importadas, etc. History, onde fica o histórico dos comandos executados.\n4 - Files, Plots, Packages, Help, Viewer, em Files encontra as pastas e arquivos carregados no RStudio. A visualização de grãficos em Plots, buscar pacotes instalados em Packages, para saber mais sobre as funções em Help e visualizar imagens carregadas em Viewer.\n\n\nPara isso pode ser criado um projeto clicando na barra de ferramentas superior em File e em seguida em New project.\n\n\n  format width height colorspace matte filesize density\n1    PNG  1366    768       sRGB FALSE   113790   38x38\n\n\n\n\n\nAssim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa Monitoramento da sensibilidade in vitro de Colletotrichum truncatum à fungicidas e outro projeto para o conjunto de dados da pesquisa Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja.\nApós criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em File e depois em New File, podendo selecionar Quarto Document... ou R Markdown.\n\n\n  format width height colorspace matte filesize density\n1    PNG  1366    768       sRGB FALSE   110539   38x38\n\n\n\n\n\n\n\n\nO Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos **.Rmd** existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros). Nessa página Web foi utilizado apenas Quarto Document.\n\n\n\nAcima foi inserido um chuck. Chunck é um bloco de código dentro de um documento R Markdown (ou Quarto) que permite a execução de código R ou de outros idiomas suportados (como Python, SQL, etc.) dentro de um documento de texto. Um atalho que pode ser usado para sua criação é o Ctrl + Alt + I ou inserir o chunck conforme mostra a imagem a seguir:\n\n\n  format width height colorspace matte filesize density\n1    PNG  1366    768       sRGB FALSE    99562   38x38\n\n\n\n\n\n\n\n\nNegrito: inserir antes e depois do texto que deseja apresentar em negrito, dois asteriscos  **. Itálico: inserir antes e depois do texto que deseja apresentar em itálico, um asteriscos * *. Título e subtítulos: Fora do chunck, para visualizar o texto como título, colocar um # antes e um # depois do texto. Para subtítulos, colocar dois ## antes e dois ## depois texto. Comentários: dentro do chunck escrever comentários utilizando antes do texto #. Texto: para rodar o código do chunck como texto, ex: nome da planilha excel, utilizar aspas duplas “ antes e depois do texto. Funções: fora do chunck, para destacar uma função no texto, inserir antes e depois do texto uma aspas `.\n\n\n\nQuando queremos atribuir um valor para algum nome, podemos utilizar &lt;-. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor.\n\nx &lt;- 10\nx\n\n[1] 10\n\ny &lt;- x*10\ny\n\n[1] 100\n\nz &lt;- x*y\nz\n\n[1] 1000\n\n\n\n\n\nPara criar um conjunto de valores, pode-se utilizar c()e colocar os valores desejados. Caso os valores sejam contínuos, pode-se agrupá-los usando :, desse modo o conjunto será formado por todos os valores que estão entre os dois números colocados.\n\nA &lt;- c(1:10)\nA \n\n [1]  1  2  3  4  5  6  7  8  9 10\n\nB &lt;- c(11:20)\nB\n\n [1] 11 12 13 14 15 16 17 18 19 20\n\n\n\n\n\nO data frame é é o objeto que guarda o conjunto de dados na forma de tabela (tabulares ou planos). Podendo armazenar vetores de diferentes tipos (caracteres, numéricos, lógico e etc) nas suas colunas. Ele pode ser criado por meio da junção de dois ou mais conjunto de dados, usando a função data.frame(), mas, para isso, o número de valores presentes nos conjuntos deve ser o mesmo.\n\ndf &lt;- data.frame(A,B)\ndf \n\n    A  B\n1   1 11\n2   2 12\n3   3 13\n4   4 14\n5   5 15\n6   6 16\n7   7 17\n8   8 18\n9   9 19\n10 10 20\n\n\n\n\n\nUtilizado quando desejar que todas as funções executadas estejam se referindo a um determinado data frame sem precisar chamá-lo repetidamente, podemos usar um pipe, precisando Ctrl+Shift+M. O pipe indica que todas as funções abaixo dele estão se referindo ao data frame especificado.\n\ndf2 &lt;- cars\ncars\n\n   speed dist\n1      4    2\n2      4   10\n3      7    4\n4      7   22\n5      8   16\n6      9   10\n7     10   18\n8     10   26\n9     10   34\n10    11   17\n11    11   28\n12    12   14\n13    12   20\n14    12   24\n15    12   28\n16    13   26\n17    13   34\n18    13   34\n19    13   46\n20    14   26\n21    14   36\n22    14   60\n23    14   80\n24    15   20\n25    15   26\n26    15   54\n27    16   32\n28    16   40\n29    17   32\n30    17   40\n31    17   50\n32    18   42\n33    18   56\n34    18   76\n35    18   84\n36    19   36\n37    19   46\n38    19   68\n39    20   32\n40    20   48\n41    20   52\n42    20   56\n43    20   64\n44    22   66\n45    23   54\n46    24   70\n47    24   92\n48    24   93\n49    24  120\n50    25   85\n\n\n\n\n\nÉ utilizado $ para criar uma nova coluna dentro do dara frame, como mostra a seguir:\n\ndf2$dist2 &lt;- c(1:50)\ndf2\n\n   speed dist dist2\n1      4    2     1\n2      4   10     2\n3      7    4     3\n4      7   22     4\n5      8   16     5\n6      9   10     6\n7     10   18     7\n8     10   26     8\n9     10   34     9\n10    11   17    10\n11    11   28    11\n12    12   14    12\n13    12   20    13\n14    12   24    14\n15    12   28    15\n16    13   26    16\n17    13   34    17\n18    13   34    18\n19    13   46    19\n20    14   26    20\n21    14   36    21\n22    14   60    22\n23    14   80    23\n24    15   20    24\n25    15   26    25\n26    15   54    26\n27    16   32    27\n28    16   40    28\n29    17   32    29\n30    17   40    30\n31    17   50    31\n32    18   42    32\n33    18   56    33\n34    18   76    34\n35    18   84    35\n36    19   36    36\n37    19   46    37\n38    19   68    38\n39    20   32    39\n40    20   48    40\n41    20   52    41\n42    20   56    42\n43    20   64    43\n44    22   66    44\n45    23   54    45\n46    24   70    46\n47    24   92    47\n48    24   93    48\n49    24  120    49\n50    25   85    50\n\n\n\nlibrary(tidyverse)\n\ndf2 |&gt;\n  mutate(dist3 = dist2+1) |&gt; \n  select(1)\n\n   speed\n1      4\n2      4\n3      7\n4      7\n5      8\n6      9\n7     10\n8     10\n9     10\n10    11\n11    11\n12    12\n13    12\n14    12\n15    12\n16    13\n17    13\n18    13\n19    13\n20    14\n21    14\n22    14\n23    14\n24    15\n25    15\n26    15\n27    16\n28    16\n29    17\n30    17\n31    17\n32    18\n33    18\n34    18\n35    18\n36    19\n37    19\n38    19\n39    20\n40    20\n41    20\n42    20\n43    20\n44    22\n45    23\n46    24\n47    24\n48    24\n49    24\n50    25\n\n\n\n\n\nPara transformar o documento .qmd em HTML ou em outros formatos, é necessário renderizar o documento. Para isso basta clicar no menu superior em Render para que o documento ou site seja criado.\n\n\n# A tibble: 1 × 7\n  format width height colorspace matte filesize density\n  &lt;chr&gt;  &lt;int&gt;  &lt;int&gt; &lt;chr&gt;      &lt;lgl&gt;    &lt;int&gt; &lt;chr&gt;  \n1 PNG     1366    768 sRGB       FALSE    89045 38x38"
   },
   {
     "objectID": "Aula 2.html#trabalhe-de-forma-organizada",
     "href": "Aula 2.html#trabalhe-de-forma-organizada",
-    "title": "RStudio:",
+    "title": "1. RStudio:",
     "section": "",
     "text": "Para isso pode ser criado um projeto clicando na barra de ferramentas superior em File e em seguida em New project.\n\n\n  format width height colorspace matte filesize density\n1    PNG  1366    768       sRGB FALSE   113790   38x38\n\n\n\n\n\nAssim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa Monitoramento da sensibilidade in vitro de Colletotrichum truncatum à fungicidas e outro projeto para o conjunto de dados da pesquisa Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja.\nApós criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em File e depois em New File, podendo selecionar Quarto Document... ou R Markdown.\n\n\n  format width height colorspace matte filesize density\n1    PNG  1366    768       sRGB FALSE   110539   38x38"
   },
   {
     "objectID": "Aula 2.html#diferença-de-quarto-document-e-r-markdown",
     "href": "Aula 2.html#diferença-de-quarto-document-e-r-markdown",
-    "title": "RStudio:",
+    "title": "1. RStudio:",
     "section": "",
     "text": "O Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos **.Rmd** existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros). Nessa página Web foi utilizado apenas Quarto Document."
   },
   {
     "objectID": "Aula 2.html#chunk",
     "href": "Aula 2.html#chunk",
-    "title": "RStudio:",
+    "title": "1. RStudio:",
     "section": "",
-    "text": "Antes de tudo, para que possamos utilizar o R Quarto Markdown e executar pedaços de códigos que serão integrados ao documento, devemos criar um chunk. O chunk permite que as funções e demais códigos sejam executadas e rodadas no documento. Um atalho que pode ser usado para sua criação é o Ctrl + Alt + I."
+    "text": "Acima foi inserido um chuck. Chunck é um bloco de código dentro de um documento R Markdown (ou Quarto) que permite a execução de código R ou de outros idiomas suportados (como Python, SQL, etc.) dentro de um documento de texto. Um atalho que pode ser usado para sua criação é o Ctrl + Alt + I ou inserir o chunck conforme mostra a imagem a seguir:\n\n\n  format width height colorspace matte filesize density\n1    PNG  1366    768       sRGB FALSE    99562   38x38"
   },
   {
-    "objectID": "Aula 2.html#texto",
-    "href": "Aula 2.html#texto",
-    "title": "RStudio:",
+    "objectID": "Aula 2.html#ferramentas-de-texto",
+    "href": "Aula 2.html#ferramentas-de-texto",
+    "title": "1. RStudio:",
     "section": "",
-    "text": "Durante a escrita, podemos colocar palavras em itálico usando 1 asterisco antes e após as palavras em questão, do mesmo modo podemos colocar palavras em negrito utilizando 2 asteriscos antes e após a (s) palavra (s).\nDentro de um chunk, podemos colocar palavras e/ou frases entre aspas ““ ou com um # na frente para que sejam rodadas como um texto, e não como dados."
+    "text": "Negrito: inserir antes e depois do texto que deseja apresentar em negrito, dois asteriscos  **. Itálico: inserir antes e depois do texto que deseja apresentar em itálico, um asteriscos * *. Título e subtítulos: Fora do chunck, para visualizar o texto como título, colocar um # antes e um # depois do texto. Para subtítulos, colocar dois ## antes e dois ## depois texto. Comentários: dentro do chunck escrever comentários utilizando antes do texto #. Texto: para rodar o código do chunck como texto, ex: nome da planilha excel, utilizar aspas duplas “ antes e depois do texto. Funções: fora do chunck, para destacar uma função no texto, inserir antes e depois do texto uma aspas `."
   },
   {
     "objectID": "Aula 2.html#atribuição-de-valores",
     "href": "Aula 2.html#atribuição-de-valores",
-    "title": "RStudio:",
+    "title": "1. RStudio:",
     "section": "",
-    "text": "Quando queremos atribuir um valor para algum nome, podemos utilizar \\&lt;-. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor."
+    "text": "Quando queremos atribuir um valor para algum nome, podemos utilizar &lt;-. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor.\n\nx &lt;- 10\nx\n\n[1] 10\n\ny &lt;- x*10\ny\n\n[1] 100\n\nz &lt;- x*y\nz\n\n[1] 1000"
+  },
+  {
+    "objectID": "Aula 2.html#conjunto-de-valores",
+    "href": "Aula 2.html#conjunto-de-valores",
+    "title": "1. RStudio:",
+    "section": "",
+    "text": "Para criar um conjunto de valores, pode-se utilizar c()e colocar os valores desejados. Caso os valores sejam contínuos, pode-se agrupá-los usando :, desse modo o conjunto será formado por todos os valores que estão entre os dois números colocados.\n\nA &lt;- c(1:10)\nA \n\n [1]  1  2  3  4  5  6  7  8  9 10\n\nB &lt;- c(11:20)\nB\n\n [1] 11 12 13 14 15 16 17 18 19 20"
+  },
+  {
+    "objectID": "Aula 2.html#data-frame",
+    "href": "Aula 2.html#data-frame",
+    "title": "1. RStudio:",
+    "section": "",
+    "text": "O data frame é é o objeto que guarda o conjunto de dados na forma de tabela (tabulares ou planos). Podendo armazenar vetores de diferentes tipos (caracteres, numéricos, lógico e etc) nas suas colunas. Ele pode ser criado por meio da junção de dois ou mais conjunto de dados, usando a função data.frame(), mas, para isso, o número de valores presentes nos conjuntos deve ser o mesmo.\n\ndf &lt;- data.frame(A,B)\ndf \n\n    A  B\n1   1 11\n2   2 12\n3   3 13\n4   4 14\n5   5 15\n6   6 16\n7   7 17\n8   8 18\n9   9 19\n10 10 20"
+  },
+  {
+    "objectID": "Aula 2.html#pipe",
+    "href": "Aula 2.html#pipe",
+    "title": "1. RStudio:",
+    "section": "",
+    "text": "Utilizado quando desejar que todas as funções executadas estejam se referindo a um determinado data frame sem precisar chamá-lo repetidamente, podemos usar um pipe, precisando Ctrl+Shift+M. O pipe indica que todas as funções abaixo dele estão se referindo ao data frame especificado.\n\ndf2 &lt;- cars\ncars\n\n   speed dist\n1      4    2\n2      4   10\n3      7    4\n4      7   22\n5      8   16\n6      9   10\n7     10   18\n8     10   26\n9     10   34\n10    11   17\n11    11   28\n12    12   14\n13    12   20\n14    12   24\n15    12   28\n16    13   26\n17    13   34\n18    13   34\n19    13   46\n20    14   26\n21    14   36\n22    14   60\n23    14   80\n24    15   20\n25    15   26\n26    15   54\n27    16   32\n28    16   40\n29    17   32\n30    17   40\n31    17   50\n32    18   42\n33    18   56\n34    18   76\n35    18   84\n36    19   36\n37    19   46\n38    19   68\n39    20   32\n40    20   48\n41    20   52\n42    20   56\n43    20   64\n44    22   66\n45    23   54\n46    24   70\n47    24   92\n48    24   93\n49    24  120\n50    25   85"
+  },
+  {
+    "objectID": "Aula 2.html#criar-coluna-dentro-do-data-frame",
+    "href": "Aula 2.html#criar-coluna-dentro-do-data-frame",
+    "title": "1. RStudio:",
+    "section": "",
+    "text": "É utilizado $ para criar uma nova coluna dentro do dara frame, como mostra a seguir:\n\ndf2$dist2 &lt;- c(1:50)\ndf2\n\n   speed dist dist2\n1      4    2     1\n2      4   10     2\n3      7    4     3\n4      7   22     4\n5      8   16     5\n6      9   10     6\n7     10   18     7\n8     10   26     8\n9     10   34     9\n10    11   17    10\n11    11   28    11\n12    12   14    12\n13    12   20    13\n14    12   24    14\n15    12   28    15\n16    13   26    16\n17    13   34    17\n18    13   34    18\n19    13   46    19\n20    14   26    20\n21    14   36    21\n22    14   60    22\n23    14   80    23\n24    15   20    24\n25    15   26    25\n26    15   54    26\n27    16   32    27\n28    16   40    28\n29    17   32    29\n30    17   40    30\n31    17   50    31\n32    18   42    32\n33    18   56    33\n34    18   76    34\n35    18   84    35\n36    19   36    36\n37    19   46    37\n38    19   68    38\n39    20   32    39\n40    20   48    40\n41    20   52    41\n42    20   56    42\n43    20   64    43\n44    22   66    44\n45    23   54    45\n46    24   70    46\n47    24   92    47\n48    24   93    48\n49    24  120    49\n50    25   85    50\n\n\n\nlibrary(tidyverse)\n\ndf2 |&gt;\n  mutate(dist3 = dist2+1) |&gt; \n  select(1)\n\n   speed\n1      4\n2      4\n3      7\n4      7\n5      8\n6      9\n7     10\n8     10\n9     10\n10    11\n11    11\n12    12\n13    12\n14    12\n15    12\n16    13\n17    13\n18    13\n19    13\n20    14\n21    14\n22    14\n23    14\n24    15\n25    15\n26    15\n27    16\n28    16\n29    17\n30    17\n31    17\n32    18\n33    18\n34    18\n35    18\n36    19\n37    19\n38    19\n39    20\n40    20\n41    20\n42    20\n43    20\n44    22\n45    23\n46    24\n47    24\n48    24\n49    24\n50    25"
+  },
+  {
+    "objectID": "Aula 2.html#criar-arquivo-html",
+    "href": "Aula 2.html#criar-arquivo-html",
+    "title": "1. RStudio:",
+    "section": "",
+    "text": "Para transformar o documento .qmd em HTML ou em outros formatos, é necessário renderizar o documento. Para isso basta clicar no menu superior em Render para que o documento ou site seja criado.\n\n\n# A tibble: 1 × 7\n  format width height colorspace matte filesize density\n  &lt;chr&gt;  &lt;int&gt;  &lt;int&gt; &lt;chr&gt;      &lt;lgl&gt;    &lt;int&gt; &lt;chr&gt;  \n1 PNG     1366    768 sRGB       FALSE    89045 38x38"
+  },
+  {
+    "objectID": "Aula 2b.html",
+    "href": "Aula 2b.html",
+    "title": "1. Instalação",
+    "section": "",
+    "text": "Pacotes são coleções de funções R, dados e código compilado em um formato bem definido, criados para adicionar funcionalidades específicas. Será mostrados os principais pacotes utilizados em análises e visualização de dados."
+  },
+  {
+    "objectID": "Aula 2b.html#carregar-pacotes",
+    "href": "Aula 2b.html#carregar-pacotes",
+    "title": "1. Instalação",
+    "section": "2. Carregar pacotes",
+    "text": "2. Carregar pacotes\nUtilize a função library(), inserindo dentro do parênteses o nome do pacote."
+  },
+  {
+    "objectID": "Aula 2c.html",
+    "href": "Aula 2c.html",
+    "title": "1. Importação de dados",
+    "section": "",
+    "text": "Para analisar dados um dos primeiros passos é criar, carregar ou importar um conjunto de dados no ambiente R. É muito utilizado o dataframe, que é o objeto que guarda o conjunto de dados na forma de tabela (tabulares ou planos). Podendo armazenar vetores de diferentes tipos (caracteres, numéricos, lógico e etc) nas suas colunas. No segundo chunck desse script foi atribuído um dataframe."
+  },
+  {
+    "objectID": "Aula 2c.html#carregar-dados-planilha-excel-salva-no-disco-local",
+    "href": "Aula 2c.html#carregar-dados-planilha-excel-salva-no-disco-local",
+    "title": "1. Importação de dados",
+    "section": "2.1 Carregar dados planilha excel salva no disco local",
+    "text": "2.1 Carregar dados planilha excel salva no disco local\nFoi instalado o pacote readxl e carregou para lêr os dados diretamente em excel. O comando para lêr o arquivo é read_excel(\"nome_do_arquivo\"). No dataframe df21 foi utilizado sheet para especificar qual planilha do arquivo excel dados-diversos carregar.\n\nlibrary(readxl) \ndf2 &lt;- read_excel(\"dados_diversos.xlsx\") \ndf21 &lt;- read_excel(\"dados_diversos.xlsx\", sheet = \"escala\") \n#df21 &lt;- read_excel(\"dados-diversos.xlsx\", \"escala\") \n#df21 &lt;- read_excel(\"dados-diversos.xlsx\", 2)\n\nUtilizou o pacote tidyverse para carregar os dados. df3 é o dataframe da planilha dados-diversos.csv.\n\nlibrary(tidyverse) \ndf3 &lt;- read_csv(\"dados-diversos.csv\")"
+  },
+  {
+    "objectID": "Aula 2c.html#carregar-planilha-do-google-drive",
+    "href": "Aula 2c.html#carregar-planilha-do-google-drive",
+    "title": "1. Importação de dados",
+    "section": "2.2 Carregar planilha do google drive",
+    "text": "2.2 Carregar planilha do google drive\nUtilizar os pacotes gsheet e googlesheet4 para utilizar o banco de dados diretamente do google drive.\nPara o gsheet utiliza gsheet2tb para baixar o banco de dados no objeto df4. Copiar o link da planilha online e colar entre aspas dentro dos parêntes, como apresentado no chunck abaixo.\n\nlibrary(gsheet) \ndf4 &lt;- gsheet2tbl(\"https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit?usp=sharing\")  \ndf41 &lt;- gsheet2tbl(\"https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit?usp=sharing\", sheetid = \"2\") \n\nPara o googlesheets4 o nome da função é read_sheet(\"\"). Permite baixar e escrever nos arquivos.\n\nlibrary(googlesheets4) \ndf5 &lt;- read_sheet(\"https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit?usp=sharing\")"
+  },
+  {
+    "objectID": "Aula 2c.html#ggplot",
+    "href": "Aula 2c.html#ggplot",
+    "title": "1. Importação de dados",
+    "section": "3. ggplot",
+    "text": "3. ggplot\nVamos utilizar o ggplot2 para poder fazer um gráfico para análise exploratória das variáveis. Com o geom_point mostra os pontos dentro da mesma variável, mas estes podem estar sobrepostos, para isso utilizamos o geom_jitter para poder desagregar os pontos dentro e observar melhor os dados.\nPode adicionar camadas também, quando coloca (+) outro parâmetro como o ´geom_boxplot`. A ordem altera como a camada será exposta, se ela ficará acima ou abaixo. O primeiro a ser chamado ficará na camada mais abaixo a próxima ficara acima desta, a próxima que for criada ficara acima das demais e assim por diante.\nPara não duplicar o outlier, podemos tirar o outlier com outlier.colour = NA.\nPodemos utilizar temas, para atender a um jornal específico, como g2 + theme_bw(), o tema fica preto e branco algo mais clean e científico. Tem outros como o theme_classic.\n\nlibrary(ggplot2)\ng1 &lt;- df4 |&gt;\n  ggplot(aes(trat, comp))+\n  geom_point(color = \"darkgreen\", shape = 2, size = 3)\ng1 + theme_classic()+\n  labs(x = \"Tratamento\",\n       y = \"Comprimento\",\n       title = \"Meu primeiro ggplot\",\n       caption = \"Fonte: Dados diversos\")\n\n\n\ng2 &lt;- df4 |&gt;\n  ggplot(aes(trat, comp))+\n  geom_boxplot(outlier.colour = NA,\n               fill = \"orange\")+\n  geom_jitter(width = 0.05,\n              color = \"darkblue\",\n              shape = 3,\n              size = 2)\ng2 + theme_bw() +\n  #ylim(0,20) #Ele faz a mesma coisa que o de baixo\n  scale_y_continuous(limits = c(0,20),\n                     n.breaks = 5) #n.breaks é o número de quebras, se colocar breaks apenas, fica só a linha correspondente aquele número.\n\n\n\nggsave(\"plot1.png\", bg = \"white\")"
+  },
+  {
+    "objectID": "Aula 3.html",
+    "href": "Aula 3.html",
+    "title": "Aula 3",
+    "section": "",
+    "text": "Vamos utilizar o ggplot2 para poder fazer um gráfico para análise exploratória das variáveis. Com o geom_point mostra os pontos dentro da mesma variável, mas estes podem estar sobrepostos, para isso utilizamos o geom_jitter para poder desagregar os pontos dentro e observar melhor os dados.\nPode adicionar camadas também, quando coloca (+) outro parâmetro como o ´geom_boxplot`. A ordem altera como a camada será exposta, se ela ficará acima ou abaixo. O primeiro a ser chamado ficará na camada mais abaixo a próxima ficara acima desta, a próxima que for criada ficara acima das demais e assim por diante.\nPara não duplicar o outlier, podemos tirar o outlier com outlier.colour = NA.\nPodemos utilizar temas, para atender a um jornal específico, como g2 + theme_bw(), o tema fica preto e branco algo mais clean e científico. Tem outros como o theme_classic.\n\n\n\nlibrary(gsheet) \ndf4 &lt;- gsheet2tbl(\"https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit?usp=sharing\") \n\n1.3 Construção dos gráficos\n\nlibrary(ggplot2)\ng1 &lt;- df4 |&gt;\n  ggplot(aes(trat, comp))+\n  geom_point(color = \"darkgreen\", shape = 2, size = 3)\ng1 + theme_classic()+\n  labs(x = \"Tratamento\",\n       y = \"Comprimento\",\n       title = \"Meu primeiro ggplot\",\n       caption = \"Fonte: Dados diversos\")\n\n\n\ng2 &lt;- df4 |&gt;\n  ggplot(aes(trat, comp))+\n  geom_boxplot(outlier.colour = NA,\n               fill = \"orange\")+\n  geom_jitter(width = 0.05,\n              color = \"darkblue\",\n              shape = 3,\n              size = 2)\ng2 + theme_bw() +\n  #ylim(0,20) #Ele faz a mesma coisa que o de baixo\n  scale_y_continuous(limits = c(0,20),\n                     n.breaks = 5) #n.breaks é o número de quebras, se colocar breaks apenas, fica só a linha correspondente aquele número.\n\n\n\nggsave(\"plot1.png\", bg = \"white\")"
+  },
+  {
+    "objectID": "Aula 3.html#carregar-conjuntos-de-dados",
+    "href": "Aula 3.html#carregar-conjuntos-de-dados",
+    "title": "Aula 3",
+    "section": "",
+    "text": "library(gsheet) \ndf4 &lt;- gsheet2tbl(\"https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit?usp=sharing\") \n\n1.3 Construção dos gráficos\n\nlibrary(ggplot2)\ng1 &lt;- df4 |&gt;\n  ggplot(aes(trat, comp))+\n  geom_point(color = \"darkgreen\", shape = 2, size = 3)\ng1 + theme_classic()+\n  labs(x = \"Tratamento\",\n       y = \"Comprimento\",\n       title = \"Meu primeiro ggplot\",\n       caption = \"Fonte: Dados diversos\")\n\n\n\ng2 &lt;- df4 |&gt;\n  ggplot(aes(trat, comp))+\n  geom_boxplot(outlier.colour = NA,\n               fill = \"orange\")+\n  geom_jitter(width = 0.05,\n              color = \"darkblue\",\n              shape = 3,\n              size = 2)\ng2 + theme_bw() +\n  #ylim(0,20) #Ele faz a mesma coisa que o de baixo\n  scale_y_continuous(limits = c(0,20),\n                     n.breaks = 5) #n.breaks é o número de quebras, se colocar breaks apenas, fica só a linha correspondente aquele número.\n\n\n\nggsave(\"plot1.png\", bg = \"white\")"
   },
   {
     "objectID": "index.html",

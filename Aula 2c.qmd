@@ -1,0 +1,94 @@
+---
+format: html
+editor: visual
+message: false
+warning: false
+---
+
+# 1. Importação de dados
+Para analisar dados um dos primeiros passos é criar, carregar ou importar um conjunto de dados no ambiente R. É muito utilizado o dataframe, que é o objeto que guarda o conjunto de dados na forma de tabela (tabulares ou planos). Podendo armazenar vetores de diferentes tipos (caracteres, numéricos, lógico e etc) nas suas colunas. No segundo chunck desse script foi atribuído um dataframe.
+
+# 2. Importando DataSets
+O RStudio possui vários datasets integrados que podem ser carregados facilmente para uso imediato. A seguir será instalado o pacote `ec50estimator` e realizará a abertura do pacote. Neste pacote foi utilizado o conjunto de dados **multi_isolate**.
+**EC50 estimator** utilizado para ajustar modelos de dose-resposta e calcular métricas como EC50 (concentração efetiva do produto testado capaz de inibir/matar 50% dos indivíduos/crescimento).
+```{r}
+library(ec50estimator) 
+multi_isolate
+```
+
+Abaixo foi atribuido um dataframe **df1** para carregar o conjunto de dados **multi_isolate** na forma de tabela.
+
+```{r} 
+df1 <- multi_isolate 
+View(df1)
+```
+## 2.1 Carregar dados planilha excel salva no disco local
+Foi instalado o pacote `readxl` e carregou para lêr os dados diretamente em excel. O comando para lêr o arquivo é `read_excel("nome_do_arquivo")`.
+No dataframe **df21** foi utilizado sheet para especificar qual planilha do arquivo excel **dados-diversos** carregar.
+```{r} 
+library(readxl) 
+df2 <- read_excel("dados_diversos.xlsx") 
+df21 <- read_excel("dados_diversos.xlsx", sheet = "escala") 
+#df21 <- read_excel("dados-diversos.xlsx", "escala") 
+#df21 <- read_excel("dados-diversos.xlsx", 2)
+```
+
+Utilizou o pacote `tidyverse` para carregar os dados. **df3** é o dataframe da planilha dados-diversos.csv.
+
+```{r} 
+library(tidyverse) 
+df3 <- read_csv("dados-diversos.csv")
+```
+
+## 2.2 Carregar planilha do google drive
+Utilizar os pacotes `gsheet` e `googlesheet4` para utilizar o banco de dados diretamente do google drive.
+
+Para o `gsheet` utiliza `gsheet2tb` para baixar o banco de dados no objeto **df4**. Copiar o link da planilha online e colar entre aspas dentro dos parêntes, como apresentado no chunck abaixo.
+
+```{r} 
+library(gsheet) 
+df4 <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit?usp=sharing")  
+df41 <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit?usp=sharing", sheetid = "2") 
+```
+
+Para o `googlesheets4` o nome da função é `read_sheet("")`. Permite baixar e escrever nos arquivos.
+
+```{r} 
+library(googlesheets4) 
+df5 <- read_sheet("https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit?usp=sharing")
+```
+
+## 3. ggplot
+Vamos utilizar o `ggplot2` para poder fazer um gráfico para análise exploratória das variáveis. Com o `geom_point` mostra os pontos dentro da mesma variável, mas estes podem estar sobrepostos, para isso utilizamos o `geom_jitter` para poder desagregar os pontos dentro e observar melhor os dados.
+
+Pode adicionar camadas também, quando coloca (+) outro parâmetro como o ´geom_boxplot`. A ordem altera como a camada será exposta, se ela ficará acima ou abaixo. O primeiro a ser chamado ficará na camada mais abaixo a próxima ficara acima desta, a próxima que for criada ficara acima das demais e assim por diante.
+
+Para não duplicar o outlier, podemos tirar o outlier com `outlier.colour = NA`.
+
+Podemos utilizar temas, para atender a um jornal específico, como **g2 + theme_bw()**, o tema fica preto e branco algo mais clean e científico. Tem outros como o theme_classic.
+
+```{r} 
+library(ggplot2)
+g1 <- df4 |>
+  ggplot(aes(trat, comp))+
+  geom_point(color = "darkgreen", shape = 2, size = 3)
+g1 + theme_classic()+
+  labs(x = "Tratamento",
+       y = "Comprimento",
+       title = "Meu primeiro ggplot",
+       caption = "Fonte: Dados diversos")
+
+g2 <- df4 |>
+  ggplot(aes(trat, comp))+
+  geom_boxplot(outlier.colour = NA,
+               fill = "orange")+
+  geom_jitter(width = 0.05,
+              color = "darkblue",
+              shape = 3,
+              size = 2)
+g2 + theme_bw() +
+  #ylim(0,20) #Ele faz a mesma coisa que o de baixo
+  scale_y_continuous(limits = c(0,20),
+                     n.breaks = 5) #n.breaks é o número de quebras, se colocar breaks apenas, fica só a linha correspondente aquele número.
+ggsave("plot1.png", bg = "white")
+```

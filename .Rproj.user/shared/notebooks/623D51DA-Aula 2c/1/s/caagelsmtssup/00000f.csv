@@ -1,0 +1,13 @@
+"0","library(googlesheets4) "
+"0","df5 <- read_sheet(""https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit?usp=sharing"")"
+"2","[38;5;253mThe [34mgooglesheets4[38;5;253m package is requesting access to your Google account.
+Enter '1' to start a new auth process or select a pre-authorized account.
+[1m1[22m: Send me to the browser for a new auth process.
+[1m2[22m: lucas.versari@ufv.br[39m"
+"0","2"
+"2","Auto-refreshing stale OAuth token.
+"
+"2","[32m✔[39m Reading from [36mdados-diversos[39m.
+"
+"2","[32m✔[39m Range [33mmagnesio[39m.
+"

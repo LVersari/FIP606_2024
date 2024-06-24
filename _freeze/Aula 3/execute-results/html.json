@@ -1,0 +1,14 @@
+{
+  "hash": "b8179067b8f43c75f7b2e6a771ec9fdb",
+  "result": {
+    "markdown": "---\ntitle: \"Aula 3\"\n---\n\n\n# 1. ggplot\n\nVamos utilizar o `ggplot2` para poder fazer um gráfico para análise exploratória das variáveis. Com o `geom_point` mostra os pontos dentro da mesma variável, mas estes podem estar sobrepostos, para isso utilizamos o `geom_jitter` para poder desagregar os pontos dentro e observar melhor os dados.\n\nPode adicionar camadas também, quando coloca (+) outro parâmetro como o ´geom_boxplot`. A ordem altera como a camada será exposta, se ela ficará acima ou abaixo. O primeiro a ser chamado ficará na camada mais abaixo a próxima ficara acima desta, a próxima que for criada ficara acima das demais e assim por diante.\n\nPara não duplicar o outlier, podemos tirar o outlier com `outlier.colour = NA`.\n\nPodemos utilizar temas, para atender a um jornal específico, como **g2 + theme_bw()**, o tema fica preto e branco algo mais clean e científico. Tem outros como o theme_classic.\n\n## 1.2 Carregar conjuntos de dados\n\n::: {.cell hash='Aula-3_cache/html/unnamed-chunk-1_e54e922da41ade04467b0cd99e63c06e'}\n\n```{.r .cell-code}\nlibrary(gsheet) \ndf4 <- gsheet2tbl(\"https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit?usp=sharing\") \n```\n:::\n\n\n1.3 Construção dos gráficos\n\n::: {.cell hash='Aula-3_cache/html/unnamed-chunk-2_262712f888450fe08591829ec0b68654'}\n\n```{.r .cell-code}\nlibrary(ggplot2)\ng1 <- df4 |>\n  ggplot(aes(trat, comp))+\n  geom_point(color = \"darkgreen\", shape = 2, size = 3)\ng1 + theme_classic()+\n  labs(x = \"Tratamento\",\n       y = \"Comprimento\",\n       title = \"Meu primeiro ggplot\",\n       caption = \"Fonte: Dados diversos\")\n```\n\n::: {.cell-output-display}\n![](Aula-3_files/figure-html/unnamed-chunk-2-1.png){width=672}\n:::\n\n```{.r .cell-code}\ng2 <- df4 |>\n  ggplot(aes(trat, comp))+\n  geom_boxplot(outlier.colour = NA,\n               fill = \"orange\")+\n  geom_jitter(width = 0.05,\n              color = \"darkblue\",\n              shape = 3,\n              size = 2)\ng2 + theme_bw() +\n  #ylim(0,20) #Ele faz a mesma coisa que o de baixo\n  scale_y_continuous(limits = c(0,20),\n                     n.breaks = 5) #n.breaks é o número de quebras, se colocar breaks apenas, fica só a linha correspondente aquele número.\n```\n\n::: {.cell-output-display}\n![](Aula-3_files/figure-html/unnamed-chunk-2-2.png){width=672}\n:::\n\n```{.r .cell-code}\nggsave(\"plot1.png\", bg = \"white\")\n```\n:::\n",
+    "supporting": [],
+    "filters": [
+      "rmarkdown/pagebreak.lua"
+    ],
+    "includes": {},
+    "engineDependencies": {},
+    "preserve": {},
+    "postProcess": true
+  }
+}
