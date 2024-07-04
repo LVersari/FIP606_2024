@@ -171,12 +171,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-análises">    
         <li>
-    <a class="dropdown-item" href="./Aula_6.qmd" rel="" target="">
- <span class="dropdown-text">Estatística inferencial (2 grupos dependentes)</span></a>
+    <a class="dropdown-item" href="./Aula 6.html" rel="" target="">
+ <span class="dropdown-text">Estatística inferencial (2 grupos)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./Aula_7.html" rel="" target="">
- <span class="dropdown-text">Estatística inferencial (3 ou mais grupos dependentes)</span></a>
+ <span class="dropdown-text">Estatística inferencial (3 ou mais grupos)</span></a>
   </li>  
         <li>
     <a class="dropdown-item" href="./Aula_8.qmd" rel="" target="">
@@ -285,13 +285,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 
-<p>---</p>
-<p>format: html</p>
-<p>editor: visual</p>
-<p>message: false</p>
-<p>warning: false</p>
-<p>---</p>
-<p>1. Carregamento pacotes</p>
+<p><strong>1. Carregamento pacotes</strong></p>
 <div class="cell" data-hash="Aula_9_cache/html/unnamed-chunk-1_84032a6ece8b7311d1b8dd41efad7f73">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gsheet)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -310,7 +304,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(TH.data)</span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<p>2 Importação dos dados</p>
+<p><strong>2 Importação dos dados</strong></p>
 <div class="cell" data-hash="Aula_9_cache/html/unnamed-chunk-2_126a436bac92bf0cdf66d82fbe93020a">
 <div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>estande <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=401662555"</span>)</span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a></span>
@@ -339,8 +333,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="Aula_9_files/figure-html/unnamed-chunk-4-1.png" class="img-fluid" width="672"></p>
 </div>
 </div>
-<p>Comparação de cada experimento</p>
-<p>Experimento 1</p>
+<p><strong>Comparação de cada experimento</strong></p>
+<p><strong>Experimento 1</strong></p>
 <div class="cell" data-hash="Aula_9_cache/html/unnamed-chunk-5_0b034ca56328f7dfca6a468fcd4b4e39">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>exp1 <span class="ot">&lt;-</span> estande <span class="sc">%&gt;%</span> </span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exp <span class="sc">==</span> <span class="dv">1</span>)</span>
@@ -379,7 +373,7 @@ Multiple R-squared:  0.07148,   Adjusted R-squared:  0.02928
 F-statistic: 1.694 on 1 and 22 DF,  p-value: 0.2066</code></pre>
 </div>
 </div>
-<p>Experimento 2</p>
+<p><strong>Experimento 2</strong></p>
 <div class="cell" data-hash="Aula_9_cache/html/unnamed-chunk-7_4a4167eb69ad3b838c44e10a13d92f3f">
 <div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>exp2 <span class="ot">&lt;-</span> estande <span class="sc">%&gt;%</span> </span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exp <span class="sc">==</span> <span class="dv">2</span>)</span>
@@ -420,7 +414,7 @@ Multiple R-squared:  0.4641,    Adjusted R-squared:  0.4398
 F-statistic: 19.05 on 1 and 22 DF,  p-value: 0.0002473</code></pre>
 </div>
 </div>
-<p>Experimento 3</p>
+<p><strong>Experimento 3</strong></p>
 <div class="cell" data-hash="Aula_9_cache/html/unnamed-chunk-9_c5cc166ee20b6bdd587e1a50d6d02ae4">
 <div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>exp3 <span class="ot">&lt;-</span> estande <span class="sc">%&gt;%</span> </span>
 <span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(exp <span class="sc">==</span> <span class="dv">3</span>)</span>
@@ -495,7 +489,7 @@ Number of Fisher Scoring iterations: 2</code></pre>
 <pre><code>[1] 202.0045</code></pre>
 </div>
 </div>
-<p>Experimento 2</p>
+<p><strong>Experimento 2</strong></p>
 <div class="cell" data-hash="Aula_9_cache/html/unnamed-chunk-12_2174b8576c649efdeeff4312058c456c">
 <div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>glm2a <span class="ot">&lt;-</span> <span class="fu">glm</span>(nplants <span class="sc">~</span> trat,</span>
 <span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">family =</span> <span class="st">"gaussian"</span>,</span>
@@ -531,7 +525,7 @@ Number of Fisher Scoring iterations: 2</code></pre>
 <pre><code>[1] 194.9597</code></pre>
 </div>
 </div>
-<p>Experimento 2</p>
+<p><strong>Experimento 2</strong></p>
 <div class="cell" data-hash="Aula_9_cache/html/unnamed-chunk-13_a5fed48bca31eb7297b1bf2f4a5736f9">
 <div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>glm2b <span class="ot">&lt;-</span> <span class="fu">glm</span>(nplants <span class="sc">~</span> trat,</span>
 <span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">family =</span> <span class="fu">poisson</span>(<span class="at">link =</span> <span class="st">"log"</span>),</span>
@@ -568,7 +562,7 @@ Number of Fisher Scoring iterations: 4</code></pre>
 <pre><code>[1] 210.2353</code></pre>
 </div>
 </div>
-<p>Experimento 3</p>
+<p><strong>Experimento 3</strong></p>
 <div class="cell" data-hash="Aula_9_cache/html/unnamed-chunk-14_ecc9c3cd68e88117afff8777e3e1d320">
 <div class="sourceCode cell-code" id="cb26"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb26-1"><a href="#cb26-1" aria-hidden="true" tabindex="-1"></a>glm3 <span class="ot">&lt;-</span> <span class="fu">glm</span>(nplants <span class="sc">~</span> trat,</span>
 <span id="cb26-2"><a href="#cb26-2" aria-hidden="true" tabindex="-1"></a>            <span class="at">family =</span> <span class="st">"gaussian"</span>,</span>

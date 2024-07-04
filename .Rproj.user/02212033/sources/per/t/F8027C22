@@ -1,20 +1,12 @@
 {
-<<<<<<<< HEAD:.Rproj.user/02212033/sources/per/t/41A59DA6
-    "id": "41A59DA6",
+    "id": "F8027C22",
     "path": "~/GitHub/FIP606_2024/Aula_9_1.qmd",
     "project_path": "Aula_9_1.qmd",
     "type": "quarto_markdown",
     "hash": "836006432",
-========
-    "id": "270F49F2",
-    "path": "~/GitHub/Projeto/Projeto/FIP606_2024/Aula 1b.qmd",
-    "project_path": "Aula 1b.qmd",
-    "type": "quarto_markdown",
-    "hash": "3098037285",
->>>>>>>> 1fcb93c81d54254cd2613254bfb3cce30093fdf5:.Rproj.user/02212033/sources/per/t/270F49F2
     "contents": "",
     "dirty": false,
-    "created": 1720055949691.0,
+    "created": 1720066539145.0,
     "source_on_save": false,
     "relative_order": 15,
     "properties": {
@@ -27,14 +19,14 @@
         "scrollLine": "0",
         "rmdVisualCollapsedChunks": "",
         "docOutlineVisible": "1",
-        "rmdVisualModeLocation": "531:333.3333435058594"
+        "rmdVisualModeLocation": "2:0"
     },
     "folds": "",
     "lastKnownWriteTime": 1720063422,
     "encoding": "UTF-8",
     "collab_server": "",
     "source_window": "",
-    "last_content_update": 1720063423001,
+    "last_content_update": 1720063422,
     "read_only": false,
     "read_only_alternatives": []
 }
