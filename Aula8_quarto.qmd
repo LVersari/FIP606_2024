@@ -25,6 +25,7 @@ library(epifitter)
 ```
 
 ```{r}
+library(gsheet)
 soja <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=866852711")
 ```
 
@@ -256,6 +257,8 @@ aov_curve <- lm(severity ~ Irrigation*day + rep,
 anova(aov_curve)
 
 library(agricolae)
-cv.model(aov_audpc) #coeficiente de variação, que é o desvio padrão dividido por 100
+cv.model(aov_audpc)
 
 ```
+
+Coeficiente de variação, que é o desvio padrão dividido por 100

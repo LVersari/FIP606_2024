@@ -40,11 +40,11 @@ website:
           
       - text: Análises
         menu: 
-        - href: Aula 6.qmd
+        - href: Aula_6.qmd
           text: Estatística inferencial (2 grupos)
         - href: Aula_7.qmd
           text: Estatística inferencial (3 ou mais grupos)
-        - href: Aula_8.qmd
+        - href: Aula8_quarto.qmd
           text: Estatística inferencial - Delineamento DBC
         - href: Aula_9.qmd
           text: Regressão linear

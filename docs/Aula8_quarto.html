@@ -171,7 +171,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     </a>
     <ul class="dropdown-menu" aria-labelledby="nav-menu-análises">    
         <li>
-    <a class="dropdown-item" href="./Aula 6.html" rel="" target="">
+    <a class="dropdown-item" href="./Aula_6.html" rel="" target="">
  <span class="dropdown-text">Estatística inferencial (2 grupos)</span></a>
   </li>  
         <li>
@@ -179,7 +179,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="dropdown-text">Estatística inferencial (3 ou mais grupos)</span></a>
   </li>  
         <li>
-    <a class="dropdown-item" href="./Aula_8.qmd" rel="" target="">
+    <a class="dropdown-item" href="./Aula8_quarto.html" rel="" target="">
  <span class="dropdown-text">Estatística inferencial - Delineamento DBC</span></a>
   </li>  
         <li>
@@ -301,8 +301,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(MASS)</span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(epifitter)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
-<div class="cell" data-hash="Aula8_quarto_cache/html/unnamed-chunk-2_e7e6890a12ea0c774c4d64ef864f5a56">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>soja <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=866852711"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell" data-hash="Aula8_quarto_cache/html/unnamed-chunk-2_68bab23b8e9c7870bd7d05b7f94a17c7">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(gsheet)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>soja <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=866852711"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 <p><strong>3. ANOVA</strong></p>
 <div class="cell" data-hash="Aula8_quarto_cache/html/unnamed-chunk-3_fd1767a6c650d6981ceaacf3d4d35999">
@@ -708,7 +709,7 @@ Lower triangle: Comparisons (estimate)   earlier vs. later</code></pre>
 <p>#Diferença de produtividade = emmean do tratamento - emmean da testemunha</p>
 <p><strong>10 Novos dados</strong></p>
 <p><strong>10.1 Curve</strong></p>
-<div class="cell" data-hash="Aula8_quarto_cache/html/unnamed-chunk-13_5af9e9d0f4f8da8d4e59b6bb88452f5e">
+<div class="cell" data-hash="Aula8_quarto_cache/html/unnamed-chunk-13_ddb9a2d9130d849e06f0d7fbc8aefd0c">
 <div class="sourceCode cell-code" id="cb63"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb63-1"><a href="#cb63-1" aria-hidden="true" tabindex="-1"></a><span class="fu">theme_set</span>(<span class="fu">theme_bw</span>())</span>
 <span id="cb63-2"><a href="#cb63-2" aria-hidden="true" tabindex="-1"></a>curve <span class="ot">&lt;-</span> <span class="fu">gsheet2tbl</span>(<span class="st">"https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=1807247585"</span>)</span>
 <span id="cb63-3"><a href="#cb63-3" aria-hidden="true" tabindex="-1"></a>curve <span class="ot">=</span> <span class="fu">as.data.frame</span>(curve)</span>
@@ -782,11 +783,12 @@ Residuals      55 0.06766 0.00123
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1</code></pre>
 </div>
 <div class="sourceCode cell-code" id="cb70"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb70-1"><a href="#cb70-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(agricolae)</span>
-<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cv.model</span>(aov_audpc) <span class="co">#coeficiente de variação, que é o desvio padrão dividido por 100</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb70-2"><a href="#cb70-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cv.model</span>(aov_audpc)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>[1] 1.097572</code></pre>
 </div>
 </div>
+<p>Coeficiente de variação, que é o desvio padrão dividido por 100</p>
 
 
 
