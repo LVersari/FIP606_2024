@@ -1,0 +1,5 @@
+"0","#Filtra SNNPR"
+"0","cr_pr <- cr |>"
+"0","  select(farm, region, cultivar, sev2) |>#select é pra colunas"
+"0","  filter(region == ""SNNPR"")"
+"0","cr_pr"

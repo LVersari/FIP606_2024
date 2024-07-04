@@ -1,0 +1,5 @@
+"0","df_ec50 |> "
+"0","  ggplot(aes(reorder(ID, Estimate), Estimate))+"
+"0","  geom_point()+"
+"0","  geom_errorbar(aes(ymin = Lower, ymax = Upper))+"
+"0","  coord_flip()"

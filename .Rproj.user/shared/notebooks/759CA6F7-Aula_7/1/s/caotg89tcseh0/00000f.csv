@@ -1,0 +1,11 @@
+"0","micelial |>    "
+"0","  ggplot(aes(especie, tcm))+   "
+"0","  geom_jitter(width = 0.01)+"
+"0","  stat_summary("
+"0","    geom = ""point"","
+"0","    fun.y = ""mean"","
+"0","    size = 3,"
+"0","    color = ""red"""
+"0","  )"
+"2","Warning: The `fun.y` argument of `stat_summary()` is deprecated as of ggplot2 3.3.0.
+Please use the `fun` argument instead."

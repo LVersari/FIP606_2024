@@ -1,0 +1,4 @@
+"0","cr2 <- cr |>"
+"0","  select(farm, region, cultivar, sev2) #select é pra colunas"
+"0",""
+"0","cr2"

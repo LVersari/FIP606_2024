@@ -1,0 +1,8 @@
+"0","library(ggplot2)"
+"0","library(ggthemes)"
+"0","theme_set(theme_bw())    "
+"0","inseticida |>    "
+"0","  ggplot(aes(spray, count))+   "
+"0","  geom_boxplot()+"
+"0","  theme_few()+"
+"0","  scale_fill_manual(values = c(""#669933"", ""#FFCC66"", ""#996633"", ""#999933"", ""#336699"", ""#993366"")) "

@@ -1,0 +1,3 @@
+"0","library(magick)"
+"0","image <- image_read(""a.png"")"
+"0","print(image)"

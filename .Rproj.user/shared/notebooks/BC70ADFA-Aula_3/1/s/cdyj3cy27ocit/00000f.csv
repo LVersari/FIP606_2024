@@ -1,0 +1,7 @@
+"0","cr_pr |>"
+"0","  ggplot(aes(x = cultivar,"
+"0","             y = sev2))+"
+"0","  geom_boxplot()+"
+"0","  labs(title = ""SNNPR"","
+"0","       x = ""Cultivar"","
+"0","       y = ""Severity (%)"")"

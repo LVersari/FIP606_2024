@@ -1,0 +1,3 @@
+"0","leaflet() %>% "
+"0","  addProviderTiles(providers$OpenStreetMap.Mapnik) %>% "
+"0","  setView(lng = -42.87127507493794, lat = -20.758814863222565, zoom = 18)"

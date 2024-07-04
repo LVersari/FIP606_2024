@@ -1,0 +1,137 @@
+---
+format: html
+editor: visual
+message: false
+warning: false
+---
+
+# 1. RStudio:
+
+A interface do RStudio é normalmente dividida em 4 partes, conforme apresentado na imagem abaixo pelos números 1, 2, 3 e 4.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(magick)
+image <- image_read("d.png")
+print(image)
+```
+
+1 - **script**, nessa janela é possível colocar em cada linha códigos e o `Enter`é utilizado para quebra de linha. Para executar o comando usa `Control+Enter` ou clique em `Run` (**⊳**) no canto superior direito do chunck.
+
+2 - **console**, trabalhar no console é muito limitado, pois as instruções devem ser inseridas uma por uma. Para executar o comando preciona `Ènter`.
+
+3 - **Environment**, é onde ficam armazendos os objetos criados, bases de dados importadas, etc. **History**, onde fica o histórico dos comandos executados.
+
+4 - **Files, Plots, Packages, Help, Viewer**, em `Files` encontra as pastas e arquivos carregados no RStudio. A visualização de grãficos em `Plots`, buscar pacotes instalados em `Packages`, para saber mais sobre as funções em `Help` e visualizar imagens carregadas em `Viewer`.
+
+## 2. Trabalhe de forma organizada
+
+Para isso pode ser criado um projeto clicando na barra de ferramentas superior em `File` e em seguida em `New project`.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(magick)
+image <- image_read("a.png")
+print(image)
+```
+
+Assim você pode trabalhar com diferentes cojuntos de dados ao mesmo tempo sem que ocorra a interveção ou conflitos entre os conjuntos de dados. Recomenda para cada trabalho, separar em projetos. Ex: um projeto para conjuntos de dados referente a pesquisa **Monitoramento da sensibilidade in vitro de** *Colletotrichum truncatum* **à fungicidas** e outro projeto para o conjunto de dados da pesquisa **Épocas de aplicações de fungicidas multissítios no controle de mancha alvo na cultura da soja**.
+
+Após criar o projeto inicia o trabalho com o conjunto de dados, criando uma página para desenvolver o spript, clicando em `File` e depois em `New File`, podendo selecionar `Quarto Document...` ou `R Markdown`.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(magick)
+imagem <- image_read("b.png")
+print(imagem)
+```
+
+## 3. Diferença de Quarto Document e R Markdown
+
+O Quarto é uma versão mais avançada e atualizada do R Markdown, com novos recursos, podendo renderizar a maioria dos arquivos `**.Rmd**` existentes sem modificação, possibilitando a criação de relatórios ou textos em diferentes formatos (HTML, PDF, Word e outros). Nessa página Web foi utilizado apenas Quarto Document.
+
+## 4. Chunk
+
+```{r}
+
+```
+
+Acima foi inserido um chuck. Chunck é um bloco de código dentro de um documento R Markdown (ou Quarto) que permite a execução de código R ou de outros idiomas suportados (como Python, SQL, etc.) dentro de um documento de texto. Um atalho que pode ser usado para sua criação é o **Ctrl + Alt + I** ou inserir o chunck conforme mostra a imagem a seguir:
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(magick)
+imagem <- image_read("c.png")
+print(imagem)
+```
+
+## 5. Ferramentas de Texto
+
+**Negrito: inserir antes e depois do texto que deseja apresentar em negrito, dois asteriscos** \*\*. *Itálico*: inserir antes e depois do texto que deseja apresentar em itálico, um asteriscos \* \*. Título e subtítulos: Fora do chunck, para visualizar o texto como título, colocar um **\#** antes e um **\#** depois do texto. Para subtítulos, colocar dois **\##** antes e dois **\##** depois texto. Comentários: dentro do chunck escrever comentários utilizando antes do texto #. Texto: para rodar o código do chunck como texto, ex: nome da planilha excel, utilizar aspas duplas **"** antes e depois do texto. `Funções`: fora do chunck, para destacar uma função no texto, inserir antes e depois do texto uma aspas **\`**.
+
+## 6. Atribuição de Valores
+
+Quando queremos atribuir um valor para algum nome, podemos utilizar `<-`. Desse modo, se quisermos trabalhar com esses valores ou conjunto de valores atribuídos a um nome, podemos utilizar diretamente o nome, sem precisar repetir o valor.
+
+```{r}
+x <- 10
+x
+
+y <- x*10
+y
+
+z <- x*y
+z
+```
+
+## 7. Conjunto de valores
+
+Para criar um conjunto de valores, pode-se utilizar `c()`e colocar os valores desejados. Caso os valores sejam contínuos, pode-se agrupá-los usando :, desse modo o conjunto será formado por todos os valores que estão entre os dois números colocados.
+
+```{r}
+A <- c(1:10)
+A 
+B <- c(11:20)
+B
+```
+
+## 8. Data frame
+
+O **data frame** é é o objeto que guarda o conjunto de dados na forma de tabela (tabulares ou planos). Podendo armazenar vetores de diferentes tipos (caracteres, numéricos, lógico e etc) nas suas colunas. Ele pode ser criado por meio da junção de dois ou mais conjunto de dados, usando a função `data.frame()`, mas, para isso, o número de valores presentes nos conjuntos deve ser o mesmo.
+
+```{r}
+df <- data.frame(A,B)
+df 
+```
+
+## 9. Pipe `|>`
+
+Utilizado quando desejar que todas as funções executadas estejam se referindo a um determinado data frame sem precisar chamá-lo repetidamente, podemos usar um pipe, precisando `Ctrl+Shift+M`. O pipe indica que todas as funções abaixo dele estão se referindo ao data frame especificado.
+
+```{r}
+df2 <- cars
+cars
+```
+
+## 10. Criar coluna dentro do data frame
+
+É utilizado `$` para criar uma nova coluna dentro do data frame, como mostra a seguir:
+
+```{r}
+df2$dist2 <- c(1:50)
+df2
+```
+
+```{r}
+library(tidyverse)
+
+df2 |>
+  mutate(dist3 = dist2+1) |> 
+  select(1)
+```
+
+## 11. Criar arquivo HTML
+
+Para transformar o documento `.qmd` em `HTML` ou em outros formatos, é necessário renderizar o documento. Para isso basta clicar no menu superior em Render para que o documento ou site seja criado.
+
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+library(magick)
+imagem <- image_read("f.png")
+print(imagem)
+```

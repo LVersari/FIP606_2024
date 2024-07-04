@@ -1,0 +1,227 @@
+---
+format: html
+editor: visual
+message: false
+warning: false
+---
+
+```{css}
+#| echo: false 
+p {
+  text-align: justify 
+}
+```
+
+Carregando os pacotes
+
+```{r}
+#| eval: FALSE
+#| output: FALSE
+#| mmessage: FALSE
+
+
+#Para instalar o pacote rnaturalearthhires:
+remotes::install_github("ropensci/rnaturalearthhires")
+install.packages("rnaturalearthhires", repos = "https://ropensci.r-universe.dev", type = "source")
+```
+
+```{r}
+library(tidyverse)
+library(gsheet)
+library(ggthemes)
+library(r4pde)
+library(ggspatial)
+library(rnaturalearth)
+library(rnaturalearthhires)
+library(plotly)
+```
+
+**1. Criando mapas**
+
+**2. Mapa-múndi**
+
+Pacotes utilizados para criar o mapa a seguir: `rnaturalearth` e `ggplot`.
+
+Com a função `ne_countries`, é possível criar mapa-múndi, mapas de continentes e de países. Após definir a região, é usada a função `geom_sf` para visualização de objetos.
+
+```{r}
+WORLD <- ne_countries()
+
+ggplot(WORLD)+
+  geom_sf()+
+  theme_map()
+```
+
+Para criar um mapa destacando um continente ou país, utiliza os argumentos `continent` ou `country`, respectivamente:
+
+```{r}
+AS <- ne_countries(continent = "Asia")
+
+ggplot(AS)+
+  geom_sf()+
+  theme_map()
+```
+
+Para criar um mapa-múndi com países selecionados em destaque:
+
+```{r}
+# Definir países a serem destacados
+WORLD_destaque <- c("Brazil", "China", "France", "Ethiopia", "Australia")
+
+# Criando uma coluna para identificar os países selecionados
+WORLD$destaque <- ifelse(WORLD$name %in% WORLD_destaque, "destaque", "normal")
+
+# Plotando o mapa com os países destacados
+ggplot(data = WORLD) +
+  geom_sf(aes(fill = destaque), color = "darkblue", show.legend = FALSE) +
+  scale_fill_manual(values = c("destaque" = "green", "normal" = "white")) +
+  theme_map ()
+```
+
+### 3. Mapas de países
+
+Para criar um mapa de um país, é utilizada a função `ne_states`, incluindo o argumento `country` em que é definido o país de interesse.
+
+```{r}
+BRA <- ne_states(country = "Brazil",
+                 returnclass = c("sf"))
+
+ggplot(BRA) + 
+  geom_sf(fill = "white",
+          color = "black")#+
+  #theme_map()
+```
+
+É possível criar um mapa destacando um estado ou localidade de interesse. Para isso, é criado um novo objeto, filtrando o estado de interesse, por exemplo, Minas Gerais.
+
+```{r}
+MG <- BRA %>% 
+  filter(name_en == "Minas Gerais")
+```
+
+**4. Selecionar estado**
+
+```{r}
+ggplot(BRA) +
+geom_sf(color = "darkblue",
+          fill = "white") +
+  geom_sf(data = MG, 
+          color = "grey",
+          fill = "darkorange")
+```
+
+```{r}
+ggplot(MG) +
+  geom_sf(fill = "white")
+```
+
+## 5. Mapas interativos
+
+Com as funções `ggplotly` (**`plotly`**) e `leaflet` (**`leaflet`**) pode ser criado mapas interativos.
+
+#### 5.1 `plotly`
+
+```{r}
+BR_int <- ggplot(BRA) +
+  geom_sf(fill = "white",
+          color = "black",
+          linewidth = 0.3)+
+  theme_map()
+
+ggplotly(BR_int)
+```
+
+#### 5.2`leaflet`
+
+Com a função `leaflet` é possível criar mapas de localidades específicas. Fornecendo as coordenadas geográficas.
+
+Será usado como exemplo a longitude e latitude de Viçosa (lng = -42.8825, lat = -20.7546).
+
+```{r}
+library(leaflet)
+
+leaflet() %>% 
+  addTiles() %>% 
+  setView(lng = -42.8825, lat = -20.7546, zoom = 13)
+```
+
+Mapas criados pela função `leaflet` podem ser personalizados utilizando a função `addProviderTiles`. Mais informações são encontradas em "*providers*".
+
+```{r}
+leaflet() %>% 
+  addProviderTiles(providers$OpenStreetMap.Mapnik) %>% 
+  setView(lng = -42.87127507493794, lat = -20.758814863222565, zoom = 18)
+```
+
+**5.3 Mapas interativos com pontos**
+
+Para criar um mapa com pontos é preciso que no conjunto de dados existam colunas identificadas como "latitude" (ou lat) e longitutude" (ou lgn). Essas coordenadas serão necessárias para plotar (`geom_point`) os pontos no gráfico.
+
+```{r}
+sbr <- r4pde::RustSoybean
+```
+
+```{r}
+BR_int <- ggplot(BRA) +
+  geom_sf(fill = "white",
+          color = "darkblue",
+          linewidth = 0.3)+
+  geom_point(data = sbr,
+             aes(longitude, latitude),
+             color = "darkorange")+
+  theme_map()
+
+ggplotly(BR_int)
+```
+
+```{r}
+leaflet(sbr,
+        options = leafletOptions(minZoom = 4,
+                                 maxZoom = 6)) %>% 
+  addTiles() %>% 
+ #comando que permite centralizar o mapa em um local:
+ #setView(lng = -42.8825, lat = -20.7546, zoom = 4) %>% 
+  addCircleMarkers(radius = 5,
+                   stroke = FALSE)
+```
+
+**5.4 Mapas associados a gráficos**
+
+Importação de conjuntos de dados
+
+```{r}
+data <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1pAIFKsdKxk_UQQXdYwIO-O5NOkYNhpclImJcLziYnk4/edit#gid=50258992")
+```
+
+Pacotes:
+
+**`ggrepel`**, permite adicionar nomes aos pontos de latitude e longitude.
+
+**`scatterpie`**, para transformar os pontos em um gráfico de pizza, em função das variáveis.
+
+```{r}
+library(ggrepel)
+library(scatterpie)
+```
+
+```{r}
+ggplot(BRA) +
+  geom_sf(fill = "gray70", alpha = 0.5, color = "white") +
+  coord_sf()+
+  geom_scatterpie(aes(x = lon, y = lat, r = 0.6), alpha = 0.8, color = NA, data = data,
+                  cols = c("DFC",
+                           "MA",
+                           "FER",
+                           "ANTR",
+                           "OIDIO"))+
+  geom_text_repel(data = data, aes(lon, lat, label = Local),
+                   size = 2, nudge_x = 0.2, nudge_y = 0.27, color = "gray30", family = "Arial") +
+  ggthemes::scale_fill_calc()+
+  ggthemes::theme_map() +
+  labs(x = "Longitude", 
+       y = "Latitude", 
+       legend = "", 
+       fill = "Doença")+
+  theme(legend.position = "bottom", 
+        text = element_text(family = "Arial", size = 8))
+```

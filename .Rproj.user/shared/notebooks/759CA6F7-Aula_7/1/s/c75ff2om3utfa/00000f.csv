@@ -1,0 +1,6 @@
+"0","mf <- lm(severity ~ treat*factor(dose),          "
+"0","         data = li) mf anova(mf) "
+"2","Error: unexpected symbol in:
+""mf <- lm(severity ~ treat*factor(dose),          
+         data = li) mf""
+"

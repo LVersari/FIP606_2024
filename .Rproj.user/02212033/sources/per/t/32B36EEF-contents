@@ -1,0 +1,187 @@
+---
+format: html
+editor: visual
+message: false
+warning: false
+---
+
+## 1. Abrindo arquivo .CSV
+
+Utilizamos o "tidyverse" para abrir a planilha em .CSV com o comando "read_csv" e o link para o arquivo.
+
+```{r}
+library(tidyverse)
+
+cr <- read_csv("https://raw.githubusercontent.com/emdelponte/paper-coffee-rust-Ethiopia/master/data/survey_clean.csv")
+cr
+```
+
+A tabela importada foi:
+
+```{r}
+head(cr)
+```
+
+Para visualizar o conjunto de dados pode-se utilizar a função "glimpse" que mostra os detalhes da tabela e das váriaveis.
+
+```{r}
+glimpse(cr)
+```
+
+## 2. Visualização de dados
+
+No historama podemos obserar a dispersão dos dados. Além disso, podemos plotar um sumário para saber dados sobre os dados como um todo.
+
+```{r}
+library(ggplot2)
+
+cr |>
+
+  ggplot(aes(x = inc))+
+
+  geom_histogram()+
+
+  facet_wrap(~region) #Separa por região.
+
+summary(cr$inc)
+```
+
+**2° Histograma**
+
+# Importação de dados disponível em planilha drive (online).
+
+Para a importação dos dados diretamente do google drive foi utilizado o pacote `gsheet`e a função `gsheet2tbl`.
+
+```{r}
+library(tidyverse)
+
+library(gsheet)
+
+notas <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=1092065531 ")
+
+glimpse(notas)
+```
+
+# Criação de subconjuntos e tabela de contingência
+
+Para analisar a frequência de cada nota, os dados da prova 1 foram separados da prova 2.
+
+Para isso, foi utilizado a função `select()` para selecionar apenas as colunas `nota`e `prova`. Posteriormente utilizou a função `count()` para separar os dados da prova 1 e prova 2.
+
+```{r}
+notas1 <- notas |> 
+
+  select(prova, nota) |> 
+
+  filter(prova == "1")
+
+notas1
+
+notas2 <- notas |> 
+
+  select(prova, nota) |> 
+
+  filter(prova == "2")
+
+notas2
+
+notas1 |> 
+
+  count(nota)
+
+notas2 |> 
+
+  count(nota)
+```
+
+# Análise descritiva
+
+Para descrever aspectos importantes do conjunto de dados sumarizado, foi utilizada a função `group_by` para agrupar os dados em 2 grupos (prova 1 e prova 2), em seguida foi inserida a função `summarise()` que oferece uma análise descritiva resumida, contendo: média, mediana e desvio padrão da váriavel contínua (prova).
+
+Para observar a distribuição de frequências da variável **nota**, foi gerado um histograma para cada prova, inserindo a função `geom_histogram()`. Adiante, os histogramas foram gerados em uma mesma imagem, utilizando a função `plot_layout()`do pacote `patchwork()`.
+
+```{r}
+notas |> 
+
+  group_by(prova) |> 
+
+  summarise(nota_mean = mean(nota),
+
+            nota_sd = sd(nota),
+
+            nota_med = median(nota))
+
+media1 <- mean(notas1$nota)
+
+media2 <- mean(notas2$nota)
+
+library(ggthemes)
+
+p1 <- notas1 |> 
+
+  ggplot(aes(x = nota))+
+
+  geom_histogram(bins = 5, fill = "darkorange", color = "white")+
+
+  geom_vline(xintercept = media1, color ="black", linetype = "dashed") +
+
+  scale_fill_canva()+
+
+  theme_bw(base_size = 14)+
+
+  theme(legend.position = "bottom")+
+
+  annotate(geom = "text",
+
+           x = 72,
+
+           y = 7.5,
+
+           label = "Mean")+
+
+  ylim(0,10)+
+
+  labs(y = "Frequency",
+
+       x = "Notas",
+
+       title = "Prova 1")
+
+p2 <- notas2 |> 
+
+  ggplot(aes(x = nota))+
+
+  geom_histogram(bins = 5, fill = "darkcyan", color = "white")+
+
+  geom_vline(xintercept = media2, color ="black", linetype = "dashed") +
+
+  scale_fill_canva()+
+
+  theme_bw(base_size = 14)+
+
+  theme(legend.position = "bottom")+
+
+  annotate(geom = "text",
+
+           x = 72,
+
+           y = 6.5,
+
+           label = "Mean")+
+
+  ylim(0,10)+
+
+  labs(y = "Frequency",
+
+       x = "Notas",
+
+       title = "Prova 2")
+
+library(patchwork)
+
+(p1 + p2) + 
+
+  plot_layout(guides = "collect",
+
+              axes = "collect")
+```

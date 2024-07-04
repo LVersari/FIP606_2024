@@ -1,0 +1,10 @@
+"0","leaflet(sbr,"
+"0","        options = leafletOptions(minZoom = 4,"
+"0","                                 maxZoom = 6)) %>% "
+"0","  addTiles() %>% "
+"0"," #comando que permite centralizar o mapa em um local:"
+"0"," #setView(lng = -42.8825, lat = -20.7546, zoom = 4) %>% "
+"0","  addCircleMarkers(radius = 5,"
+"0","                   stroke = FALSE)"
+"2","Assuming ""longitude"" and ""latitude"" are longitude and latitude, respectively
+"

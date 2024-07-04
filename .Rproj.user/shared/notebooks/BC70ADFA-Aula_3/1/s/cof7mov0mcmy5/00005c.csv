@@ -1,0 +1,4 @@
+"0",""
+"0","# Salvar o gráfico"
+"0","ggsave(""plott1.png"", plot = g1, bg = ""white"")"
+"2","[38;5;253mSaving 6.79 x 4.2 in image[39m"

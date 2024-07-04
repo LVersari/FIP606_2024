@@ -1,0 +1,3 @@
+"0","micelial |>    "
+"0","  ggplot(aes(especie, tcm))+   "
+"0","  geom_jitter(width = 0.05) "

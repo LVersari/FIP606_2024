@@ -1,0 +1,84 @@
+---
+format: html
+editor: visual
+message: false
+warning: false
+---
+
+# 1. Regressão não-linear
+
+São adotadas as análises de regressão não-linear em estudos que apresentam relações complexas entre as variáveis, que não é capaz de ser explicados com modelos de regressão linear.
+
+O conjunto de dados importado acima tem duas replicatas para cada nível de fator, para que facilite a sua análise, será agrupado as replicatas em um único dado, pegando a média deles.
+
+```{r}
+library(gsheet)
+library(dplyr)
+library(tidyverse)
+library(ggplot2)
+pyra <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=465348652")
+
+pyra2 <- pyra |> 
+  group_by(code, state, dose) |> 
+  summarise(mean_germination = mean(germination), .groups = "drop")
+```
+
+## Visualização dos dados
+
+```{r}
+pyra2 |> 
+  ggplot(aes(dose, mean_germination))+
+  geom_point()+
+  geom_smooth(span = 3, se = FALSE)+
+  facet_wrap(~code)
+```
+
+Nota-se que o conjunto de dados não segue o modelo linear e nem o modelo quadrático.
+
+## 2. Estimativa da EC50
+
+EC50 - Concentração efetiva de fungicida(mg/L) capaz de inibir 50% da germinação de conídios.
+
+Utiliou um modelo não-linear para análise de regressão, e a partir dos parâmetros da equação (coeficiente angular e coeficiente linear) é estimada a EC50.
+
+Usou o pacote `drc` e as funções `ED()`, `drm()` e o argumento `fct = LL.3()` (log-logistic de 3 parâmetros).
+
+```{r}
+library(drc)
+
+isolado165 <- pyra2 |> 
+  filter(code == "165")
+
+drc1 <- drm(mean_germination ~ dose, data = isolado165,
+            fct = LL.3())
+AIC(drc1) 
+plot(drc1) 
+ED(drc1, 50, interval = "delta") #O interval = delta fornece o intervalo de confiança
+```
+
+A EC50 pode ser estimada a partir do pacote `ec50estimator` e a função `estimate_EC50()`.
+
+No exemplo a seguir foi usado o argumento `fct = drc::LL.3()`.
+
+```{r}
+library(ec50estimator)
+
+df_ec50 <- estimate_EC50(mean_germination ~ dose,
+                         data = pyra2,
+                         isolate_col = "code",
+                         interval = "delta",
+                         fct = drc::LL.3())
+df_ec50
+```
+
+Para uma melhor visualização das estimativas de EC50 foi plotado um gráfico utilizando as funções `geom_point` e `geom_errorbar`.
+
+```{r}
+df_ec50 |> 
+  ggplot(aes(reorder(ID, Estimate), Estimate))+
+  geom_point()+
+  geom_errorbar(aes(ymin = Lower, ymax = Upper))+
+  coord_flip()
+```
+
+Os isolados apresentaram valores distintos de EC50 entre si.

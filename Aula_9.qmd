@@ -1,0 +1,196 @@
+\-\--
+
+format: html
+
+editor: visual
+
+message: false
+
+warning: false
+
+\-\--
+
+1\. Carregamento pacotes
+
+```{r}
+library(gsheet)
+library(tidyverse)
+library(lme4)
+library(car)
+library(performance)
+library(DHARMa)
+library(emmeans)
+library(multcomp)
+library(multcompView)
+library(patchwork)
+library(r4pde)
+
+library(mvtnorm)
+library(survival)
+library(TH.data)
+library(MASS)
+```
+
+2 Importação dos dados
+
+```{r}
+estande <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=401662555")
+
+estande <- estande %>% 
+  mutate(bloco = as.factor(bloco))
+```
+
+3 Visualização Foi utilizada as funções `geom_jittler` para visualizar a distribuição dos dados e `geom_smooth` para mostrar a linha de tendência linear ajustada dos dados.
+
+```{r}
+estande %>% 
+  ggplot(aes(trat, nplants))+
+  geom_jitter(width = 0.2, alpha = 0.2, color = "darkorange")+
+  stat_summary(fun.data = "mean_cl_boot")+
+  geom_smooth(method = "lm", se = FALSE)+
+  facet_wrap(~exp)
+```
+
+```{r}
+estande %>% 
+  ggplot(aes(trat, nplants))+
+  geom_jitter(width = 0.2, alpha = 0.2, color = "darkblue")+
+  stat_summary(fun.data = "mean_cl_boot")+
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+Comparação de cada experimento
+
+Experimento 1
+
+```{r}
+exp1 <- estande %>% 
+  filter(exp == 1)
+
+exp1 %>% 
+  ggplot(aes(trat, nplants))+
+  geom_point()+
+  ylim (0,100)+
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+```{r}
+lm1 <- lm (nplants ~ trat,
+           data = exp1)
+summary(lm1)
+```
+
+Experimento 2
+
+```{r}
+exp2 <- estande %>% 
+  filter(exp == 2)
+
+exp2 %>% 
+  ggplot(aes(trat, nplants))+
+  geom_point()+
+  ylim (0,100)+
+  geom_smooth (se = FALSE)+
+  geom_smooth(method = "lm", se = FALSE, color = "darkorange")
+```
+
+Com base no comportamente da variável resposta nplants em função do trat, seria interessante utilizar a transformação de trat para log10, para uma possível linearização da curva respota.
+
+```{r}
+lm2 <- lm (nplants ~ trat,
+           data = exp2)
+summary(lm2)
+```
+
+Experimento 3
+
+```{r}
+exp3 <- estande %>% 
+  filter(exp == 3)
+
+exp1 %>% 
+  ggplot(aes(trat, nplants))+
+  geom_point()+
+  ylim (0,100)+
+  geom_smooth(method = "lm", se = FALSE)
+```
+
+```{r}
+lm3 <- lm (nplants ~ trat,
+           data = exp3)
+summary(lm3)
+```
+
+Modelos lineares generalizados Foi utilizado modelos lineares generalizados para comparar o ajuste em cada experimento. Utilizando o critério de seleção Akaiake (AIC). Experimento 1
+
+```{r}
+glm1 <- glm(nplants ~ trat,
+            family = "gaussian",
+            data = exp1)
+
+summary(glm1)
+AIC(glm1)
+```
+
+Experimento 2
+
+```{r}
+glm2a <- glm(nplants ~ trat,
+            family = "gaussian",
+            data = exp2)
+
+summary(glm2a)
+AIC(glm2a)
+```
+
+Experimento 2
+
+```{r}
+glm2b <- glm(nplants ~ trat,
+            family = poisson(link = "log"),
+            data = exp2)
+
+summary(glm2b)
+AIC(glm2b)
+```
+
+Experimento 3
+
+```{r}
+glm3 <- glm(nplants ~ trat,
+            family = "gaussian",
+            data = exp3)
+
+summary(glm3)
+AIC(glm3)
+```
+
+```{r}
+glm3b <- glm(nplants ~ trat,
+            family = poisson(link = "log"),
+            data = exp3)
+
+summary(glm3b)
+AIC(glm3b)
+```
+
+Análise dos experimentos como um conjuto Utilizou o critério de informação AIC para a escolha do modelo de regressão.
+
+```{r}
+glm_exp <- glmer(nplants ~ trat + (trat | exp),
+            family = "gaussian",
+            data = estande)
+
+summary(glm_exp)
+AIC(glm_exp)
+```
+
+```{r}
+
+glm_exp_2 <- glmer(nplants ~ trat + (trat | exp),
+            family = poisson(link = "log"),
+            data = estande)
+
+summary(glm_exp_2)
+AIC(glm_exp_2)
+```

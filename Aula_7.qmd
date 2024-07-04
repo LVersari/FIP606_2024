@@ -1,0 +1,280 @@
+---
+format: html
+editor: visual
+message: false
+warning: false
+---
+
+## 1. Carregamento de dados
+
+```{r}
+library(gsheet)
+micelial <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=959387827") 
+```
+
+**2. Carregamento pacotes**
+
+```{r}
+library(mvtnorm)
+library(survival)
+library(TH.data)
+library(MASS)
+library(tidyverse)
+```
+
+**3. Visualização dos dados**
+
+```{r}
+micelial |> 
+  ggplot(aes(especie, tcm))+
+  geom_jitter(width = 0.01)+
+  stat_summary(
+    geom = "point",
+    fun.y = "mean",
+    size = 3,
+    color = "cornflowerblue"
+  )
+```
+
+**4. Testando as premissas**
+
+Antes da execução da ANOVA é verificada as premissas: homogeneidade de variâncias e normalidade.
+
+**4.1 Teste de Bartlett**
+
+O teste de Bartlett é usado para verificar se as amostras têm homogeneidade de variâncias (variâncias iguais).
+
+**4.1.1 Pressupostos**
+
+O teste assume que as observações são independentes.
+
+**4.1.2 Hipóteses**
+
+**Hipótese nula:** as variâncias são iguais.\
+**Hipótese alternativa:** As variâncias são desiguais para pelo menos dois grupos.
+
+```{r}
+m1 <- lm(tcm ~ especie-1, data = micelial) 
+anova(m1) 
+summary(m1) 
+hist(m1$residuals) 
+```
+
+**4.2 Shapiro-Wilk**
+
+Para verificar se os dados apresentam uma distribuição normal foi utilizada a função `shapiro.test`.
+
+```{r}
+shapiro.test(m1$residuals) 
+```
+
+**4.3 DHARma e Performance**
+
+Os pacotes `performance` e `DHARma` são utilizados para também para averiguar se os dados apresentam normalidade e se as variâncias são heterogêneas.
+
+O DHARma faz o outro test (KS test), saída das variâncias com texto em vermelho indica que as variâncias são heterogêneas.
+
+```{r}
+library(DHARMa) 
+plot(simulateResiduals(m1))  
+library(performance) 
+check_normality(m1) 
+check_heteroscedasticity(m1) 
+check_model(m1)
+```
+
+**5. Diferença entre médias**
+
+Foi utilizado o pacote `emmeans` para calcular as médias e o pacote `multcomp` para fazer a comparações multiplas de médias
+
+```{r}
+library(emmeans) 
+medias1 <- emmeans(m1, ~ especie) 
+library(multcomp) 
+library(multcompView) 
+cld(medias1)  
+```
+
+As médias foram separadas em 3 grupos. No entanto a espécie Fmer diferiu apenas em relação a espécie Fgra (grupo 1), e não diferindo estatísticamente das demais espécies (grupos 2 e 3).
+
+**6. Carregando outro conjunto de dados**
+
+ Foi utilizado um conjunto de dados presente no R  "`InsectSprays"`, atribuído a um objeto.
+
+```{r}
+inseticida <- InsectSprays 
+library(tidyverse) 
+inseticida |>    
+  count(spray)
+```
+
+**7. Visualização dos dados**
+
+foi plotado um gráfico boxplot para a visualização dos dados.
+
+```{r}
+library(ggplot2)
+library(ggthemes)
+theme_set(theme_bw())    
+inseticida |>    
+  ggplot(aes(spray, count, group = spray, fill = spray))+   
+  geom_boxplot()+
+  theme_few()+
+  scale_fill_manual(values = c("#669933", "#FFCC66", "#996633", "#999933", "#336699", "#993366")) 
+```
+
+Na visualização é possível observar três agrupamento, tratamento spray A e B (grupo 1), C, D e E (grupo 2) e F (grupo 3).
+
+**8. Ajuste do novo modelo**
+
+```{r}
+m1 <- lm(count ~ spray,           
+         data = inseticida) 
+summary(m1) 
+```
+
+**9. Comparação de médias**
+
+Usou o pacote `emmeans` para calcular as médias e em seguida realizou a comparação de médias utilizando o pacote `multcomp`.
+
+```{r}
+anova(m1)   
+library(emmeans) 
+m1_medias <- emmeans(m1, ~ spray) 
+plot(m1_medias) 
+library(multcomp) 
+cld(m1_medias)  
+```
+
+Assim como no gráfico boxplot no item 7., aqui é possível também visualizar o agrupamento em três grupos de eficiência de controle. Tratamento spray A e B (grupo 1), C, D e E (grupo 2) e F (grupo 3).
+
+**10. Testando premissas**
+
+Foi verificada a normalidade e homogeneidade de variâncias do conjunto de dados utilizando:
+
+`hist`, `qqnorm`, `qqline` e `shapiro.test` para averiguar a normalidade dos dados;
+
+`bartlett.test` para verificar a homocedasticidade;
+
+E os pacotes **perfomance** e **DARMa** para verificar as duas premissas, normalidade e homocedasticidade.
+
+```{r}
+m1$residuals 
+hist(m1$residuals) 
+qqnorm(m1$residuals) 
+qqline(m1$residuals) 
+shapiro.test(m1$residuals) 
+bartlett.test(count ~ spray,               
+              data = inseticida)  
+library(performance) 
+check_normality(m1) 
+check_heteroscedasticity(m1)  
+library(DHARMa) 
+plot(simulateResiduals(m1))
+```
+
+Os dados não apresentaram distribuição normal e homogeneidade de variância.
+
+O próximo passo é utilizar a transformação dos dados para tentar corrigir os erros de normalidade e homocedasticidade.
+
+**11. Tranformação**
+
+**11.1 Formas de visualização das comparações de médias**
+
+Foi usada a função `pwpp` (`emmeans`) para plotar os valores de probabilidade associados as comparações pareadas das médias marginais estimadas.
+
+```{r}
+m2 <- lm(count ~ spray,          
+         data = inseticida) 
+summary(m2) 
+anova(m2)  
+```
+
+```{r}
+library(emmeans) 
+m2_medias <- emmeans(m2, ~ spray) 
+plot(m2_medias) 
+library(multcomp) 
+cld(m2_medias)  
+pwpm(m2_medias) 
+pwpp(m2_medias) 
+pairs(m2_medias) 
+m2$residuals 
+hist(m2$residuals) 
+qqnorm(m2$residuals) 
+qqline(m2$residuals) 
+shapiro.test(m2$residuals) 
+bartlett.test(count ~ spray,               
+              data = inseticida)  
+library(performance) 
+check_normality(m2) 
+check_heteroscedasticity(m2)  
+library(DHARMa) 
+plot(simulateResiduals(m2))   
+```
+
+**11.2 Transformação Box-Cox**
+
+```{r}
+library(MASS) 
+b <- boxcox(lm(inseticida$count + 0.1 ~1)) 
+lambda <- b$x[which.max(b$y)] 
+lambda   
+inseticida$count3 <- (inseticida$count ^ lambda - 1) 
+lambda
+inseticida$count3  
+```
+
+**11.2 Não paramétrico**
+
+A segunda alternativa para explorar os efeitos dos tratamentos desse conjunto de dados pode ser utilizado o teste não paramétrico, para a comparação entre grupos.
+
+Utilizou o teste Kruskal-Wallis.
+
+```{r}
+library(agricolae) 
+kruskal.test(count ~ spray,              data = inseticida)  
+m3 <- kruskal(inseticida$count,         inseticida$spray,         group = TRUE) 
+m3 
+```
+
+**11.3 GLMs**
+
+Os modelos lineares generalizados podem ser visto como um método de transformação mais elegante que os mostrados acima. Abaixo foi aplicado uma distribuição de Poisson.
+
+Com a função `glm` é possível realizar o ajuste do modelo linear, sendo necessário indicar o conjunto de dados em questão, a variável resposta, a variável independente e a família de distribuição de probabilidade.
+
+```{r}
+m4 <- glm(count ~ spray,           family = poisson,           
+          data = inseticida) 
+summary(m4) 
+anova(m4) 
+library(car) 
+Anova(m4) 
+plot(simulateResiduals(m4)) 
+m4_medias <- emmeans(m4, ~ spray,                      type = "response") 
+cld(m4_medias)
+```
+
+**12. ANOVA Fatorial**
+
+```{r}
+library(gsheet) 
+li <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=2023059672")  
+li |>    
+  ggplot(aes(factor(dose), severity, color = factor(dose)))+   
+  geom_jitter(width =0.1)+   
+  facet_wrap(~treat)
+```
+
+**13. Modelo Fatorial (two-way anova)**
+
+```{r}
+mf <- lm(severity ~ treat*factor(dose),          
+         data = li) 
+mf 
+anova(mf) 
+plot(simulateResiduals(mf)) 
+mf_medias <- emmeans(mf, ~ dose | treat) 
+cld(mf_medias) 
+```

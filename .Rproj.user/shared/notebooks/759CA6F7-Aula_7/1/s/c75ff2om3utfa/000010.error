@@ -1,0 +1,1 @@
+{"frames":[],"message":"Error: unexpected symbol in:\n\"mf <- lm(severity ~ treat*factor(dose),          \n         data = li) mf\"\n"}

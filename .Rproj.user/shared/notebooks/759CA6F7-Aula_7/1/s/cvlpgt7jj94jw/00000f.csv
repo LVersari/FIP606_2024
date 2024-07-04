@@ -1,0 +1,5 @@
+"0","m4 <- glm(count ~ spray,           family = poisson,           "
+"0","          data = inseticida) "
+"0","summary(m4) anova(m4) "
+"2","Error: unexpected symbol in ""summary(m4) anova""
+"

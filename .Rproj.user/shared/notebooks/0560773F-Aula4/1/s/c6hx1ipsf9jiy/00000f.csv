@@ -1,0 +1,11 @@
+"0","cr <- read_csv(""https://raw.githubusercontent.com/emdelponte/paper-coffee-rust-Ethiopia/master/data/survey_clean.csv"")"
+"2","[1mRows: [22m[34m405[39m [1mColumns: [22m[34m13[39m"
+"2","[36m──[39m [1mColumn specification[22m [36m──────────────────────────────────────────────────────────────────────[39m
+[1mDelimiter:[22m "",""
+[31mchr[39m (7): region, zone, district, cultivar, shade, cropping_system, farm_management
+[32mdbl[39m (6): farm, lon, lat, altitude, inc, sev2"
+"2","
+[36mℹ[39m Use `spec()` to retrieve the full column specification for this data.
+[36mℹ[39m Specify the column types or set `show_col_types = FALSE` to quiet this message."
+"0","cr |> "
+"0","  count(region, zone) #Formato longo"

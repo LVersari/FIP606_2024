@@ -1,0 +1,261 @@
+---
+format: html
+editor: visual
+message: false
+warning: false
+---
+
+**1. Delineamento de Blocos Casualizados (DBC)**
+
+**2. Carregamento de pacotes e Importação dos dados**
+
+```{r}
+library(tidyverse)
+library(gsheet)
+library(gsheet)
+library(tidyverse)
+library(patchwork)
+library(performance)
+library(DHARMa)
+library(emmeans)
+library(multcomp)
+library(multcompView)
+library(MASS)
+library(epifitter)
+```
+
+```{r}
+soja <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=866852711")
+```
+
+**3. ANOVA**
+
+```{r}
+soja <- soja |> 
+  mutate(TRAT = as.factor(TRAT),
+         BLOCO = as.factor(BLOCO))
+```
+
+**4. Ferrugem e Produtividade**
+
+```{r}
+dfc <- soja |> 
+  ggplot(aes(TRAT, DFC))+
+  geom_jitter(width = 0.05, color = "gray70")+
+  stat_summary(fun.data = "mean_cl_boot", color = "black")
+dfc
+
+fer <- soja |> 
+  ggplot(aes(TRAT, FER))+
+  geom_jitter(width = 0.1)
+fer
+
+prod <- soja |> 
+  ggplot(aes(TRAT, PROD))+
+  geom_jitter(width = 0.1)
+prod
+
+library(patchwork)
+dfc / fer / prod
+```
+
+Os pontos pretos representam a média e a linha o intervalo de confiança.
+
+**5. Anova DFC**
+
+Foi testadas as premissas: normalidade e homocedasticidade e em seguida realizou o cálculo de médias e comparações entre médias.
+
+```{r}
+aov_dfc <- lm(DFC ~ TRAT+BLOCO,  #Bloco entra como efeito fixo ao colocar o "+"
+              data = soja)
+anova(aov_dfc)
+#Grau de liberdade = n-1
+# F é a divisão entre os Mean Square
+# Trat é extremamente significativo
+
+library(performance)
+check_heteroscedasticity(aov_dfc)
+check_normality(aov_dfc)
+
+library(emmeans)
+medias_dfc <- emmeans(aov_dfc, ~ TRAT)
+medias_dfc
+pwpm(medias_dfc)
+
+library(multcomp)
+library(multcompView)
+cld(medias_dfc, Letters = letters)
+
+
+#Eficácia no controle (%) = (1- (emmean do tratamento/emmean da testemunha))*100
+
+```
+
+**6. ANOVA Ferrugem**
+
+Foi testadas as premissas: normalidade e homocedasticidade e em seguida realizou o cálculo de médias e comparações entre médias.
+
+```{r}
+aov_fer <- lm(FER ~ TRAT+BLOCO,
+              data = soja)
+anova(aov_fer)
+
+library(performance)
+check_heteroscedasticity(aov_fer)
+check_normality(aov_fer)
+```
+
+Os dados não apresentaram distribuição normal e homogeneidade de variâncias.
+
+**6.1 Transformação dos dados**
+
+Foi realizada a transformação dos dados e checada as premissas: normalidade e homocedasticidade.
+
+```{r}
+soja <- soja |> 
+  mutate(FER2 = log(FER))
+
+aov_fer2 <- lm(FER2 ~ TRAT+BLOCO,
+               data = soja)
+anova(aov_fer2)
+check_normality(aov_fer2)
+check_heteroscedasticity(aov_fer2)
+
+medias_fer <- emmeans(aov_fer2, ~ TRAT)
+medias_fer
+pwpm(medias_fer)
+
+cld(medias_fer, Letters = letters)
+```
+
+Os dados apresentaram distribuição normal, portanto não houve homogeneidade de variâncias.
+
+Foi aplicado um teste de médias, com p-valor significativo e agrupamento das médias em 3 grupos.
+
+Portanto, recomenda utilizar outras alternativas devido a heterogeneidade de variâncias.
+
+**6.1 Box cox**
+
+Utilizou a transformação de dados Box cox para tentar arrumar a normalidade por Lambda.
+
+```{r}
+b <- boxcox(lm(soja$FER ~ 1))
+lambda <- b$x[which.max(b$y)]
+lambda
+soja$FER3 <- (soja$FER ^ lambda - 1)/ lambda
+aov_fer3 <- lm(FER3 ~ TRAT+BLOCO,
+              data = soja)
+check_normality(aov_fer3)
+check_heteroscedasticity(aov_fer3)
+medias_fer2 <- emmeans(aov_fer2, ~ TRAT)
+medias_fer2
+pwpm(medias_fer2)
+
+cld(medias_fer2, Letters = letters)
+```
+
+Os testes demonstram que a transformação de Box-Cox foi suficiente para corrigir a normalidade aos resíduos e homogeneidade de variância entre os grupos.
+
+**7. Premissas Produtividade**
+
+Foi testadas as premissas: normalidade e homocedasticidade e em seguida realizou o cálculo de médias e comparações entre médias.
+
+```{r}
+aov_prod <- lm(PROD ~ TRAT+BLOCO,
+              data = soja)
+anova(aov_prod)
+check_heteroscedasticity(aov_prod)
+check_normality(aov_prod) 
+```
+
+Há normalidade dos dados, portanto não homogeneidade de variâncias.
+
+**8. Comparação de médias**
+
+Foram comparadas as médias entre grupos usando a função `emmeans`
+
+```{r}
+medias_prod <- emmeans(aov_prod, ~ TRAT)
+medias_prod
+```
+
+```{r}
+pwpm(medias_prod)
+```
+
+**9. Outras formas de visualização dos valores de produtividade**
+
+Foi plotado um gráfico com as médias e intervalo de confiança da variável resposta produtividade.
+
+```{r}
+medias_prod_grupo <- cld(medias_prod, Letters = letters)
+df_prod <- data.frame(medias_prod_grupo)
+df_prod |> 
+  ggplot(aes(TRAT, emmean))+
+  geom_point()+
+  ylim(3000,6500)+
+  geom_errorbar(aes(min = lower.CL,
+                    max = upper.CL),
+                width = 0.1)+
+  annotate(geom = "text", x = 1.2, y = 4200, label = "A")+
+  annotate(geom = "text", x = 2.3, y = 5000, label = "AB")
+
+```
+
+Houve o agrupamento das médias dos tratamentos em 2 grupos. Os tratamentos 3, 4, 5, 6, 7 e 8 diferiram estatisticamente do tratamento 1. O tratamento 2 não diferiu estatísticamente da testenhuma e demais tratamentos.
+
+#Diferença de produtividade = emmean do tratamento - emmean da testemunha
+
+**10 Novos dados**
+
+**10.1 Curve**
+
+```{r}
+theme_set(theme_bw())
+curve <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=1807247585")
+curve = as.data.frame(curve)
+
+
+curve |> 
+  group_by(day) |> 
+  summarise(severity_mean = mean(severity),
+            severity_sd = sd(severity)) |> 
+  ggplot(aes(day, severity_mean))+
+  geom_point(width = 0.05)+
+  geom_line()
+
+curve |> 
+  group_by(day, Irrigation) |> 
+  summarise(severity_mean = mean(severity),
+            severity_sd = sd(severity)) |> 
+  ggplot(aes(day, severity_mean, color = Irrigation))+
+  geom_point(width = 0.05)+
+  geom_line()
+
+curve |> 
+  group_by(day, Irrigation) |> 
+  summarise(severity_mean = mean(severity)) |> 
+  ggplot(aes(day, severity_mean))+
+  geom_point(width = 0.05)+
+  geom_line()+
+  facet_grid(~Irrigation)
+
+#Área abaixo da curva
+library(epifitter)
+audpc <- curve |> 
+  group_by(Irrigation, rep) |> 
+  summarise(aacpd = AUDPC(day, severity))
+
+#ANOVA da área debaixo da curva
+aov_audpc <- lm(aacpd ~ Irrigation + factor(rep),
+                data = audpc) 
+anova(aov_audpc)
+  
+aov_curve <- lm(severity ~ Irrigation*day + rep,
+         data = curve)
+anova(aov_curve)
+
+library(agricolae)
+cv.model(aov_audpc) #coeficiente de variação, que é o desvio padrão dividido por 100
+
+```

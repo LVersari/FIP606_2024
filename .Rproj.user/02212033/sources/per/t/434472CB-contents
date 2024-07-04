@@ -1,0 +1,189 @@
+---
+format: html
+editor: visual
+message: false
+warning: false
+---
+
+# Importar dados
+
+Nessa aula iremos aprender outra forma de importar os dados, através do pacote `datapasta`. Instalando o pacote, ele fornece mais opções na aba **Addins**. Por meio do **Addins** podemos copiar (Ctrl+C) algum dado, vetor ou tabela e colar dentro do chunk no documento R Quarto Markdown. Para colar essas informações, selecionamos o **Addins** e podemos selecionar **Paste as** conforme o que desejarmos, sendo *vector* uma coluna e *data.frame* como uma tabela.
+
+```{r}
+comp <- c("9", "12.5", "10", "8", "13.2", "11", "10.8", "9.5", "10.8", "10.4", "13.72", "15.91", "15.7", "14.2", "15.9", "16.54", "18", "14.4", "16.41", "16")
+
+dat <- data.frame(
+  stringsAsFactors = FALSE,
+              trat = c("Mg2","Mg2","Mg2","Mg2",
+                       "Mg2","Mg2","Mg2","Mg2","Mg2","Mg2","control",
+                       "control","control","control","control","control","control",
+                       "control","control","control"),
+               rep = c(1L,2L,3L,4L,5L,6L,7L,8L,
+                       9L,10L,1L,2L,3L,4L,5L,6L,7L,8L,9L,10L),
+              comp = c(9,12.5,10,8,13.2,11,10.8,
+                       9.5,10.8,10.4,13.72,15.91,15.7,14.2,15.9,16.54,
+                       18,14.4,16.41,16))
+dat
+
+dat.tib <- tibble::tribble(
+      ~trat, ~rep, ~comp,
+      "Mg2",   1L,     9,
+      "Mg2",   2L,  12.5,
+      "Mg2",   3L,    10,
+      "Mg2",   4L,     8,
+      "Mg2",   5L,  13.2,
+      "Mg2",   6L,    11,
+      "Mg2",   7L,  10.8,
+      "Mg2",   8L,   9.5,
+      "Mg2",   9L,  10.8,
+      "Mg2",  10L,  10.4,
+  "control",   1L, 13.72,
+  "control",   2L, 15.91,
+  "control",   3L,  15.7,
+  "control",   4L,  14.2,
+  "control",   5L,  15.9,
+  "control",   6L, 16.54,
+  "control",   7L,    18,
+  "control",   8L,  14.4,
+  "control",   9L, 16.41,
+  "control",  10L,    16
+  )
+dat.tib
+
+visitas <- tibble::tribble(
+           ~Paises, ~Visitas,
+          "Brazil",     4303,
+      "Mozambique",       43,
+        "Portugal",       33,
+   "United States",       23,
+          "Angola",       19,
+           "Spain",       16,
+       "(not set)",       12,
+        "Colombia",        8,
+         "Germany",        5,
+         "Hungary",        5,
+  "United Kingdom",        5,
+     "Netherlands",        4,
+         "Ecuador",        3,
+          "France",        3,
+           "Chile",        2,
+        "Paraguay",        2,
+            "Peru",        2,
+       "Argentina",        1,
+         "Austria",        1,
+         "Bolivia",        1,
+      "Cape Verde",        1,
+           "China",        1,
+           "Egypt",        1,
+         "Finland",        1,
+           "India",        1,
+           "Italy",        1,
+        "Malaysia",        1,
+        "Pakistan",        1,
+          "Poland",        1,
+       "Singapore",        1,
+     "Timor-Leste",        1,
+         "Uruguay",        1
+  )
+```
+
+# R4PDE.net
+
+Primeiro foi instalado o pacote `pak`, depois o pacote `Icens` e `emdelponte/r4pde`.
+
+```{r}
+#install.packages("pak")
+#pak::pkg_install("Icens")
+#pak::pkg_install("emdelponte/r4pde")
+
+```
+
+No site **R4PDE.net** foi importado os dados `pepper`. Esses dados estão no formato largo, por isso, usando a função `pivot_longer`do `tidyverse` para tranformar a tabela no formato longo.O gráfico deve ser feito com o formato longo.
+
+```{r}
+library(tidyverse)
+pepper <- 
+  tribble(
+   ~t,  ~`1`,  ~`2`,  ~`3`,
+   0,  0.08, 0.001, 0.001,
+   7,  0.13,  0.01, 0.001,
+  14,  0.78,  0.09,  0.01,
+  21,  0.92,  0.25,  0.05,
+  28,  0.99,   0.8,  0.18,
+  35, 0.995,  0.98,  0.34,
+  42, 0.999,  0.99,  0.48,
+  49, 0.999, 0.999,  0.74
+  ) 
+
+pepper |> 
+  pivot_longer(2:4,
+               names_to = "epidemic",
+               values_to = "inc")
+
+```
+
+Esses dados foram transformados em um gráfico usando o `geom_point`e o `geom_line`. Para definir um nome para cada linha formada, usamos a função `annotate`.
+
+```{r}
+pepper |> 
+  pivot_longer(2:4,
+               names_to = "epidemic",
+               values_to = "inc") |> 
+  ggplot(aes(t, inc, color = epidemic))+
+  geom_point()+
+  geom_line()+
+  annotate(geom = "text",
+           x = 10,
+           y = 0.75,
+           label = "1")+
+  annotate(geom = "text",
+           x = 25,
+           y = 0.75,
+           label = "2")+
+  annotate(geom = "text",
+           x = 47,
+           y = 0.75,
+           label = "3")+
+  theme(legend.position = "none") #Isso é usado para tirar a legenda do gráfico
+
+```
+
+# Tabela de contingência
+
+A função `count()`conta quantas ocorrências têm de determinadas variáveis
+
+```{r}
+cr <- read_csv("https://raw.githubusercontent.com/emdelponte/paper-coffee-rust-Ethiopia/master/data/survey_clean.csv")
+
+cr |> 
+  count(region, zone) #Formato longo
+
+library(janitor)
+cr |> 
+  tabyl(region, zone) #Formato largo
+
+cr |> 
+  tabyl(zone, region)
+
+cr |> 
+  tabyl(cultivar, region)
+
+cr |> 
+  count(cultivar, farm_management)
+
+
+library(ggthemes)
+cr |> 
+  count(farm_management, cultivar) |> 
+  ggplot(aes(cultivar, n, fill = farm_management, label = n))+
+  geom_col(position = "dodge2")+
+  scale_fill_canva()+
+  theme_bw()+
+  theme(strip.text.x = element_blank(),
+        legend.position = "top")+
+  geom_text(position = position_dodge(width = 0.9))+
+  facet_wrap(~cultivar, scales = "free_x")
+
+```
+
+????? Gráficos de colunas com médias e desvio padrão.

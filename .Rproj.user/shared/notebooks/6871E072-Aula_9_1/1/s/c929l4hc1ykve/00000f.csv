@@ -1,0 +1,31 @@
+"0","library(drc)"
+"2","
+'drc' has been loaded.
+
+"
+"2","Please cite R and 'drc' if used for a publication,
+"
+"2","for references type 'citation()' and 'citation('drc')'.
+
+"
+"2","
+Attaching package: ‘drc’
+
+"
+"2","The following objects are masked from ‘package:stats’:
+
+    gaussian, getInitial
+
+"
+"0","isolado165 <- pyra2 |> "
+"0","  filter(code == ""165"")"
+"0",""
+"0","            fct = LL.3())"
+"2","Warning: NaNs produced"
+"2","Warning: NaNs produced"
+"0","AIC(drc1) "
+"1","[1]"
+"1"," 31.55522"
+"1","
+"
+"0","plot(drc1) "

@@ -1,0 +1,135 @@
+---
+format: html
+editor: visual
+message: false
+warning: false
+---
+
+## 1. Estatística Inferencial
+
+A Inferência Estatística consiste de procedimentos para fazer generalizações sobre as características de uma população a partir da informação contida na amostra.
+
+### 2. Dois grupos independentes
+
+Carregamento dos dados a partir de planilha online (google drive), utilizando o pacote `gsheet` e a função `gsheet2tbl`.
+
+```{r}
+library(gsheet)  
+mg <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=983033137")
+```
+
+## 3. Visualização dos dados
+
+```{r}
+library(tidyverse)  
+mg |>       
+  ggplot(aes(trat, comp))+      
+  geom_boxplot() 
+```
+
+O gráfico mostra um possível efeito do tratamento **Mg2** na redução do comprimento das lesões.
+
+Os dados apresentam uma baixa dispersão, indicando uma possível distribuição normal dos dados.
+
+**4. Teste de Normalidade**
+
+Foram utilizados diferentes médodos para averiguar se os dados apresentam uma distribuição normal.
+
+Como:
+
+Q-Q Plot, usando as funções `qqnorm` e `qqline`;
+
+Histogramas, selecionando a função `hist`;
+
+E aplicando o teste de normalidade Shapiro-wilk, a partir da função `shapiro.test.`
+
+```{r}
+mg2 <- mg |>       
+  pivot_wider(names_from = trat,                              
+              values_from = comp) 
+teste1 <- t.test(mg2$control, mg2$Mg2)    
+shapiro.test(mg2$control)  
+shapiro.test(mg2$Mg2)  
+hist(mg2$control)  
+hist(mg2$Mg2)    
+qqnorm(mg2$control)  
+qqline(mg2$control)    
+qqnorm(mg2$Mg2)  
+qqline(mg2$Mg2)  
+```
+
+Foi possível confirmar que os dados apresentam uma distribuição normal, utilizando as três formas de análises. No teste de Shapiro Wilk, o P valor é maior que o nível de significância adotado (⍺ = 5%), ou seja, a hipótese nula (de normalidade) não é rejeitada.
+
+**5. Teste de homocedasticidade**
+
+A função `var.test` foi usada para realizar o teste de homogeneidade de variâncias.
+
+```{r}
+var.test(mg2$control, mg2$Mg2)
+```
+
+A hipótese nula não foi rejeitada, há homogeneidade entre as variâncias das amostras.
+
+A seguir, será adotado o Test t.
+
+**6. Test t**
+
+Após a normalidade e homocedasticidade dos dados ser confirmada, foi aplicado o Test t, utilizado quando possui um estudo com apenas dois tratamentos.
+
+```{r}
+library(report)   
+report(teste1)  
+wilcox.test(mg2$control, mg2$Mg2,                          
+            paired = FALSE)     
+```
+
+**7. Dois grupos dependentes**
+
+carregou o conjunto de dados:
+
+```{r}
+escala <- gsheet2tbl("https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=1729131173")
+```
+
+**7. Visualização**
+
+Plotou um gráfico `bloxplot` para visualizar o conjunto de dados.
+
+```{r}
+escala |>       
+  ggplot(aes(assessment, acuracia))+      
+  geom_boxplot()
+```
+
+```{r}
+escala2 <- escala |>       
+  select(assessment, rater, acuracia) |>       
+  pivot_wider(names_from = assessment,                              
+              values_from = acuracia)
+```
+
+**8. Normalidade e Test t**
+
+Aplicou o test t e verificou a normalidade da distribuição dos dados.
+
+```{r}
+shapiro.test(escala2$Unaided)  
+shapiro.test(escala2$Aided1)  
+var.test(escala2$Unaided, escala2$Aided1)   
+t.test(escala2$Aided1, escala2$Unaided,                
+       paired = TRUE,                
+       var.equal = FALSE)
+```
+
+Com base no teste de normalidade Shapiro-Wilk, concluiu que os dados não apresentam distribuição normal.
+
+A seguir, pode ser aplicado um teste de comparação de grupos, não paramétrico.
+
+**9. Teste não paramétrico**
+
+```{r}
+wilcox.test(escala2$Aided1,              escala2$Unaided,              
+            paired = TRUE)
+```
+
+O P-valor foi significativo, portanto não foi possível computar o valor de p exato com o de desempate.

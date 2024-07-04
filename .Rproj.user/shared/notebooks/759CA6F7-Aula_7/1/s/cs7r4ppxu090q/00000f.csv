@@ -1,0 +1,4 @@
+"0","library(DHARMa) "
+"2","This is DHARMa 0.4.6. For overview type '?DHARMa'. For recent changes, type news(package = 'DHARMa')
+"
+"0","plot(simulateResiduals(m1))  "

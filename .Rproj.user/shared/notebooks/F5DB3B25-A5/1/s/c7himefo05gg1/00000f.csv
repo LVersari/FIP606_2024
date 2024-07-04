@@ -1,0 +1,7 @@
+"0","notas1 <- notas |> "
+"0",""
+"0","  select(prova, nota) |> "
+"0",""
+"0","  filter(prova == ""1"")"
+"0",""
+"0","notas1"

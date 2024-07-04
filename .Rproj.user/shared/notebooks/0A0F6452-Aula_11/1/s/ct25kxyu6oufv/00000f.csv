@@ -1,0 +1,5 @@
+"0","WORLD <- ne_countries()"
+"0",""
+"0","ggplot(WORLD)+"
+"0","  geom_sf()+"
+"0","  theme_map()"

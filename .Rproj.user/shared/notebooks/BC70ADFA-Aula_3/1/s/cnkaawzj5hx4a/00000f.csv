@@ -1,0 +1,7 @@
+"0","cr_oromia |>"
+"0","  ggplot(aes(x = cultivar,"
+"0","             y = sev2))+"
+"0","  geom_boxplot()+"
+"0","  labs(title = ""Oromia"","
+"0","       X = ""Cultivar"","
+"0","       y = ""Severity (%)"")"

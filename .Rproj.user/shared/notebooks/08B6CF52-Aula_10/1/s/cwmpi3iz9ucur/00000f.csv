@@ -1,0 +1,18 @@
+"0","imgs2 <- imgs[, c(""Assess"", ""LeafDoctor"", ""ImageJ"")]"
+"0",""
+"0","library(AgroR)"
+"2","
+Attaching package: ‘AgroR’
+
+"
+"2","The following object is masked from ‘package:drc’:
+
+    logistic
+
+"
+"2","The following object is masked from ‘package:dplyr’:
+
+    desc
+
+"
+"0","corgraph(imgs2) "

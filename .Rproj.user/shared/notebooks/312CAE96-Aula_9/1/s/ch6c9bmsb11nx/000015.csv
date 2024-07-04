@@ -1,0 +1,5 @@
+"0","estande %>% "
+"0","  ggplot(aes(trat, nplants))+"
+"0","  geom_jitter(width = 0.2, alpha = 0.2, color = ""darkblue"")+"
+"0","  stat_summary(fun.data = ""mean_cl_boot"")+"
+"0","  geom_smooth(method = ""lm"", se = FALSE)"

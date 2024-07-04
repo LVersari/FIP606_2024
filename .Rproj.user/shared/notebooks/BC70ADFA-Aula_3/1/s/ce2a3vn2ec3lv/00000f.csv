@@ -1,0 +1,6 @@
+"0","notas |> "
+"0","  ggplot(aes(factor(prova), nota))+"
+"0","  geom_boxplot(fill = ""orange"")+"
+"0","  geom_jitter(width = 0.05)+"
+"0","  labs(x = ""Notas"","
+"0","       y = ""Prova"")"

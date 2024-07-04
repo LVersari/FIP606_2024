@@ -1,0 +1,2 @@
+"0","library(MASS) "
+"0","b <- boxcox(lm(inseticida$count + 0.1 ~1)) "

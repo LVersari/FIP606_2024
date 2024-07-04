@@ -1,0 +1,4 @@
+"0","escala2 <- escala |>       "
+"0","  select(assessment, rater, acuracia) |>       "
+"0","  pivot_wider(names_from = assessment,                              "
+"0","              values_from = acuracia)"

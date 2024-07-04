@@ -1,0 +1,6 @@
+"0","ggplot(BRA) +"
+"0","geom_sf(color = ""darkblue"","
+"0","          fill = ""white"") +"
+"0","  geom_sf(data = MG, "
+"0","          color = ""grey"","
+"0","          fill = ""darkorange"")"

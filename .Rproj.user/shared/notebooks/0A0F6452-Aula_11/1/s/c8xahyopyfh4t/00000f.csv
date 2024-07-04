@@ -1,0 +1,5 @@
+"0","AS <- ne_countries(continent = ""Asia"")"
+"0",""
+"0","ggplot(AS)+"
+"0","  geom_sf()+"
+"0","  theme_map()"

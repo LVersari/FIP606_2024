@@ -1,0 +1,7 @@
+"0","BR_int <- ggplot(BRA) +"
+"0","  geom_sf(fill = ""white"","
+"0","          color = ""black"","
+"0","          linewidth = 0.3)+"
+"0","  theme_map()"
+"0",""
+"0","ggplotly(BR_int)"

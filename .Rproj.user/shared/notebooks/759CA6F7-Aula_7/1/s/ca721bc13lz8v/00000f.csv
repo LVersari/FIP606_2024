@@ -1,0 +1,6 @@
+"0","library(gsheet) "
+"0","li <- gsheet2tbl(""https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=2023059672"")  "
+"0","li |>    "
+"0","  ggplot(aes(factor(dose), severity, color = factor(dose)))+   "
+"0","  geom_jitter(width =0.1)+   "
+"0","  facet_wrap(~treat)"

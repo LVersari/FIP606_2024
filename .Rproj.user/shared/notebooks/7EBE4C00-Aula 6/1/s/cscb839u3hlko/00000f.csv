@@ -1,0 +1,2 @@
+"0","library(gsheet)  "
+"0","mg <- gsheet2tbl(""https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=983033137"")"

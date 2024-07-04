@@ -1,0 +1,4 @@
+"0","library(gsheet)"
+"0","cr <- gsheet2tbl(""https://docs.google.com/spreadsheets/d/1aID5Dh6PlBVCKzU1j7k-WA6zuWQWE2NhtWEgdJtt5iA/edit?usp=sharing"")"
+"2","Error in open.connection(6L, ""rb"") : HTTP error 404.
+"

@@ -1,0 +1,5 @@
+"0","pyra2 |> "
+"0","  ggplot(aes(dose, mean_germination))+"
+"0","  geom_point()+"
+"0","  geom_smooth(span = 3, se = FALSE)+"
+"0","  facet_wrap(~code)"

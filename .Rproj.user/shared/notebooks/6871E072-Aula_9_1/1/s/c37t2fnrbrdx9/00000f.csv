@@ -1,0 +1,6 @@
+"0","pyra <- gsheet2tbl(""https://docs.google.com/spreadsheets/d/1bq2N19DcZdtax2fQW9OHSGMR0X2__Z9T/edit#gid=465348652"")"
+"0",""
+"0","pyra2 <- pyra |> "
+"0","  group_by(code, state, dose) |> "
+"0","  summarise(mean_germination = mean(germination))"
+"2","`summarise()` has grouped output by 'code', 'state'. You can override using the `.groups` argument."
